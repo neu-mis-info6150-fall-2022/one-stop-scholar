@@ -1,0 +1,34 @@
+@import 'tokens';
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    padding: 20px;
+    background-color: $footer-color;
+    color: white;
+    @include flexCenter;
+    flex-direction: column;
+
+    .copyrightText {
+        font-weight: fonts(bold);
+        letter-spacing: 3px;
+    }
+
+    .copyrightLogo {
+        height: 15px;
+        width: 15px;
+    } 
+
+    .links {
+        a {
+            color: rgb(219, 219, 219);
+            text-decoration: none;
+            margin: auto 20px;
+
+            &:hover {
+                font-weight: fonts(bold);
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+// Declaring all variables for text color, link text color, background color, button color
+$primary-text-color: black;
+$secondary-text-color: #636874;
+$highlight-text-color: white;
+$primary-bg-color: #edf2f4;
+$accent-color1: rgb(239, 248, 254);
+$accent-color2: rgb(227,235,251);
+$font-family: 'Nunito', sans-serif;
+$button-color: #f95c39;
+$footer-color: #1f2937;
+
+// Below is map which stores different values of font sizes
+$font-weights: (
+    "regular" : 400,
+    "medium" : 500,
+    "medium-bold" : 600,
+    "bold" : 700,
+    "bolder" : 800,
+    "boldest" : 900
+);
+
+// Function to get font weight from above map variable
+@function fonts($weight-name) {
+    @return map-get($font-weights , $weight-name );
+}
+
+//Below map has been created to be used in destinations cards
+$destination-images-paths: (
+    image1 : "../public/united-states.jpg",
+    image2 : "../public/united-kingdom.jpeg",
+    image3 : "../public/australia.jpg",
+    image4 : "../public/germany.jpg"
+);
+
+
+// Below are mixins for positioning cases and theme change
+@mixin flexEqualDistribution {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flexHorizontalCenter {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin autoMarginHorizontal {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// @mixin theme($dark-theme: true) {
+    
+//     // Using if condition to check if dark theme needs to be applied or not
+    
+//     @if $dark-theme {
+//         background-color: rgb(12, 19, 43);
+
+//         #destinations {
+//             background-color: rgb(24, 37, 82);
+//         }
+
+//         .header {
+//             color: white;
+//         }
+
+//         .header-nav-tab a {
+//             color: rgb(226, 226, 226);
+
+//             &:hover {
+//                 color: white;
+
+//             }
+//         }
+
+//         p, h4, h3 {
+//             color: white;
+//         }
+
+//     }
+
+// }

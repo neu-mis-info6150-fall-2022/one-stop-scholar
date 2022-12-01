@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import '../styles/globals.css'
+import Footer from '../components/Footer.js'
 
 function MyApp({ Component, pageProps }) {
   return <>
@@ -10,6 +11,7 @@ function MyApp({ Component, pageProps }) {
         <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' />
       </Head>
       <Component {...pageProps} />
+      <Footer/>
   </>
 }
 
