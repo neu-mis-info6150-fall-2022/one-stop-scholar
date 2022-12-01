@@ -1,0 +1,28 @@
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  padding: 20px;
+  background-color: #1f2937;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.footer .copyrightText {
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+.footer .copyrightLogo {
+  height: 15px;
+  width: 15px;
+}
+.footer .links a {
+  color: rgb(219, 219, 219);
+  text-decoration: none;
+  margin: auto 20px;
+}
+.footer .links a:hover {
+  font-weight: 700;
+}/*# sourceMappingURL=Footer.module.css.map */

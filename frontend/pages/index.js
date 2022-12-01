@@ -23,7 +23,6 @@ export default function Home() {
           <Link href='#' legacyBehavior><a>Contact Us</a></Link>
         </div>
         <div className='login-container'>
-          <Link href='#' legacyBehavior><a>User</a></Link>
           <Link href='#' legacyBehavior><a>Sign In</a></Link>
           {/* <Link href='#' legacyBehavior><a>Sign Out</a></Link> */}
         </div>
@@ -41,7 +40,37 @@ export default function Home() {
           <button onClick={handleSubmit}>Know More</button>
         </div>
       </div>
-      
+
+      <div className={styles.destinations}>
+        <h2 className={styles.header}>Most Popular Countries</h2>
+        <div className={styles.cardContainer}>
+          <div className={styles.card}>
+            <div className={[styles.image1, styles.cardImage].join(" ")}></div>
+            <p>Scholarships in</p>
+            <h4>United States</h4>
+          </div>
+
+          <div className={styles.card}>
+            <div className={[styles.image2, styles.cardImage].join(" ")}></div>
+            <p>Scholarships in</p>
+            <h4>United Kingdom</h4>
+          </div>
+
+          <div className={styles.card}>
+            <div className={[styles.image3, styles.cardImage].join(" ")}></div>
+            <p>Scholarships in</p>
+            <h4>Australia</h4>
+          </div>
+
+          <div className={styles.card}>
+            <div className={[styles.image4, styles.cardImage].join(" ")}></div>
+            <p>Scholarships in</p>
+            <h4>Germany</h4>
+          </div>
+
+        </div>
+      </div>
+    
 
     </div>
   )
