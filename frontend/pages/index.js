@@ -12,7 +12,6 @@ export default function Home() {
     const key = process.env.NEXT_PUBLIC_EMAIL_VALIDATION_API_KEY
     const response = await fetch(`${url}?api_key=${key}&email=${email}`);
     const data = await response.json();
-    console.log(data);
     return data.is_valid_format.value;
   }
 

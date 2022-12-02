@@ -14,7 +14,7 @@ app.use(cors());
 // routes(app);
 
 // Connect to mongodb using mongoose connect function
-mongoose.connect('mongodb://localhost:27017/todolist');
+mongoose.connect('mongodb+srv://onestopscholar:OneStopScholarINFO6150@onestopscholar.cpgxpwf.mongodb.net/?retryWrites=true&w=majority');
 
 
 export default app;
