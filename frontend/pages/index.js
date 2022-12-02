@@ -23,7 +23,7 @@ export default function Home() {
           <Link href='#' legacyBehavior><a>Contact Us</a></Link>
         </div>
         <div className='login-container'>
-          <Link href='#' legacyBehavior><a>Sign In</a></Link>
+          <Link href='/signin' legacyBehavior><a>Sign In</a></Link>
           {/* <Link href='#' legacyBehavior><a>Sign Out</a></Link> */}
         </div>
       </nav>
