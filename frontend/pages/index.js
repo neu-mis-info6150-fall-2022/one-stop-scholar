@@ -7,8 +7,23 @@ export default function Home() {
 
   const emailRef = useRef();
 
-  const handleSubmit = () => {
+  const validateEmail = async (email) => {
+    const url = process.env.NEXT_PUBLIC_EMAIL_VALIDATION_URL;
+    const key = process.env.NEXT_PUBLIC_EMAIL_VALIDATION_API_KEY
+    const response = await fetch(`${url}?api_key=${key}&email=${email}`);
+    const data = await response.json();
+    console.log(data);
+    return data.is_valid_format.value;
+  }
+
+  const handleSubmit = async () => {
+    
     const email = emailRef.current.value;
+    const validity = await validateEmail(email)
+    if(validity) {
+      console.log("Email is valid: " + email);
+    } else alert("Kindly enter valid email address");
+    
   }
 
   return (
