@@ -2,19 +2,35 @@ import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import {useRouter} from 'next/router'
+import { signIn, signOut, useSession } from 'next-auth/react'
+import { useEffect, useState } from 'react'
+
 
 export default function() {
+    // const {data: session} = useSession();
+    // const [studentLogin, setstudentLogin] = useState(false);
+    // const [sponsorLogin, setsponsorLogin] = useState(false);
 
     const router = useRouter();
 
-    const handleStudentClick = (e) => {
-        e.preventDefault();
-        router.push('/student/signIn')
+    // useEffect(() => {
+    //     if(session && studentLogin) {
+    //         console.log(session, studentLogin);
+    //     }
+    // });
+
+    const handleStudentClick = () => {
+        // setstudentLogin(true);
+        console.log("Student function");
+        signIn('github',{callbackUrl: 'http://localhost:3000/student'});
+        
     }
 
-    const handleSponsorClick = (e) => {
-        e.preventDefault();
-        router.push('/sponsor/signIn')
+    const handleSponsorClick = () => {
+        // router.push('/sponsor/signIn')
+        // signIn({callbackUrl: 'http://localhost:3000/student'});
+        console.log("Sponsor function");
+        signIn('github',{callbackUrl: 'http://localhost:3000/sponsor'});
     }
 
     return(
