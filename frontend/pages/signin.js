@@ -1,20 +1,20 @@
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import {useRouter} from 'next/router'
+import { signIn } from 'next-auth/react'
+
 
 export default function() {
 
-    const router = useRouter();
-
-    const handleStudentClick = (e) => {
-        e.preventDefault();
-        router.push('/student/signIn')
+    const handleStudentClick = () => {
+        console.log("Student function");
+        signIn('github',{callbackUrl: 'http://localhost:3000/student'});
+        
     }
 
-    const handleSponsorClick = (e) => {
-        e.preventDefault();
-        router.push('/sponsor/signIn')
+    const handleSponsorClick = () => {
+        console.log("Sponsor function");
+        signIn('github',{callbackUrl: 'http://localhost:3000/sponsor'});
     }
 
     return(
