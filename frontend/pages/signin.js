@@ -1,14 +1,10 @@
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import {useRouter} from 'next/router'
-import { signIn, signOut, useSession } from 'next-auth/react'
-import { useEffect, useState } from 'react'
+import { signIn } from 'next-auth/react'
 
 
 export default function() {
-
-    const router = useRouter();
 
     const handleStudentClick = () => {
         console.log("Student function");
