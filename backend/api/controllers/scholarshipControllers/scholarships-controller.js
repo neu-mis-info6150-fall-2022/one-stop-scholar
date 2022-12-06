@@ -1,3 +1,4 @@
+import { response } from 'express';
 import * as scholarshipServices from '../../services/scholarshipServices/scholarship-services.js';
 
 // Default response in case of success and failure
@@ -15,11 +16,19 @@ const setError = (err, response) => {
 // Controller resolves the requests and consumes functions defined in services
 export const getAll = async (req, res) => {
     try {
-        console.log("before controller");
         const allScholarships = await scholarshipServices.getAll();
-        console.log("allScholarships",allScholarships);
         setResponse(allScholarships, res);
     } catch(error) {
+        setError(error, res);
+    }
+}
+
+export const getById = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const scholarship = await scholarshipServices.getById(id);
+        setResponse(scholarship,res);
+    }catch (error) {
         setError(error, res);
     }
 }
