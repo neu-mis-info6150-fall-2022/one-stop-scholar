@@ -1,6 +1,4 @@
 import Profile from '../../models/studentDbModels/profile.js';
-import Experience from '../../models/studentDbModels/experience.js';
-import Qualification from '../../models/studentDbModels/qualifications.js';
 
 export const save = async (data) => {
     const profile = new Profile(data);

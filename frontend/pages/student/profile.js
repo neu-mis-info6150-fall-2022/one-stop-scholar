@@ -2,344 +2,232 @@ import { getSession, signOut } from 'next-auth/react';
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react';
 
-export default function StudentProfile({session, user}) {
+export default function StudentProfile({session, profileData}) {
 
     const handleSignOut = () => {
         signOut({callbackUrl: 'http://localhost:3000'});
     }
 
+    const [successMessage, setsuccessMessage] = useState(false);
+    const [inputs, setInputs] = useState();
+
+    // Set the input value when there is change in any field
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({...values, [name]: value}))
+    }
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const profileURL = `http://localhost:8080/studentDb/profile/${profileData.email}`;
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(inputs)
+        };
+        const res = await fetch(profileURL,requestOptions);
+        if(res.ok) setsuccessMessage(true);
+
+    }
     
 
     return(
         <div className={styles.container}>
-            <div><nav className={styles.navbar}>
+            <nav className={styles.navbar}>
                 <Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image>
                 <div className={styles.centerNav}>
                     <Link href='/student' legacyBehavior><a>Dashboard</a></Link>
                     <Link href='/student/applications' legacyBehavior><a>Applications</a></Link>
                 </div>
                 <div className='login-container'>
-                    <Link href='/student/profile' legacyBehavior><a>{user.email}</a></Link>
+                    <Link href='/student/profile' legacyBehavior><a>{profileData.email}</a></Link>
                     <button onClick={handleSignOut} className={styles.signOutButton}>Sign Out</button>
                 </div>
             </nav>
-            </div>
-            {/* <br></br>
-            <br></br> */}
-            <div class="student-profile">
-                <h2>Student Profile Section</h2>
-                {/* <form onSubmit={this.addToDoFromUI}> */}
-                    <h3>Personal Information</h3>
-                    <div>
-                        <label>
-                            Name:
-                        <input 
-                            type="text" 
-                            name="name" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Date of Birth:
-                        <input 
-                            type="text" 
-                            name="dob" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Email:
-                        <input 
-                            type="text" 
-                            name="email" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Gender:
-                        <input 
-                            type="text" 
-                            name="gender" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <h3>Northeastern Details</h3>
-                    <div>
-                        <label>
-                            NUID:
-                        <input 
-                            type="text" 
-                            name="nuid" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            College:
-                        <input 
-                            type="text" 
-                            name="college" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Location:
-                        <input 
-                            type="text" 
-                            name="colege" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Program:
-                        <input 
-                            type="text" 
-                            name="program" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Majors:
-                        <input 
-                            type="text" 
-                            name="majors" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Grade:
-                        <input 
-                            type="text" 
-                            name="grade" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <h3>Work Experience</h3>
-                    <div>
-                        <label>
-                            Position:
-                        <input 
-                            type="text" 
-                            name="position" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Duration (months):
-                        <input 
-                            type="text" 
-                            name="duration" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Company:
-                        <input 
-                            type="text" 
-                            name="company" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Location:
-                        <input 
-                            type="text" 
-                            name="companylocation" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Location:
-                        <input 
-                            type="text" 
-                            name="companylocation" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <h3>Educational Details</h3>
-                    <div>
-                        <label>
-                            Undergrad:
-                        <input 
-                            type="text" 
-                            name="undergradclg" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Location:
-                        <input 
-                            type="text" 
-                            name="undergradloc" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Grade:
-                        <input 
-                            type="text" 
-                            name="undergradgrade" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            12th:
-                        <input 
-                            type="text" 
-                            name="12th" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            12th Location:
-                        <input 
-                            type="text" 
-                            name="12thloc" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            12th Grade:
-                        <input 
-                            type="text" 
-                            name="12thgrade" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            10th:
-                        <input 
-                            type="text" 
-                            name="10th" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            10th Location:
-                        <input 
-                            type="text" 
-                            name="10thloc" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            10th Grade:
-                        <input 
-                            type="text" 
-                            name="10thgrade" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <h3>Certifications</h3>
-                    <div>
-                        <label>
-                            Certifications:
-                        <input 
-                            type="text" 
-                            name="centrifications" 
-                            // value ={this.state.title} 
-                            // onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div >
-                        <input className="button" type="submit" value="Submit" />
-                    </div>
-                {/* </form> */}
-            </div>
+            
+            <form className={styles.studentProfileForm} onSubmit={handleSubmit}>
+                <h2 className={styles.header}>Student Profile Section</h2>
+                <h3 className={styles.formSectionHeader}>Personal Information</h3>
+                <div className={styles.inputElements}>
+                    <label>First Name:</label>
+                    <input 
+                        type="text" 
+                        name="firstName" 
+                        defaultValue={profileData.firstName}
+                        onChange={handleChange} 
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Last Name:</label>
+                    <input 
+                        type="text" 
+                        name="lastName" 
+                        defaultValue ={profileData.lastName} 
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Date of Birth (MM/DD/YYYY):</label>
+                    <input
+                        type="text"
+                        name="dateOfBirth"
+                        defaultValue={profileData.dateOfBirth}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Email:</label>
+                    <input 
+                        type="text" 
+                        name="email" 
+                        defaultValue={profileData.email}
+                        onChange={handleChange} 
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Gender:</label>
+                    <input 
+                        type="text" 
+                        name="gender" 
+                        defaultValue ={profileData.gender} 
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Current City:</label>
+                    <input 
+                        type="text" 
+                        name="currentCity" 
+                        defaultValue ={profileData.currentCity} 
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Current Country:</label>
+                    <input 
+                        type="text" 
+                        name="currentCountry" 
+                        defaultValue ={profileData.currentCountry} 
+                        onChange={handleChange} 
+                        required
+                    />
+                </div>
+
+                <h3 className={styles.formSectionHeader}>Educational Details</h3>
+                <div className={styles.inputElements}>
+                    <label>Highest Qualification:</label>
+                    <input 
+                        type="text" 
+                        name="highestQualification" 
+                        defaultValue ={profileData.highestQualification} 
+                        onChange={handleChange} 
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Major:</label>
+                    <input 
+                        type="text" 
+                        name="majors" 
+                        defaultValue ={profileData.majors} 
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Grade:</label>
+                    <input 
+                        type="text" 
+                        name="grade" 
+                        defaultValue ={profileData.grade} 
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>University:</label>
+                    <input 
+                        type="text" 
+                        name="university" 
+                        defaultValue ={profileData.university} 
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Year of Completion:</label>
+                    <input 
+                        type="number" 
+                        min="1900" 
+                        max="2099" 
+                        step="1" 
+                        name="yearOfCompletion" 
+                        defaultValue ={profileData.yearOfCompletion} 
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
+                <h3 className={styles.formSectionHeader}>Work Experience</h3>
+                <div className={styles.inputElements}>
+                    <label>Company:</label>
+                    <input 
+                        type="text" 
+                        name="company" 
+                        defaultValue ={profileData.company} 
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Location:</label>
+                    <input 
+                        type="text" 
+                        name="companyLocation" 
+                        defaultValue ={profileData.companyLocation} 
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Position:</label>
+                    <input 
+                        type="text" 
+                        name="position" 
+                        defaultValue ={profileData.position} 
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Duration(years):</label>
+                    <input 
+                        type="text" 
+                        name="duration" 
+                        defaultValue ={profileData.duration} 
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.saveButton}>
+                    <input type="submit" value="Save" />
+                </div>
+
+                {
+                    successMessage ? <div className={styles.successMessage}>Data saved successfully!</div> : null
+                }
+                
+            </form>
         </div>
         
     ) 
@@ -357,8 +245,8 @@ export async function getServerSideProps(context) {
         }
     } else {
         const email = session.user.email;
-        const url = `http://localhost:8080/nextAuthDb/users/${email}`;
-        const response = await fetch(url);
+        const usersTableURL = `http://localhost:8080/nextAuthDb/users/${email}`;
+        const response = await fetch(usersTableURL);
         const userData = await response.json();
 
         if (userData[0].userType === 'sponsor') {
@@ -371,10 +259,14 @@ export async function getServerSideProps(context) {
 
         }
 
+        const profileTableURL = `http://localhost:8080/studentDb/profile/${email}`;
+        const profileResponse = await fetch(profileTableURL);
+        const profileData = await profileResponse.json();
+
         return{
             props: {
                 session,
-                user: session.user
+                profileData
             }
         }
     } 

@@ -8,7 +8,7 @@ const schema = new mongoose.Schema({
         type: String
     },
     dateOfBirth: {
-        type: Date
+        type: String
     },
     email: {
         type: String,
@@ -36,7 +36,7 @@ const schema = new mongoose.Schema({
         type: String
     },
     yearOfCompletion: {
-        type: Date
+        type: Number
     },
     company: {
         type: String
