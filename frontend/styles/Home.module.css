@@ -26,6 +26,19 @@
   text-shadow: -1px -1px 0 #c2211c;
 }
 
+.signOutButton {
+  border: none;
+  background-color: transparent;
+  color: #636874;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+.signOutButton:hover {
+  color: black;
+  font-weight: 700;
+}
+
 .header {
   text-align: center;
 }

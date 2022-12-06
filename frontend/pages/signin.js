@@ -4,17 +4,17 @@ import Image from 'next/image'
 import { signIn } from 'next-auth/react'
 
 
-export default function() {
+export default function SignIn() {
 
     const handleStudentClick = () => {
         console.log("Student function");
-        signIn('github',{callbackUrl: 'http://localhost:3000/student'});
+        signIn('',{callbackUrl: 'http://localhost:3000/student'});
         
     }
 
     const handleSponsorClick = () => {
         console.log("Sponsor function");
-        signIn('github',{callbackUrl: 'http://localhost:3000/sponsor'});
+        signIn('',{callbackUrl: 'http://localhost:3000/sponsor'});
     }
 
     return(
@@ -23,7 +23,7 @@ export default function() {
             <nav className={styles.navbar}>
                 <Image href="/" src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image>
                 <div className={styles.centerNav}>
-                <Link href='#' legacyBehavior><a>About</a></Link>
+                <Link href='#' legacyBehavior><a>Scholarships</a></Link>
                 <Link href='#' legacyBehavior><a>Destinations</a></Link>
                 <Link href='#' legacyBehavior><a>Degrees</a></Link>
                 <Link href='#' legacyBehavior><a>Contact Us</a></Link>

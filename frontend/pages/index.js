@@ -31,7 +31,7 @@ export default function Home() {
       <nav className={styles.navbar}>
         <Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image>
         <div className={styles.centerNav}>
-          <Link href='#' legacyBehavior><a>About</a></Link>
+          <Link href='/scholarships' legacyBehavior><a>Scholarships</a></Link>
           <Link href='#' legacyBehavior><a>Destinations</a></Link>
           <Link href='#' legacyBehavior><a>Degrees</a></Link>
           <Link href='#' legacyBehavior><a>Contact Us</a></Link>
