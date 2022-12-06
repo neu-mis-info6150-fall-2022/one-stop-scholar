@@ -62,54 +62,87 @@
   text-shadow: 1px 1px #848484;
 }
 
+.heading {
+  margin-top: 10%;
+  font-weight: 700;
+}
+
+.description {
+  font-weight: 400;
+}
+
+.applyButton {
+  background-color: orange;
+}
+
 .scholarships {
   margin-top: 10vh;
 }
 .scholarships .schcardContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   text-align: center;
   margin: 50px auto 100px auto;
   width: 90%;
 }
 .scholarships .schcardContainer .schcard {
-  width: 250px;
-  height: 280px;
-  padding: 8px;
+  width: 1000px;
+  height: 71px;
   box-sizing: border-box;
   background-color: white;
   border-radius: 5px;
-  margin: 0px 10px 10px;
+  margin: 23px;
   box-shadow: 5px 5px 5px rgb(95, 94, 94);
 }
 .scholarships .schcardContainer .schcard .cardImage {
-  height: 75%;
-  width: 100%;
+  height: 100%;
+  width: 50%;
+  opacity: 20%;
 }
 .scholarships .schcardContainer .schcard p {
   color: grey;
   margin-bottom: 0;
 }
-.scholarships .schcardContainer .schcard h4 {
-  margin-top: 5px;
+.scholarships .schcardContainer .schcard .countries {
+  position: relative;
+  top: 1px;
+  right: 313px;
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
 }
-.scholarships .schcardContainer .schcard .applyButton {
+.scholarships .schcardContainer .schcard .details {
+  position: relative;
+  top: -8px;
+  right: -8px;
+  color: black;
+  text-align: left;
+}
+.scholarships .schcardContainer .schcard .button {
+  position: relative;
+  top: -48px;
+  left: 438px;
+  background-color: rgba(244, 132, 132, 0.6588235294);
+  border-radius: 7px;
+  border: 0px;
+  font-size: 15px;
+  padding: 6px;
+}
+.scholarships .schcardContainer .schcard .button:hover {
+  background-color: rgba(237, 75, 75, 0.8235294118);
+  cursor: pointer;
+}
+.scholarships .schcardContainer .applyButton {
   background-color: blue;
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 5px 5px 5px rgb(43, 43, 43);
 }
-.scholarships .schcardContainer .schcard .applyButton:hover {
+.scholarships .schcardContainer .applyButton:hover {
   opacity: 0.5;
 }
-.scholarships .schcardContainer .schcard:hover {
-  transform: scale(1.2);
+.scholarships .schcard:hover {
+  transform: scale(1.1);
   transition: 0.5s;
   box-shadow: 5px 5px 5px rgb(43, 43, 43);
-  height: 290px;
-  border-radius: 10px;
-  cursor: pointer;
 }
 
 .header {

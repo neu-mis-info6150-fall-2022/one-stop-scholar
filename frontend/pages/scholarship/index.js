@@ -5,16 +5,11 @@ import Router from 'next/router'
 
 export default function Home() {
 
-  const handleApplyClick = (id) => {
-    console.log("Apply function");
-    Router.push(`/scholarships/${id}`);
-}
-
   return (
     <div className={styles.container}>
 
       <nav className={styles.navbar}>
-        <Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image>
+        <a href="http://localhost:3000" ><Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
         <div className={styles.centerNav}>
           <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
           <Link href='#' legacyBehavior><a>Countries</a></Link>
@@ -33,68 +28,80 @@ export default function Home() {
 
       {/*Popular Destination*/}
       <div className={styles.scholarships}>
-        <h2 className={styles.popScholarships}>Most Popular Scholarship Countries</h2>
+        <h2 className={styles.popScholarships}>Input something</h2>
         <div className={styles.schcardContainer}>
           <div className={styles.schcard}>
-            <div className={[styles.image1, styles.cardImage].join(" ")}>
-            <button onClick={handleApplyClick(1)} className={styles.applyButton}>Apply</button>
-            </div>
-            <p>Scholarships in</p>
-            <h4>United States</h4>
-            
+          <Link href='/scholarship/scholarshipDetails' legacyBehavior><a>Elie Wiesel Prize in Ethics Essay</a></Link>
+            <p className={styles.details}>Building Services Supervisor - Evening R111084   |   Posting Date: 12/05/2022   |   Boston, MA (Main Campus)</p>
           </div>
 
           <div className={styles.schcard}>
-            <div className={[styles.image2, styles.cardImage].join(" ")}></div>
-            <p>Scholarships in</p>
-            <h4>United Kingdom</h4>
+            {/*  <div className={[styles.image1, styles.cardImage].join(" ")}></div> */}
+            <a href="">Harry S. Truman Scholarships</a>
+            <p className={styles.details}>Building Services Supervisor - Evening R111084   |   Posting Date: 12/05/2022   |   Boston, MA (Main Campus)</p>
+
           </div>
 
           <div className={styles.schcard}>
-            <div className={[styles.image3, styles.cardImage].join(" ")}></div>
-            <p>Scholarships in</p>
-            <h4>Australia</h4>
+            {/*  <div className={[styles.image1, styles.cardImage].join(" ")}></div> */}
+            <p className={styles.countries}>Luce Scholars Program</p>
+            <p className={styles.details}>Building Services Supervisor - Evening R111084   |   Posting Date: 12/05/2022   |   Boston, MA (Main Campus)</p>
+
           </div>
 
           <div className={styles.schcard}>
-            <div className={[styles.image4, styles.cardImage].join(" ")}></div>
-            <p>Scholarships in</p>
-            <h4>Germany</h4>
-          </div>
+            {/*  <div className={[styles.image1, styles.cardImage].join(" ")}></div> */}
+            <p className={styles.countries}>Marshall Scholarships</p>
+            <p className={styles.details}>Building Services Supervisor - Evening R111084   |   Posting Date: 12/05/2022   |   Boston, MA (Main Campus)</p>
 
-        </div>
-      </div>
-
-      {/*Most Popular Scholarships */}
-
-      <div className={styles.scholarships}>
-        <h2 className={styles.popScholarshipsDes}>Most Popular Scholarship</h2>
-        <div className={styles.schcardContainer}>
-          <div className={styles.schcard}>
-            <div className={[styles.image1, styles.cardImage].join(" ")}></div>
-            <p>Elie Wiesel Prize in Ethics Essay</p>
-            <h4>$5,000</h4>
-          </div>
-
-          <div className={styles.schcard}>
-            <div className={[styles.image2, styles.cardImage].join(" ")}></div>
-            <p>Harry S. Truman Scholarships</p>
-            <h4>$30,000</h4>
-          </div>
-
-          <div className={styles.schcard}>
-            <div className={[styles.image3, styles.cardImage].join(" ")}></div>
-            <p>Luce Scholars Program</p>
-            <h4>All Expenses</h4>
-          </div>
-
-          <div className={styles.schcard}>
-            <div className={[styles.image4, styles.cardImage].join(" ")}></div>
-            <p>Marshall Scholarships</p>
-            <h4><b>All Expenses</b></h4>
           </div>
         </div>
       </div>
     </div>
   )
 }
+
+// export async function getStaticPaths() {
+//   const response = await fetch('http://localhost:8080/scholarships/:id')
+//   const data = await response.json();
+//   console.log("datagetStaticPaths",data);
+//   // console.log("scholarshipId",scholarshipId)
+//   const paths = [data].map(scholarship => {
+//     return {
+//       params: {
+//         scholarshipId: `${scholarship.id}`
+//       }
+//     }
+//   })
+  
+//   return {
+//     paths,
+//     fallback: 'blocking'
+//   }
+// }
+
+// export async function getStaticProps(context) {
+//   const {params} = context;
+//   const response = await fetch(`http://localhost:8080/scholarships/${params.scholarshipId}`)
+//   console.log("response",response);
+//   const data = await response.json();
+//   console.log("data",data);
+//   return {
+//       props: {
+//         scholarship: data[0]
+//       }
+//   }
+// }
+
+// function getScholarshipDetails({scholarship}) {
+//   return(
+//       <>
+//           <Head>
+//               <title>scholarship List</title>
+//               <meta name="description" content="To Do App on Next" />
+//               <link rel="icon" href="/list.png" />
+//           </Head>
+//           <TaskItem id={scholarship.id} name={task.name} description={task.description} submissionDate={task.submissionDate} status={task.status}></TaskItem>
+//       </>
+//   )
+// }

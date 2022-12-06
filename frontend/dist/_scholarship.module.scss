@@ -21,37 +21,81 @@
     text-shadow: 1px 1px #848484;
 }
 
+.heading {
+    margin-top: 10%;
+    font-weight: fonts(bold);
+    // color: aqua;
+}
+
+.description {
+    // color: yellow;
+    font-weight: fonts(regular);
+}
+
+.applyButton{
+    background-color: orange;
+}
+
 .scholarships {
     margin-top: 10vh;
 
     .schcardContainer {
-        @include flexEqualDistribution;
-        text-align: center;
+       // @include flexEqualDistribution;
+        
+       text-align: center;
         margin: 50px auto 100px auto;
         width: 90%;
 
         .schcard {
-            width: 250px;
-            height: 280px;
-            padding: 8px;
+            width: 1000px;
+            height: 71px;
+            //padding: 8px;
             box-sizing: border-box;
             background-color: white;
             border-radius: 5px;
-            margin: 0px 10px 10px;
+            margin: 23px;
             box-shadow: 5px 5px 5px rgb(95, 94, 94);
 
             .cardImage {
-                height: 75%;
-                width: 100%;
+                height: 100%;
+                width: 50%;
+                opacity: 20%;
             }
 
             p {
                 color: grey;
                 margin-bottom: 0;
             }
+            .countries{
+                position: relative;
+                top: 1px;
+                right: 313px;
+                color: black;
+                font-weight: bold;
+                font-size: 25px;
+            }
 
-            h4 {
-                margin-top: 5px;
+            .details {
+                position: relative;
+                top: -8px;
+                right: -8px;
+                color: black;
+                text-align: left;
+            }
+            .button{
+                position: relative;
+                top: -48px;
+                left: 438px;
+                background-color: #f48484a8;
+                border-radius: 7px;
+                border: 0px;
+                font-size: 15px;
+                padding: 6px;
+            }
+            .button:hover{
+                background-color: #ed4b4bd2;
+                cursor: pointer;
+            }
             }
             .applyButton{
                 background-color: blue;
@@ -65,13 +109,14 @@
             }
         }
         .schcard:hover {
-            transform: scale(1.2);
-            transition: 0.5s;
+           transform: scale(1.1);
+           transition: 0.5s;
             box-shadow: 5px 5px 5px rgb(43, 43, 43);
-            height: 290px;
-            border-radius: 10px;
-            cursor: pointer;
+           //height: 281px;
+           // border-radius: 10px;
+            
         }
     }
-}
+
+
 
