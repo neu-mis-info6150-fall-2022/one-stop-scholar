@@ -94,6 +94,15 @@
 .scholarships .schcardContainer .schcard h4 {
   margin-top: 5px;
 }
+.scholarships .schcardContainer .schcard .applyButton {
+  background-color: blue;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgb(43, 43, 43);
+}
+.scholarships .schcardContainer .schcard .applyButton:hover {
+  opacity: 0.5;
+}
 .scholarships .schcardContainer .schcard:hover {
   transform: scale(1.2);
   transition: 0.5s;
@@ -175,8 +184,26 @@
 .imageBannerContainer .form input:hover {
   border: 2px solid grey;
 }
+.imageBannerContainer .form input:hover::-moz-placeholder {
+  font-weight: 700;
+}
+.imageBannerContainer .form input:hover:-ms-input-placeholder {
+  font-weight: 700;
+}
 .imageBannerContainer .form input:hover::placeholder {
   font-weight: 700;
+}
+.imageBannerContainer .form input::-moz-placeholder {
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.imageBannerContainer .form input:-ms-input-placeholder {
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  letter-spacing: 2px;
 }
 .imageBannerContainer .form input::placeholder {
   font-weight: 500;

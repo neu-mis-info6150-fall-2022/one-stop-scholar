@@ -1,13 +1,19 @@
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import Router from 'next/router'
 
 export default function Home() {
+
+  const handleApplyClick = (id) => {
+    console.log("Apply function");
+    Router.push(`/scholarships/${id}`);
+}
 
   return (
     <div className={styles.container}>
 
-<nav className={styles.navbar}>
+      <nav className={styles.navbar}>
         <Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image>
         <div className={styles.centerNav}>
           <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
@@ -25,14 +31,17 @@ export default function Home() {
         <h3 className={styles.quote}>Originality is the essence of true scholarship. <br />Creativity is the soul of the true scholar</h3>
       </div>
 
-      {/*Popular Destination*/}      
+      {/*Popular Destination*/}
       <div className={styles.scholarships}>
         <h2 className={styles.popScholarships}>Most Popular Scholarship Countries</h2>
         <div className={styles.schcardContainer}>
           <div className={styles.schcard}>
-            <div className={[styles.image1, styles.cardImage].join(" ")}></div>
+            <div className={[styles.image1, styles.cardImage].join(" ")}>
+            <button onClick={handleApplyClick(1)} className={styles.applyButton}>Apply</button>
+            </div>
             <p>Scholarships in</p>
             <h4>United States</h4>
+            
           </div>
 
           <div className={styles.schcard}>
@@ -56,7 +65,7 @@ export default function Home() {
         </div>
       </div>
 
-    {/*Most Popular Scholarships */}
+      {/*Most Popular Scholarships */}
 
       <div className={styles.scholarships}>
         <h2 className={styles.popScholarshipsDes}>Most Popular Scholarship</h2>

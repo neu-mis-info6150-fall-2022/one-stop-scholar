@@ -7,7 +7,7 @@ const Router = express.Router();
 // Post routing it will call functions in controller
 
 Router.route('/').get(scholarshipsController.getAll);
-console.log("before r");
+
 Router.route('/:id').get(scholarshipsController.getById);
 
 

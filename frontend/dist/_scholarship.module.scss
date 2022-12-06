@@ -53,6 +53,16 @@
             h4 {
                 margin-top: 5px;
             }
+            .applyButton{
+                background-color: blue;
+                border-radius: 10px;
+                cursor: pointer;
+                box-shadow: 5px 5px 5px rgb(43, 43, 43);
+            }
+
+            .applyButton:hover{
+                opacity: 0.5;
+            }
         }
         .schcard:hover {
             transform: scale(1.2);
