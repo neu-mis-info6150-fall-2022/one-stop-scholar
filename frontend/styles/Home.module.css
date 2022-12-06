@@ -39,6 +39,90 @@
   font-weight: 700;
 }
 
+.quote {
+  font-size: xx-large;
+  font-family: fangsong;
+  color: #c86c6c;
+  text-shadow: 1px 1px #848484;
+}
+
+.popScholarships {
+  text-align: center;
+  position: relative;
+  right: 331px;
+  top: 26px;
+  text-shadow: 1px 1px #848484;
+}
+
+.popScholarshipsDes {
+  text-align: center;
+  position: relative;
+  right: 407px;
+  top: 26px;
+  text-shadow: 1px 1px #848484;
+}
+
+.scholarships {
+  margin-top: 10vh;
+}
+.scholarships .schcardContainer {
+  text-align: center;
+  margin: 50px auto 100px auto;
+  width: 90%;
+}
+.scholarships .schcardContainer .schcard {
+  width: 1000px;
+  height: 71px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 5px;
+  margin: 23px;
+  box-shadow: 5px 5px 5px rgb(95, 94, 94);
+}
+.scholarships .schcardContainer .schcard .cardImage {
+  height: 100%;
+  width: 50%;
+  opacity: 20%;
+}
+.scholarships .schcardContainer .schcard p {
+  color: grey;
+  margin-bottom: 0;
+}
+.scholarships .schcardContainer .schcard .countries {
+  position: relative;
+  top: 1px;
+  right: 313px;
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+}
+.scholarships .schcardContainer .schcard .details {
+  position: relative;
+  top: -8px;
+  right: -8px;
+  color: black;
+  text-align: left;
+}
+.scholarships .schcardContainer .schcard .button {
+  position: relative;
+  top: -48px;
+  left: 438px;
+  background-color: rgba(244, 132, 132, 0.6588235294);
+  border-radius: 7px;
+  border: 0px;
+  font-size: 15px;
+  padding: 6px;
+}
+.scholarships .schcardContainer .schcard .button:hover {
+  background-color: rgba(237, 75, 75, 0.8235294118);
+  cursor: pointer;
+}
+.scholarships .schcard:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+  box-shadow: 5px 5px 5px rgb(43, 43, 43);
+}
+
 .header {
   text-align: center;
 }
@@ -58,6 +142,7 @@
   padding: 10px 30px;
   box-sizing: border-box;
   box-shadow: 0px 2px 10px grey;
+  z-index: 1;
 }
 .navbar a {
   text-decoration: none;
@@ -110,26 +195,8 @@
 .imageBannerContainer .form input:hover {
   border: 2px solid grey;
 }
-.imageBannerContainer .form input:hover::-moz-placeholder {
-  font-weight: 700;
-}
-.imageBannerContainer .form input:hover:-ms-input-placeholder {
-  font-weight: 700;
-}
 .imageBannerContainer .form input:hover::placeholder {
   font-weight: 700;
-}
-.imageBannerContainer .form input::-moz-placeholder {
-  font-weight: 500;
-  color: black;
-  text-align: center;
-  letter-spacing: 2px;
-}
-.imageBannerContainer .form input:-ms-input-placeholder {
-  font-weight: 500;
-  color: black;
-  text-align: center;
-  letter-spacing: 2px;
 }
 .imageBannerContainer .form input::placeholder {
   font-weight: 500;
