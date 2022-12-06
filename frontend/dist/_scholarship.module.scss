@@ -21,6 +21,21 @@
     text-shadow: 1px 1px #848484;
 }
 
+.heading {
+    margin-top: 10%;
+    font-weight: fonts(bold);
+    // color: aqua;
+}
+
+.description {
+    // color: yellow;
+    font-weight: fonts(regular);
+}
+
+.applyButton{
+    background-color: orange;
+}
+
 .scholarships {
     margin-top: 10vh;
 
@@ -81,6 +96,16 @@
                 background-color: #ed4b4bd2;
                 cursor: pointer;
             }
+            }
+            .applyButton{
+                background-color: blue;
+                border-radius: 10px;
+                cursor: pointer;
+                box-shadow: 5px 5px 5px rgb(43, 43, 43);
+            }
+
+            .applyButton:hover{
+                opacity: 0.5;
             }
         }
         .schcard:hover {

@@ -62,6 +62,19 @@
   text-shadow: 1px 1px #848484;
 }
 
+.heading {
+  margin-top: 10%;
+  font-weight: 700;
+}
+
+.description {
+  font-weight: 400;
+}
+
+.applyButton {
+  background-color: orange;
+}
+
 .scholarships {
   margin-top: 10vh;
 }
@@ -116,6 +129,15 @@
 .scholarships .schcardContainer .schcard .button:hover {
   background-color: rgba(237, 75, 75, 0.8235294118);
   cursor: pointer;
+}
+.scholarships .schcardContainer .applyButton {
+  background-color: blue;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgb(43, 43, 43);
+}
+.scholarships .schcardContainer .applyButton:hover {
+  opacity: 0.5;
 }
 .scholarships .schcard:hover {
   transform: scale(1.1);
