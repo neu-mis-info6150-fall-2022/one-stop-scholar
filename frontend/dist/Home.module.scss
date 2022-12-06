@@ -1,6 +1,7 @@
 @import 'tokens';
 @import 'signIn.module';
 @import 'studentDashboard.module';
+@import 'scholarship.module';
 
 .header {
     text-align: center;
@@ -19,6 +20,7 @@
     padding: 10px 30px;
     box-sizing: border-box;
     box-shadow: 0px 2px 10px grey;
+    z-index: 1;
 
     a {
         text-decoration: none;
