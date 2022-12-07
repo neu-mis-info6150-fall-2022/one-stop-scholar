@@ -556,6 +556,10 @@
 .destinations .cardContainer .card h4 {
   margin-top: 5px;
 }
+.destinations .cardContainer .card:hover {
+  transform: scale(1.03);
+  transition: 0.5s;
+}
 
 .image1 {
   background: url("../public/united-states.jpg");
