@@ -5,11 +5,12 @@ import Image from 'next/image'
 function scholarshipList({ scholarships }) {
 
   return (
+    
     <div className={styles.container}>
       <nav className={styles.navbar}>
         <a href="http://localhost:3000" ><Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
         <div className={styles.centerNav}>
-          <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
+          <Link href='/scholarship' legacyBehavior><a className={styles.selectedBold}>Scholarships</a></Link>
           <Link href='/countries' legacyBehavior><a>Countries</a></Link>
           <Link href='/degree' legacyBehavior><a>Degrees</a></Link>
           <Link href='/contactus' legacyBehavior><a>Contact Us</a></Link>
