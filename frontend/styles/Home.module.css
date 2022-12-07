@@ -77,24 +77,28 @@
   background-color: #ffffff;
 }
 
-.image1 {
+.image5 {
   background: url("../public/icons8-degree-60.png");
   background-position: center;
+  background-repeat: no-repeat;
 }
 
-.image2 {
+.image6 {
   background: url("../public/degree2.png");
   background-position: center;
+  background-repeat: no-repeat;
 }
 
-.image3 {
+.image7 {
   background: url("../public/graduation.png");
   background-position: center;
+  background-repeat: no-repeat;
 }
 
-.image4 {
+.image8 {
   background: url("../public/online-learning.png");
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .quote {

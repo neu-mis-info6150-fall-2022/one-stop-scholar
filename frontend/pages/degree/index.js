@@ -30,44 +30,44 @@ export default function Degree() {
         <h2 className={styles.header}>Most Popular Degrees</h2>
         <div className={styles.cardContainer}>
           <div className={styles.card}>
-            <div className={[styles.image1, styles.cardImage].join(" ")}></div>
+            <div className={[styles.image5, styles.cardImage].join(" ")}></div>
             <p>Professional Certificate</p>
           </div>
 
           <div className={styles.card}>
-            <div className={[styles.image2, styles.cardImage].join(" ")}></div>
+            <div className={[styles.image6, styles.cardImage].join(" ")}></div>
             <p>Undergraduate Degrees</p>
           </div>
 
           <div className={styles.card}>
-            <div className={[styles.image3, styles.cardImage].join(" ")}></div>
+            <div className={[styles.image7, styles.cardImage].join(" ")}></div>
             <p>Transfer Degree</p>
           </div>
 
           <div className={styles.card}>
-            <div className={[styles.image4, styles.cardImage].join(" ")}></div>
+            <div className={[styles.image8, styles.cardImage].join(" ")}></div>
             <p>Associate Degree</p>
           </div>
         </div>
 
         <div className={styles.cardContainer}>
           <div className={styles.card}>
-            <div className={[styles.image4, styles.cardImage].join(" ")}></div>
+            <div className={[styles.image6, styles.cardImage].join(" ")}></div>
             <p>Bachelor Degree</p>
           </div>
 
           <div className={styles.card}>
-            <div className={[styles.image3, styles.cardImage].join(" ")}></div>
+            <div className={[styles.image5, styles.cardImage].join(" ")}></div>
             <p>Graduate Degrees</p>
           </div>
 
           <div className={styles.card}>
-            <div className={[styles.image1, styles.cardImage].join(" ")}></div>
+            <div className={[styles.image8, styles.cardImage].join(" ")}></div>
             <p>Master Degree</p>
           </div>
 
           <div className={styles.card}>
-            <div className={[styles.image2, styles.cardImage].join(" ")}></div>
+            <div className={[styles.image7, styles.cardImage].join(" ")}></div>
             <p>Doctoral Degree</p>
           </div>
         </div>
