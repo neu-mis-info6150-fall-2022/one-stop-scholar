@@ -33,11 +33,11 @@ export const getById = async (req, res) => {
     }
 }
 
-export const getByEmail = async (req, res) => {
+export const getByQuery = async (req, res) => {
     try {
-        const params = req.params;
-        const searchByParam = await scholarshipServices.getByEmail(params);
-        setResponse(searchByParam, res);
+        const query = req.query;
+        const searchByQuery = await scholarshipServices.search(query);
+        setResponse(searchByQuery, res);
     } catch (error) {
         setError(error, res);
     }
