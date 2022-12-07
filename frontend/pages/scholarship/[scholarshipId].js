@@ -29,7 +29,6 @@ export default getScholarshipDetails
 export async function getStaticPaths() {
   const response = await fetch('http://localhost:8080/scholarships/');
   const data = await response.json();
-  console.log("data-getStaticPaths",data);
   const paths = data.map(scholarship => {
       return{
           params : {
@@ -46,13 +45,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const {params} = context;
-  console.log("params-prop",params);
-
-  const response = await fetch(`http://localhost:8080/scholarships/638ea71bca471a808b4be3d6`);
-  console.log("response-prop",response);
-
+  const response = await fetch(`http://localhost:8080/scholarships/${params.scholarshipId}`);
   const data = await response.json();
-  console.log("data-prop",data);
+
   return {
       props: {
         scholarship: data

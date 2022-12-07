@@ -36,7 +36,7 @@ function scholarshipList({ scholarships }) {
               return (
                 <div key={idx}>
                   <div className={styles.schcard}>
-                    <Link href={`scholarships/${scholarship._id}`} legacyBehavior>  
+                    <Link href={`/scholarship/${scholarship._id}`} legacyBehavior>  
                     {/* "http://localhost:3000/scholarship/scholarshipDetails/" */}
                     {/* {`scholarships/${scholarship.id}`} */}
                       <a>{scholarship.scholarshipName}</a>
