@@ -1,13 +1,14 @@
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import Router from 'next/router'
 
 export default function ScholarshipDetails() {
 
     const handleApply = () => {
         console.log("apply function");
         // signIn('',{callbackUrl: 'http://localhost:3000/student'});
-        
+        Router.push('/scholarships')
     }
 
     return (
