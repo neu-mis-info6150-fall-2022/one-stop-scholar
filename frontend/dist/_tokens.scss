@@ -26,6 +26,13 @@ $font-weights: (
 
 //Below map has been created to be used in destinations cards
 $destination-images-paths: (
+    image1 : "../public/united-states.jpg",
+    image2 : "../public/united-kingdom.jpeg",
+    image3 : "../public/australia.jpg",
+    image4 : "../public/germany.jpg"
+);
+
+$degree-images-paths: (
     image1 : "../public/icons8-degree-60.png",
     image2 : "../public/degree2.png",
     image3 : "../public/graduation.png",

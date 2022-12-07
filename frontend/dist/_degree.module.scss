@@ -46,7 +46,7 @@
     }
 }
 
-@each $name, $path in $destination-images-paths {
+@each $name, $path in $degree-images-paths {
     .#{$name} {
         background: url($path);
         background-position: center;

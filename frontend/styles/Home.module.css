@@ -520,25 +520,25 @@
 }
 
 .image1 {
-  background: url("../public/icons8-degree-60.png");
+  background: url("../public/united-states.jpg");
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .image2 {
-  background: url("../public/degree2.png");
+  background: url("../public/united-kingdom.jpeg");
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .image3 {
-  background: url("../public/graduation.png");
+  background: url("../public/australia.jpg");
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .image4 {
-  background: url("../public/online-learning.png");
+  background: url("../public/germany.jpg");
   background-position: center;
   background-repeat: no-repeat;
 }/*# sourceMappingURL=Home.module.css.map */
