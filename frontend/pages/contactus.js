@@ -11,8 +11,8 @@ export default function ContactUs() {
                 <a href='http://localhost:3000'><Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
                 <div className={styles.centerNav}>
                     <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
-                    <Link href='#' legacyBehavior><a>Countries</a></Link>
-                    <Link href='#' legacyBehavior><a>Degrees</a></Link>
+                    <Link href='/countries' legacyBehavior><a>Countries</a></Link>
+                    <Link href='/degree' legacyBehavior><a>Degrees</a></Link>
                     <Link href='/contactus' legacyBehavior><a>Contact Us</a></Link>
                 </div>
                 <div className='login-container'>
