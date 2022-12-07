@@ -26,6 +26,9 @@ const schema = new mongoose.Schema({
     },
     scholarshipApplicants: {
         type: String,
+    },
+    email: {
+        type: String,
     }
 }, {versionKey: false});
 

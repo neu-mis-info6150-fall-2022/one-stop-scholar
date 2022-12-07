@@ -33,4 +33,44 @@ export const getById = async (req, res) => {
     }
 }
 
+export const getByEmail = async (req, res) => {
+    try {
+        const params = req.params;
+        const searchByParam = await scholarshipServices.getByEmail(params);
+        setResponse(searchByParam, res);
+    } catch (error) {
+        setError(error, res);
+    }
+}
+
+export const post = async (req, res) => {
+    try {
+        const scholarship = req.body;
+        const savedScholarship = await scholarshipServices.save(scholarship);
+        setResponse(savedScholarship, res);
+    } catch (error) {
+        setError(error, res);
+    }
+}
+
+export const put = async (req, res) => {
+    try {
+        const updateParam = req.body;
+        const queryParam = req.params;
+        const savedScholarship = await scholarshipServices.update(queryParam, updateParam);
+        setResponse(savedScholarship, res);
+    } catch (error) {
+        setError(error, res);
+    }
+}
+
+export const remove = async (req, res) => {
+    try {
+        const query = req.params;
+        const removedScholarship = await scholarshipServices.remove(query);
+        setResponse(removedScholarship, res);
+    } catch (error) {
+        setError(error, res)
+    }
+}
 
