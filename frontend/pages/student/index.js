@@ -58,6 +58,14 @@ export async function getServerSideProps(context) {
                 body: JSON.stringify({ userType: "student"})
             };
             await fetch(url, requestOptions);
+
+            const profileTableURL = `http://localhost:8080/studentDb/profile/`;
+            const profileRequestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email})
+            };
+            await fetch(profileTableURL,profileRequestOptions);
         }
 
         return{
