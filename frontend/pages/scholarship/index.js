@@ -21,7 +21,7 @@ function scholarshipList({ scholarships }) {
       </nav>
 
       <div className={styles.banner}>
-        <Image src="/quote.png" alt="OneStopScholar" width={1300} height={300} />
+        <Image src="/browseSch.png" alt="OneStopScholar" width={1300} height={400} />
       </div>
 
       <h2 className={styles.popScholarships}>Available Scholarships</h2>
@@ -38,7 +38,7 @@ function scholarshipList({ scholarships }) {
                     <Link href={`/scholarship/${scholarship._id}`} legacyBehavior>  
                       <a className={styles.schName}>{scholarship.scholarshipName}</a>
                     </Link>
-                    <p className={styles.schAmt}>${scholarship.scholarshipAmt}</p>
+                    <p className={styles.schAmt}>Upto ${scholarship.scholarshipAmt}</p>
                     <p className={styles.details}>Desc: {scholarship.scholarshipDescription}</p>
                     <p className={styles.details}>Sponser: {scholarship.scholarshipSponsor}</p>
                     <p className={styles.details}>Date Posted: {date}</p>
