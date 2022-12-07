@@ -15,7 +15,7 @@ function getScholarshipDetails({ scholarship }) {
         //if yes then redirect to application page
 
         //else then redirect to signin page
-        signIn('', { callbackUrl: 'http://localhost:3000/student' });
+        signIn('', { callbackUrl: 'http://localhost:3000/student/signin' });
     }
 
     var date = scholarship.scholarshipDeadline;
