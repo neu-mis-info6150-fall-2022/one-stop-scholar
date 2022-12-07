@@ -84,8 +84,8 @@
   width: 90%;
 }
 .scholarships .schcardContainer .schcard {
-  width: 1000px;
-  height: 71px;
+  width: 100%;
+  height: 50%;
   box-sizing: border-box;
   background-color: white;
   border-radius: 5px;
