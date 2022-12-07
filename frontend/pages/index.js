@@ -34,7 +34,7 @@ export default function Home() {
           <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
           <Link href='#' legacyBehavior><a>Countries</a></Link>
           <Link href='/degree' legacyBehavior><a>Degrees</a></Link>
-          <Link href='#' legacyBehavior><a>Contact Us</a></Link>
+          <Link href='/contactus' legacyBehavior><a>Contact Us</a></Link>
         </div>
         <div className='login-container'>
           <Link href='/signin' legacyBehavior><a>Sign In</a></Link>
