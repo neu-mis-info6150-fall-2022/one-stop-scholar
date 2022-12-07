@@ -27,9 +27,16 @@ $font-weights: (
 //Below map has been created to be used in destinations cards
 $destination-images-paths: (
     image1 : "../public/united-states.jpg",
-    image2 : "../public/united-kingdom.jpeg",
+    image2 : "../public/united-kingdom.jpg",
     image3 : "../public/australia.jpg",
-    image4 : "../public/germany.jpg"
+    image4 : "../public/germany.jpg",
+    image9 : "../public/ireland.jpeg",
+    image10 : "../public/uae.jpeg",
+    image11 : "../public/new-zealand.jpeg",
+    image12 : "../public/japan.jpeg",
+    image13 : "../public/singapore.jpg",
+    image14 : "../public/united-kingdom.jpeg",
+
 );
 
 $degree-images-paths: (
@@ -38,7 +45,6 @@ $degree-images-paths: (
     image7 : "../public/graduation.png",
     image8 : "../public/online-learning.png"
 );
-
 
 // Below are mixins for positioning cases and theme change
 @mixin flexEqualDistribution {
