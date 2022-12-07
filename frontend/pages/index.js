@@ -29,7 +29,7 @@ export default function Home() {
     <div className={styles.container}>
 
       <nav className={styles.navbar}>
-        <Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image>
+        <a href='http://localhost:3000'><Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
         <div className={styles.centerNav}>
           <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
           <Link href='#' legacyBehavior><a>Countries</a></Link>
