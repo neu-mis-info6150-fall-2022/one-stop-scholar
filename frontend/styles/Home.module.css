@@ -49,7 +49,6 @@
 .popScholarships {
   text-align: center;
   position: relative;
-  right: -523px;
   top: 26px;
   color: #4d4d4d;
   /* text-shadow: 1px 1px #848484; */
@@ -175,7 +174,7 @@
   position: relative;
   z-index: 0;
   border-radius: 10px;
-  top: 40px;
+  top: 81px;
   right: -960px;
 }
 
@@ -203,8 +202,7 @@
   filter: blur(5px);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  -webkit-animation: glowing 20s linear infinite;
-          animation: glowing 20s linear infinite;
+  animation: glowing 20s linear infinite;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
@@ -228,18 +226,6 @@
   left: 0;
   top: 0;
   border-radius: 10px;
-}
-
-@-webkit-keyframes glowing {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
 }
 
 @keyframes glowing {
@@ -394,26 +380,8 @@
 .imageBannerContainer .form input:hover {
   border: 2px solid grey;
 }
-.imageBannerContainer .form input:hover::-moz-placeholder {
-  font-weight: 700;
-}
-.imageBannerContainer .form input:hover:-ms-input-placeholder {
-  font-weight: 700;
-}
 .imageBannerContainer .form input:hover::placeholder {
   font-weight: 700;
-}
-.imageBannerContainer .form input::-moz-placeholder {
-  font-weight: 500;
-  color: black;
-  text-align: center;
-  letter-spacing: 2px;
-}
-.imageBannerContainer .form input:-ms-input-placeholder {
-  font-weight: 500;
-  color: black;
-  text-align: center;
-  letter-spacing: 2px;
 }
 .imageBannerContainer .form input::placeholder {
   font-weight: 500;

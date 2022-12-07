@@ -24,7 +24,7 @@ function scholarshipList({ scholarships }) {
         <Image src="/quote.png" alt="OneStopScholar" width={1300} height={300} />
       </div>
 
-      <h2 className={styles.popScholarships}>Input something</h2>
+      <h2 className={styles.popScholarships}>Available Scholarships</h2>
 
       <div className={styles.scholarships}>
         <div className={styles.schcardContainer}>
@@ -36,7 +36,7 @@ function scholarshipList({ scholarships }) {
                 <div key={idx}>
                   <div className={styles.schcard}>
                     <Link href={`/scholarship/${scholarship._id}`} legacyBehavior>  
-                      <a>{scholarship.scholarshipName}</a>
+                      <a className={styles.schName}>{scholarship.scholarshipName}</a>
                     </Link>
                     <p className={styles.schAmt}>${scholarship.scholarshipAmt}</p>
                     <p className={styles.details}>Desc: {scholarship.scholarshipDescription}</p>
