@@ -21,7 +21,7 @@ function scholarshipList({ scholarships }) {
       </nav>
 
       <div className={styles.banner}>
-        <Image src="/quote.png" alt="OneStopScholar" width={1300} height={300} />
+        <Image src="/browseSch.png" alt="OneStopScholar" width={1300} height={400} />
       </div>
 
       <h2 className={styles.popScholarships}>Available Scholarships</h2>

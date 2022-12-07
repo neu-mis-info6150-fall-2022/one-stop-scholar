@@ -1,214 +1,7 @@
 @import 'tokens';
 
-.quote{
-    font-size: xx-large;
-    font-family: fangsong;
-    color: #c86c6c;
-    text-shadow: 1px 1px #848484;
-}
-.degree{
-    text-align: center;
-    position: relative;
-    right: -593px;
-    top: 26px;
-    color: #4d4d4d;
-    /* text-shadow: 1px 1px #848484; */
-    font-family: inherit;
-    font-weight: bolder;
-    font-size: x-large;
-
-
-}
-.popScholarshipsDes{
-    text-align: center;
-    position: relative;
-    right: 407px;
-    top: 26px;
-    text-shadow: 1px 1px #848484;
-
-}
-
-.heading {
-    margin-top: 10%;
-    font-weight: fonts(bold);
-    // color: aqua;
-}
-
-.description {
-    // color: yellow;
-    font-weight: fonts(regular);
-}
-
-.applyButton{
-    background-color: orange;
-}
-
-.scholarships {
+.degree {
     margin-top: 10vh;
-    
-    .schcardContainer {
-       // @include flexEqualDistribution;
-        
-       text-align: center;
-        margin: 50px auto 100px auto;
-        width: 90%;
-
-        .schcard {
-            width: 100%;
-            height: 50%;
-            //padding: 8px;
-            box-sizing: border-box;
-            background-color: white;
-            border-radius: 5px;
-            margin: 23px;
-            box-shadow: 5px 5px 5px rgb(95, 94, 94);
-
-            .cardImage {
-                height: 100%;
-                width: 50%;
-                opacity: 20%;
-            }
-
-            p {
-                color: grey;
-                margin-bottom: 0;
-            }
-            .countries{
-                position: relative;
-                top: 1px;
-                right: 313px;
-                color: black;
-                font-weight: bold;
-                font-size: 25px;
-            }
-
-            .details {
-                position: relative;
-                top: -8px;
-                right: -8px;
-                //color: black;
-                text-align: left;
-                margin: 4px;
-            }
-            .button{
-                position: relative;
-                top: -48px;
-                left: 438px;
-                background-color: #f48484a8;
-                border-radius: 7px;
-                border: 0px;
-                font-size: 15px;
-                padding: 6px;
-            }
-            .button:hover{
-                background-color: #ed4b4bd2;
-                cursor: pointer;
-            }
-            }
-            .applyButton{
-                background-color: blue;
-                border-radius: 10px;
-                cursor: pointer;
-                box-shadow: 5px 5px 5px rgb(43, 43, 43);
-            }
-
-            .applyButton:hover{
-                opacity: 0.5;
-            }
-        }
-        .schcard:hover {
-           transform: scale(1.03);
-           transition: 0.5s;
-            box-shadow: 5px 5px 5px rgb(43, 43, 43);
-           //height: 281px;
-           // border-radius: 10px;
-            
-        }
-    }
-
-.schName{
-    position: relative;
-    font-size: large;
-    font-weight: bold;
-    text-decoration: none;
-    right: 486px;
-    top: 7px;
-}
-.schAmt{
-    width: 114px;
-    height: 27px;
-    border: none;
-    outline: none;
-    color: rgb(0, 0, 0) !important;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-    top: 40px;
-    right: -960px;
-}
-
-.glow-on-hover {
-    width: 220px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-}
-
-.schAmt:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
-}
-
-.schAmt:active {
-    //color: #000
-}
-
-.schAmt:active:after {
-    background: transparent;
-}
-
-.schAmt:hover:before {
-    opacity: 1;
-}
-
-.schAmt:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(255, 161, 161);
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-}
-
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}
-
 
     .cardContainer {
         @include flexEqualDistribution;
@@ -228,6 +21,7 @@
             .cardImage {
                 height: 75%;
                 width: 100%;
+                
             }
 
             p {
@@ -239,8 +33,18 @@
                 margin-top: 5px;
             }
         }
+        .card:hover {
+            transform: scale(1.03);
+            transition: 0.5s;
+             box-shadow: 5px 7px 7px rgb(79, 78, 78);
+             background-color: #ffffff;
+             //color: white !important;
+            //height: 281px;
+            // border-radius: 10px;
+             
+         }
     }
-
+}
 
 @each $name, $path in $destination-images-paths {
     .#{$name} {
@@ -248,5 +52,3 @@
         background-position: center;
     }
 }
-
-

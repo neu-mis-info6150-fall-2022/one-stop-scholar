@@ -1,9 +1,11 @@
 @import 'tokens';
 @import 'signIn.module';
 @import 'studentDashboard.module';
+@import 'degree.module';
 @import 'scholarship.module';
 @import 'studentProfile.module';
 @import 'sponsorDashboard.module';
+
 
 .header {
     text-align: center;
@@ -149,5 +151,6 @@
     .#{$name} {
         background: url($path);
         background-position: center;
+        background-repeat: no-repeat;
     }
 }
