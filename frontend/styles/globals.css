@@ -1,5 +1,11 @@
+.selectedBold {
+  color: black !important;
+  font-weight: bold;
+}
+
 body {
   font-family: "Nunito", sans-serif;
   background-color: #e1e1e1;
+  background-color: #ffffff;
   overflow-x: hidden;
 }/*# sourceMappingURL=globals.css.map */

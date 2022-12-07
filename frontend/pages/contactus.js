@@ -11,9 +11,9 @@ export default function ContactUs() {
                 <a href='http://localhost:3000'><Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
                 <div className={styles.centerNav}>
                     <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
-                    <Link href='/countries' legacyBehavior><a>Countries</a></Link>
+                    <Link href='/countries' legacyBehavior><a>Destinations</a></Link>
                     <Link href='/degree' legacyBehavior><a>Degrees</a></Link>
-                    <Link href='/contactus' legacyBehavior><a>Contact Us</a></Link>
+                    <Link href='/contactus' legacyBehavior><a className={styles.selectedBold}>Contact Us</a></Link>
                 </div>
                 <div className='login-container'>
                     <Link href='/signin' legacyBehavior><a>Sign In</a></Link>
@@ -27,12 +27,12 @@ export default function ContactUs() {
             
             <div className={styles.contactContainer}>
                 <div className={styles.contactCard}>
-                    <div class={styles.contactCardHeader}>
+                    <div className={styles.contactCardHeader}>
                         <h3>For Scholarship related queries</h3>
                     </div>
-                    <div class='grid'>
-                        <div class='image'>
-
+                    <div className={styles.grid}>
+                        <div className='image'>
+                        <Image src="/riya.jpeg" alt="" className={styles.contactPic} width={100} height={100} />
                         </div>
                         <div>
                             <p>Contact: Riya Rajesh Patil</p>
@@ -42,12 +42,12 @@ export default function ContactUs() {
                     
                 </div>
                 <div className={styles.contactCard}>
-                    <div class={styles.contactCardHeader}>
+                    <div className={styles.contactCardHeader}>
                         <h3>For Scholarship related queries</h3>
                     </div>
-                    <div class='grid'>
-                        <div class='image'>
-
+                    <div className={styles.grid}>
+                        <div className='image'>
+                        <Image src="/ritvik.jpeg" alt="" className={styles.contactPic} width={100} height={100} />
                         </div>
                         <div>
                             <p>Contact: Ritvik Saxena</p>
@@ -56,12 +56,12 @@ export default function ContactUs() {
                     </div>
                 </div>
                 <div className={styles.contactCard}>
-                    <div class={styles.contactCardHeader}>
+                    <div className={styles.contactCardHeader}>
                         <h3>For Technical related queries</h3>
                     </div>
-                    <div class='grid'>
-                        <div class='image'>
-
+                    <div className={styles.grid}>
+                        <div className='image'>
+                        <Image src="/souvik.jpeg" alt="" className={styles.contactPic} width={100} height={100} />
                         </div>
                         <div>
                             <p>Contact: Souvik Dinda</p>
@@ -70,12 +70,12 @@ export default function ContactUs() {
                     </div>
                 </div>
                 <div className={styles.contactCard}>
-                    <div class={styles.contactCardHeader}>
+                    <div className={styles.contactCardHeader}>
                         <h3>For Business related queries</h3>
                     </div>
-                    <div class='grid'>
-                        <div class='image'>
-
+                    <div className={styles.grid}>
+                        <div className='image'>
+                        <Image src="/vinay.jpeg" alt="" className={styles.contactPic} width={100} height={100} />
                         </div>
                         <div>
                             <p>Contact: Vinay Kumar Gudooru</p>

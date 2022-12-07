@@ -67,6 +67,11 @@
   font-weight: 700;
 }
 
+.selectedBold {
+  color: black !important;
+  font-weight: bold;
+}
+
 .degree {
   margin-top: 10vh;
 }
@@ -127,6 +132,11 @@
   background: url("../public/online-learning.png");
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.selectedBold {
+  color: black !important;
+  font-weight: bold;
 }
 
 .quote {
@@ -356,6 +366,11 @@
     background-position: 0 0;
   }
 }
+.selectedBold {
+  color: black !important;
+  font-weight: bold;
+}
+
 .studentProfileForm {
   margin-left: auto;
   margin-right: auto;
@@ -422,6 +437,11 @@
   font-weight: 600;
 }
 
+.selectedBold {
+  color: black !important;
+  font-weight: bold;
+}
+
 .dashboardContainer {
   margin-top: 17vh;
 }
@@ -466,7 +486,7 @@
 .contactCard {
   width: 40%;
   height: 50%;
-  padding: 3px;
+  padding: 10px;
   box-sizing: border-box;
   background-color: white;
   border-radius: 5px;
@@ -476,6 +496,118 @@
 
 .contactCardHeader {
   color: orangered;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 40% 52%;
+}
+
+.contactPic {
+  border-radius: 50px;
+}
+
+.selectedBold {
+  color: black !important;
+  font-weight: bold;
+}
+
+.countries {
+  margin-top: 10vh;
+}
+.countries .cardContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 50px auto 100px auto;
+  width: 90%;
+}
+.countries .cardContainer .card {
+  width: 30%;
+  height: 62vh;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px grey;
+}
+.countries .cardContainer .card .cardImage {
+  height: 75%;
+  width: 100%;
+}
+.countries .cardContainer .card p {
+  color: grey;
+  margin-bottom: 0;
+}
+.countries .cardContainer .card h4 {
+  margin-top: 5px;
+}
+.countries .cardContainer .card:hover {
+  transform: scale(1.07);
+  transition: 0.5s;
+  box-shadow: 5px 7px 7px rgb(79, 78, 78);
+  background-color: #ffffff;
+}
+
+.image1 {
+  background: url("../public/united-states.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image2 {
+  background: url("../public/united-kingdom.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image3 {
+  background: url("../public/australia.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image4 {
+  background: url("../public/germany.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image9 {
+  background: url("../public/ireland.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image10 {
+  background: url("../public/uae.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image11 {
+  background: url("../public/new-zealand.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image12 {
+  background: url("../public/japan.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image13 {
+  background: url("../public/singapore.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image14 {
+  background: url("../public/united-kingdom.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .header {
@@ -636,7 +768,7 @@
 }
 
 .image2 {
-  background: url("../public/united-kingdom.jpeg");
+  background: url("../public/united-kingdom.jpg");
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -649,6 +781,42 @@
 
 .image4 {
   background: url("../public/germany.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image9 {
+  background: url("../public/ireland.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image10 {
+  background: url("../public/uae.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image11 {
+  background: url("../public/new-zealand.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image12 {
+  background: url("../public/japan.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image13 {
+  background: url("../public/singapore.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image14 {
+  background: url("../public/united-kingdom.jpeg");
   background-position: center;
   background-repeat: no-repeat;
 }/*# sourceMappingURL=Home.module.css.map */
