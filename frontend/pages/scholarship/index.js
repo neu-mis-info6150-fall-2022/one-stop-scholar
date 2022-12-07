@@ -12,7 +12,7 @@ function scholarshipList({ scholarships }) {
         <div className={styles.centerNav}>
           <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
           <Link href='#' legacyBehavior><a>Countries</a></Link>
-          <Link href='#' legacyBehavior><a>Degrees</a></Link>
+          <Link href='/degree' legacyBehavior><a>Degrees</a></Link>
           <Link href='#' legacyBehavior><a>Contact Us</a></Link>
         </div>
         <div className='login-container'>
@@ -26,7 +26,7 @@ function scholarshipList({ scholarships }) {
   </div> */}
 
       <div className={styles.banner}>
-        <Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={300} height={100} />
+        <Image src="/quote.png" alt="OneStopScholar" width={1300} height={300} />
       </div>
 
       <a className={styles.popScholarships}>Available Scholarships</a>
@@ -43,7 +43,7 @@ function scholarshipList({ scholarships }) {
                     <Link href={`scholarships/${scholarship.id}`} legacyBehavior>
                       <a className={styles.schName}>{scholarship.scholarshipName}</a>
                     </Link>
-                    <p className={styles.schAmt}>{scholarship.scholarshipAmt}</p>
+                    <p className={styles.schAmt}>${scholarship.scholarshipAmt}</p>
                     <p className={styles.details}>Desc: {scholarship.scholarshipDescription}</p>
                     <p className={styles.details}>Sponser: {scholarship.scholarshipSponsor}</p>
                     <p className={styles.details}>Date Posted: {date}</p>

@@ -147,6 +147,7 @@
   transform: scale(1.03);
   transition: 0.5s;
   box-shadow: 5px 5px 5px rgb(43, 43, 43);
+  background-color: #dad9d6;
 }
 
 .schName {
@@ -154,8 +155,8 @@
   font-size: large;
   font-weight: bold;
   text-decoration: none;
-  right: 486px;
-  top: 7px;
+  right: 423px;
+  top: 17px;
 }
 
 .schAmt {
