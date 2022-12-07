@@ -50,5 +50,6 @@
     .#{$name} {
         background: url($path);
         background-position: center;
+        background-repeat: no-repeat;
     }
 }
