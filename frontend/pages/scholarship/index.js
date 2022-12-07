@@ -37,14 +37,14 @@ function scholarshipList({ scholarships }) {
                 <div key={idx}>
                   <div className={styles.schcard}>
                     <Link href={`scholarships/${scholarship.id}`} legacyBehavior>
-                      <a>{scholarship.scholarshipName}</a>
+                      <a className={styles.schName}>{scholarship.scholarshipName}</a>
                     </Link>
-                    <p className={styles.details}>{scholarship.scholarshipDescription}</p>
-                    <p className={styles.details}>{scholarship.scholarshipSponsor}</p>
-                    <p className={styles.details}>{scholarship.scholarshipAmt}</p>
-                    <p className={styles.details}>{date}</p>
-                    <p className={styles.details}>{scholarship.scholarshipCriteria}</p>
-                    <p className={styles.details}>{scholarship.scholarshipApplicants}</p>
+                    <p className={styles.schAmt}>{scholarship.scholarshipAmt}</p>
+                    <p className={styles.details}>Desc: {scholarship.scholarshipDescription}</p>
+                    <p className={styles.details}>Sponser: {scholarship.scholarshipSponsor}</p>
+                    <p className={styles.details}>Date Posted: {date}</p>
+                    <p className={styles.details}>Criteria: {scholarship.scholarshipCriteria}</p>
+                    <p className={styles.details}>Number of Applicants: {scholarship.scholarshipApplicants}</p>
                   </div>
                 </div>
               )
