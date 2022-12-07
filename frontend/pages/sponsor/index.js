@@ -44,6 +44,8 @@ export default function({user, scholarships}) {
                 </div>
             </nav>
 
+            
+
             <div className={styles.dashboardContainer}>
                 {
                     scholarships.length === 0 ? <p>No Scholarships Posted Yet</p> :
