@@ -7,8 +7,11 @@ const Router = express.Router();
 // Post routing it will call functions in controller
 
 Router.route('/').get(scholarshipsController.getAll);
-
 Router.route('/:id').get(scholarshipsController.getById);
+Router.route('/:email').get(scholarshipsController.getByEmail);
+Router.route('/').post(scholarshipsController.post);
+Router.route('/:id').put(scholarshipsController.put);
+Router.route('/:id').delete(scholarshipsController.remove);
 
 
 export default Router;

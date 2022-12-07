@@ -3,7 +3,7 @@ import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default function({session, user}) {
+export default function({user}) {
 
     const handleSignOut = () => {
         signOut({callbackUrl: 'http://localhost:3000'});
@@ -23,6 +23,12 @@ export default function({session, user}) {
                     <button onClick={handleSignOut} className={styles.signOutButton}>Sign Out</button>
                 </div>
             </nav>
+
+            <div className={styles.dashboardContainer}>
+                
+
+                
+            </div>
         </div>
     )
 }
