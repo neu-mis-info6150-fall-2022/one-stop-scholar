@@ -2,7 +2,7 @@
 $primary-text-color: black;
 $secondary-text-color: #636874;
 $highlight-text-color: white;
-$primary-bg-color: #dae1e6;
+$primary-bg-color: #d9d9d9;
 $accent-color1: rgb(239, 248, 254);
 $accent-color2: rgb(227,235,251);
 $font-family: 'Nunito', sans-serif;
@@ -30,6 +30,13 @@ $destination-images-paths: (
     image2 : "../public/united-kingdom.jpeg",
     image3 : "../public/australia.jpg",
     image4 : "../public/germany.jpg"
+);
+
+$degree-images-paths: (
+    image5 : "../public/icons8-degree-60.png",
+    image6 : "../public/degree2.png",
+    image7 : "../public/graduation.png",
+    image8 : "../public/online-learning.png"
 );
 
 
