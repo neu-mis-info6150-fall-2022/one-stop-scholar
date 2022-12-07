@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 
-export default function StudentDashboard({session, user}) {
+export default function StudentDashboard({scholarships, user}) {
 
     const handleSignOut = () => {
         signOut({callbackUrl: 'http://localhost:3000'});
@@ -23,6 +23,33 @@ export default function StudentDashboard({session, user}) {
                     <button onClick={handleSignOut} className={styles.signOutButton}>Sign Out</button>
                 </div>
             </nav>
+
+            <div className={styles.scholarships}>
+        <div className={styles.schcardContainer}>
+          {
+            scholarships.length === 0 ? <p>No scholarships Yet...</p> : (scholarships.map((scholarship, idx) => {
+              var date = scholarship.scholarshipDeadline;
+              date = date.split('T')[0];
+              return (
+                <div key={idx}>
+                  <div className={styles.schcard}>
+                    <Link href={`/student/${scholarship._id}`} legacyBehavior>  
+                      <a>{scholarship.scholarshipName}</a>
+                    </Link>
+                    <p className={styles.details}>{scholarship.scholarshipDescription}</p>
+                    <p className={styles.details}>{scholarship.scholarshipSponsor}</p>
+                    <p className={styles.details}>{scholarship.scholarshipAmt}</p>
+                    <p className={styles.details}>{date}</p>
+                    <p className={styles.details}>{scholarship.scholarshipCriteria}</p>
+                    <p className={styles.details}>{scholarship.scholarshipApplicants}</p>
+                  </div>
+                </div>
+              )
+            }
+            ))
+          }
+        </div>
+      </div>
         </div>
     )
 }
@@ -68,10 +95,14 @@ export async function getServerSideProps(context) {
             await fetch(profileTableURL,profileRequestOptions);
         }
 
+        const scholarshipResponse = await fetch('http://localhost:8080/scholarships/')
+        const data = await scholarshipResponse.json();
+
         return{
             props: {
                 session,
-                user: session.user
+                user: session.user,
+                scholarships:data
             }
         }
     }
