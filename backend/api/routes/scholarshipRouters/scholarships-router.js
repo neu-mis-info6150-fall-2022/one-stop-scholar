@@ -8,7 +8,7 @@ const Router = express.Router();
 
 Router.route('/').get(scholarshipsController.getAll);
 Router.route('/:id').get(scholarshipsController.getById);
-Router.route('/:email').get(scholarshipsController.getByEmail);
+Router.route('/v1/search').get(scholarshipsController.getByQuery);
 Router.route('/').post(scholarshipsController.post);
 Router.route('/:id').put(scholarshipsController.put);
 Router.route('/:id').delete(scholarshipsController.remove);

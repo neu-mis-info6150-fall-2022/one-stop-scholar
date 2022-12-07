@@ -17,7 +17,6 @@ export default function SponsorProfile({session, profileData}) {
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}))
-        console.log(inputs);
     }
 
     const validateContact = async (contact) => {
@@ -31,7 +30,6 @@ export default function SponsorProfile({session, profileData}) {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const validity = await validateContact(inputs.contact);
-        console.log(validity);
         if (validity) {
             const profileURL = `http://localhost:8080/sponsorDb/profile/${profileData.email}`;
             const requestOptions = {

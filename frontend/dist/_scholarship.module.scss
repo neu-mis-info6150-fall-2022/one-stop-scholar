@@ -49,7 +49,7 @@
 }
 
 .scholarships {
-    margin-top: 10vh;
+    margin-top: 20vh;
     
     .schcardContainer {
        // @include flexEqualDistribution;
@@ -61,12 +61,28 @@
         .schcard {
             width: 100%;
             height: 50%;
-            //padding: 8px;
+            padding: 2em;
             box-sizing: border-box;
-            background-color: #b1b1b1;
+            background-color: #e1f9fd;
             border-radius: 5px;
-            margin: 23px;
+            margin: 3em auto;
             box-shadow: 5px 5px 5px rgb(95, 94, 94);
+
+            a {
+                color: black;
+                font-weight: fonts(bold);
+                font-size: larger;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                text-decoration: none;
+                text-shadow: 1px 1px 2px grey;
+
+                &:hover {
+                    color: blue;
+                    text-decoration: underline;
+                    transition: 200ms linear;
+                }
+            }
 
             .cardImage {
                 height: 100%;
@@ -78,6 +94,7 @@
                 color: grey;
                 margin-bottom: 0;
             }
+
             .countries{
                 position: relative;
                 top: 1px;
@@ -88,12 +105,12 @@
             }
 
             .details {
-                position: relative;
-                top: -8px;
-                right: -8px;
+                // @include autoMarginHorizontal;
                 color: black;
                 text-align: left;
-                margin: 4px;
+                width: 80%;
+                margin: 8px auto;
+
             }
             .button{
                 position: relative;
