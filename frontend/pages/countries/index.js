@@ -97,9 +97,6 @@ export default function Degree() {
         </div>
 
         </div>
-
-        
-
       </div>
   )
 }
