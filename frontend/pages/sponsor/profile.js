@@ -2,6 +2,7 @@ import { getSession, signOut } from 'next-auth/react';
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react';
 
 export default function SponsorProfile({session, profileData}) {
 
@@ -16,21 +17,34 @@ export default function SponsorProfile({session, profileData}) {
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}))
+        console.log(inputs);
+    }
+
+    const validateContact = async (contact) => {
+        const url = process.env.NEXT_PUBLIC_PHONE_VALIDATION_URL;
+        const key = process.env.NEXT_PUBLIC_PHONE_VALIDATION_API_KEY;
+        const res = await fetch(`${url}?api_key=${key}&phone=${contact}`);
+        const data = await res.json();
+        return data.valid;
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const validity = await validateContact(inputs.contact);
+        console.log(validity);
+        if (validity) {
+            const profileURL = `http://localhost:8080/sponsorDb/profile/${profileData.email}`;
+            const requestOptions = {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(inputs)
+            };
+            const res = await fetch(profileURL,requestOptions);
+            if(res.ok) setsuccessMessage(true);
+        } else window.alert("Kindly Enter Valid Contact Number");
+}
 
-        const profileURL = `http://localhost:8080/sponsorDb/profile/${profileData.email}`;
-        const requestOptions = {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(inputs)
-        };
-        const res = await fetch(profileURL,requestOptions);
-        if(res.ok) setsuccessMessage(true);
 
-    }
 
     return(
         <div className={styles.container}>

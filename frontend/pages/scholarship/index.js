@@ -1,7 +1,6 @@
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import Router from 'next/router'
 
 function scholarshipList({ scholarships }) {
 
@@ -37,8 +36,6 @@ function scholarshipList({ scholarships }) {
                 <div key={idx}>
                   <div className={styles.schcard}>
                     <Link href={`/scholarship/${scholarship._id}`} legacyBehavior>  
-                    {/* "http://localhost:3000/scholarship/scholarshipDetails/" */}
-                    {/* {`scholarships/${scholarship.id}`} */}
                       <a>{scholarship.scholarshipName}</a>
                     </Link>
                     <p className={styles.details}>{scholarship.scholarshipDescription}</p>
