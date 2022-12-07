@@ -451,7 +451,7 @@
 .contactCard {
   width: 40%;
   height: 50%;
-  padding: 3px;
+  padding: 10px;
   box-sizing: border-box;
   background-color: white;
   border-radius: 5px;
@@ -461,6 +461,15 @@
 
 .contactCardHeader {
   color: orangered;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 40% 52%;
+}
+
+.contactPic {
+  border-radius: 50px;
 }
 
 .selectedBold {
