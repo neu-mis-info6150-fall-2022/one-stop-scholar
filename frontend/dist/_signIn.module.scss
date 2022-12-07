@@ -3,27 +3,62 @@
 .signInContainer {
     @include flexEqualDistribution;
     margin: 17vh auto;
-    width: 80%;
+    width: 60%;
+    position: relative;
+    bottom: 717px;
 
     .signInButton {
         cursor: pointer;
-        width: 48%;
-        height: 70vh;
+        width: 53vh;
+        height: 41vh;
         font-size: x-large;
-        background-color: $button-color;
+        background-color: white;//$button-color;
         border: none;
-        color: white;
+        color: rgb(50, 50, 50);
         font-weight: fonts(medium-bold);
-        box-shadow:  2px 0 #e45738, 2px 2px 6px #fa6240;
+       // box-shadow:  2px 0 #e45738, 2px 2px 6px #fa6240;
         transition: all 150ms linear;
         border-radius: 10px;
 
         &:hover {
-            background-color: #d4492a;
+            transform: scale(1.03);
+            transition: 0.5s;
+           // background-color: #d4492a;
             transition: all 250ms linear;
-            box-shadow: 1px 1px 2px rgba(241, 99, 56, 0.2);
-            color: #fe9c86;
-            text-shadow: -1px -1px 0 #c2211c;
+            box-shadow: 1px 1px 2px rgba(25, 25, 25, 0.2);
+           // color: #fe9c86;
+           // text-shadow: -1px -1px 0 #c2211c;
         }
     }
+}
+
+.bgPic{
+position: relative;
+    top: -9px;
+    opacity: 75%;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+}
+.doner{
+    width: 298px;
+    height: 209px;
+}
+.debt{
+    position: relative;
+    left: 398px;
+    color: white;
+    bottom: 639px;
+    font-weight: bolder !important;
+    font-size: xxx-large !important;
+    text-shadow: 1px 2px 2px black;
+}
+.debtText{
+    position: relative;
+    left: 8px;
+    color: white;
+    bottom: 657px;
+    font-weight: bolder !important;
+    font-size: x-large !important;
+    text-shadow: 1px 2px 2px black;
+    text-align: center;
 }
