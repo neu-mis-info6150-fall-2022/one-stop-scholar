@@ -3,105 +3,59 @@ import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default function SponsorProfile({session, user}) {
+export default function SponsorProfile({session, profileData}) {
 
     const handleSignOut = () => {
         signOut({callbackUrl: 'http://localhost:3000'});
     }
 
+    const [successMessage, setsuccessMessage] = useState(false);
+    const [inputs, setInputs] = useState();
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({...values, [name]: value}))
+    }
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const profileURL = `http://localhost:8080/sponsorDb/profile/${profileData.email}`;
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(inputs)
+        };
+        const res = await fetch(profileURL,requestOptions);
+        if(res.ok) setsuccessMessage(true);
+
+    }
+
     return(
         <div className={styles.container}>
             <nav className={styles.navbar}>
-                <Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image>
+                <a href='http://localhost:3000/sponsor'><Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
                 <div className={styles.centerNav}>
                     <Link href='/sponsor' legacyBehavior><a>Dashboard</a></Link>
                     <Link href='/sponsor/applications' legacyBehavior><a>Applications</a></Link>
                 </div>
                 <div className='login-container'>
-                    <Link href='/sponsor/profile' legacyBehavior><a>{user.email}</a></Link>
+                    <Link href='/sponsor/profile' legacyBehavior><a>{profileData.email}</a></Link>
                     <button onClick={handleSignOut} className={styles.signOutButton}>Sign Out</button>
                 </div>
             </nav>
-            <div id="sponsor-profile">
-                <h2>Sponsor Profile Section</h2>
-                <form onSubmit={this.addToDoFromUI}>
-                    <div>
-                        <label>
-                            Name:
-                        <input 
-                            type="text" 
-                            name="name" 
-                            value ={this.state.title} 
-                            onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Postal Address:
-                        <input 
-                            type="text" 
-                            name="address" 
-                            value ={this.state.title} 
-                            onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Contact Number:
-                        <input 
-                            type="text" 
-                            name="contactnumber" 
-                            value ={this.state.title} 
-                            onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Email ID:
-                        <input 
-                            type="text" 
-                            name="emailID" 
-                            value ={this.state.title} 
-                            onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Incorporation Date:
-                        <input 
-                            type="text" 
-                            name="incorporationdate" 
-                            value ={this.state.title} 
-                            onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            Registeration Number:
-                        <input 
-                            type="text" 
-                            name="registrationnumber" 
-                            value ={this.state.title} 
-                            onChange={this.handleChange} 
-                            required
-                        />
-                        </label>
-                    </div>
-                    <div >
-                        <input className="button" type="submit" value="Submit" />
-                    </div>
-                </form>
-            </div>
+            
+            <form className={styles.studentProfileForm} onSubmit={handleSubmit}>
+                
+                
+                <div className={styles.saveButton}>
+                    <input type="submit" value="Save" />
+                </div>
+                {
+                    successMessage ? <div className={styles.successMessage}>Data saved successfully!</div> : null
+                }
+            </form>
         </div>
         
     ) 
@@ -123,7 +77,7 @@ export async function getServerSideProps(context) {
         const response = await fetch(url);
         const userData = await response.json();
 
-        if (userData[0].userType === 'sponsor') {
+        if (userData[0].userType === 'student') {
             return {
                 redirect: {
                     destination: '/signin',
@@ -133,10 +87,14 @@ export async function getServerSideProps(context) {
 
         }
 
+        const profileTableURL = `http://localhost:8080/sponsorDb/profile/${email}`;
+        const profileResponse = await fetch(profileTableURL);
+        const profileData = await profileResponse.json();
+
         return{
             props: {
                 session,
-                user: session.user
+                profileData
             }
         }
     } 
