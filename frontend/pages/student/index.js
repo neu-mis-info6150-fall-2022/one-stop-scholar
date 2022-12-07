@@ -25,31 +25,31 @@ export default function StudentDashboard({scholarships, user}) {
             </nav>
 
             <div className={styles.scholarships}>
-        <div className={styles.schcardContainer}>
-          {
-            scholarships.length === 0 ? <p>No scholarships Yet...</p> : (scholarships.map((scholarship, idx) => {
-              var date = scholarship.scholarshipDeadline;
-              date = date.split('T')[0];
-              return (
-                <div key={idx}>
-                  <div className={styles.schcard}>
-                    <Link href={`/student/${scholarship._id}`} legacyBehavior>  
-                      <a>{scholarship.scholarshipName}</a>
-                    </Link>
-                    <p className={styles.details}>{scholarship.scholarshipDescription}</p>
-                    <p className={styles.details}>{scholarship.scholarshipSponsor}</p>
-                    <p className={styles.details}>{scholarship.scholarshipAmt}</p>
-                    <p className={styles.details}>{date}</p>
-                    <p className={styles.details}>{scholarship.scholarshipCriteria}</p>
-                    <p className={styles.details}>{scholarship.scholarshipApplicants}</p>
-                  </div>
+                <div className={styles.schcardContainer}>
+                {
+                    scholarships.length === 0 ? <p>No scholarships Yet...</p> : (scholarships.map((scholarship, idx) => {
+                        var date = scholarship.scholarshipDeadline;
+                        date = date.split('T')[0];
+                        
+                        return (
+                            <div key={idx}>
+                            <div className={styles.schcard}>
+                                <Link href={`/student/${scholarship._id}`} legacyBehavior>  
+                                <a>{scholarship.scholarshipName}</a>
+                                </Link>
+                                <p className={styles.details}>{scholarship.scholarshipDescription}</p>
+                                <p className={styles.details}>{scholarship.scholarshipSponsor}</p>
+                                <p className={styles.details}>{scholarship.scholarshipAmt}</p>
+                                <p className={styles.details}>{date}</p>
+                                <p className={styles.details}>{scholarship.scholarshipCriteria}</p>
+                                <p className={styles.details}>{scholarship.scholarshipApplicants}</p>
+                            </div>
+                            </div>
+                        )
+                    }))
+                }
                 </div>
-              )
-            }
-            ))
-          }
-        </div>
-      </div>
+            </div>
         </div>
     )
 }

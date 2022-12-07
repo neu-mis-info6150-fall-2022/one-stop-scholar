@@ -33,16 +33,17 @@ export default function SignIn() {
                 </div>
             </nav>
             
-            <div>
-             <Image src="/bgPic.jpg" alt="BgPic" className={styles.bgPic} width={1270} height={750} />
-             </div>
-             <h1 className={styles.debt}>Fighting Student Debt</h1>
-             <p className={styles.debtText}>Create or apply to exclusive scholarships,<br /> fellowships, and grants, in minutes.</p>
-            
-            <div className={styles.signInContainer}>
-                <button onClick={handleStudentClick} className={styles.signInButton}><Image src="/applicant.png" alt="applicant" className={styles.doner} width={1270} height={750} /></button>
-                <button onClick={handleSponsorClick} className={styles.signInButton}><Image src="/doner.png" alt="doner" className={styles.doner} width={1270} height={750} /></button>
+            <div className={styles.bgPic}></div>
+            <div className={styles.signInDivContainer}>
+                <h1 className={styles.debt}>Fighting Student Debt</h1>
+                <p className={styles.debtText}>Create or apply to exclusive scholarships,<br /> fellowships, and grants, in minutes.</p>
+
+                <div className={styles.signInContainer}>
+                    <button onClick={handleStudentClick} className={styles.signInButton}><Image src="/applicant.png" alt="applicant" className={styles.doner} width={150} height={100} /></button>
+                    <button onClick={handleSponsorClick} className={styles.signInButton}><Image src="/doner.png" alt="doner" className={styles.doner} width={150} height={100} /></button>
+                </div>
             </div>
+             
         </div>
     )
 }
