@@ -1,21 +1,16 @@
+import { getSession, signOut } from 'next-auth/react';
 import styles from '../../styles/Home.module.css'
 import Scholarship from "../../components/Scholarship";
 import Link from 'next/link'
 import Image from 'next/image'
 import { signIn } from 'next-auth/react'
+import Router  from 'next/router';
 
 function getScholarshipDetails({ scholarship }) {
 
     const handleSubmit = async () => {
-
-        console.log("button pressed");
-
-        //check whether the user is signed in or no
-
-        //if yes then redirect to application page
-
-        //else then redirect to signin page
-        signIn('', { callbackUrl: 'http://localhost:3000/student/signin' });
+        Router.push('/signin');
+        // signIn('', { callbackUrl: 'http://localhost:3000/signin' });
     }
 
     var date = scholarship.scholarshipDeadline;
@@ -72,3 +67,53 @@ export async function getStaticProps(context) {
         }
     }
 }
+
+// export async function getServerSideProps(context) {
+//     const session = await getSession(context);
+
+//     if(!session) {
+//         return {
+//             redirect: {
+//                 destination: '/signin',
+//                 permanent: false,
+//             },
+//         }
+//     } else {
+//         const email = session.user.email;
+//         const url = `http://localhost:8080/nextAuthDb/users/${email}`;
+//         const response = await fetch(url);
+//         const userData = await response.json();
+
+//         if (userData[0].userType === 'sponsor') {
+//             return {
+//                 redirect: {
+//                     destination: '/signin',
+//                     permanent: false,
+//                 },
+//             }
+
+//         } else if(typeof userData[0].userType === 'undefined') {
+//             const requestOptions = {
+//                 method: 'PUT',
+//                 headers: { 'Content-Type': 'application/json' },
+//                 body: JSON.stringify({ userType: "student"})
+//             };
+//             await fetch(url, requestOptions);
+
+//             const profileTableURL = `http://localhost:8080/studentDb/profile/`;
+//             const profileRequestOptions = {
+//                 method: 'POST',
+//                 headers: { 'Content-Type': 'application/json' },
+//                 body: JSON.stringify({ email: email})
+//             };
+//             await fetch(profileTableURL,profileRequestOptions);
+//         }
+
+//         return{
+//             props: {
+//                 session,
+//                 user: session.user
+//             }
+//         }
+//     }
+// }
