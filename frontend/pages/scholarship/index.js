@@ -21,11 +21,15 @@ function scholarshipList({ scholarships }) {
         </div>
       </nav>
 
-      <div className={styles.banner}>
+     {/* <div className={styles.banner}>
         <h3 className={styles.quote}>Originality is the essence of true scholarship. <br />Creativity is the soul of the true scholar</h3>
+  </div> */}
+
+      <div className={styles.banner}>
+        <Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={300} height={100} />
       </div>
 
-      <h2 className={styles.popScholarships}>Input something</h2>
+      <a className={styles.popScholarships}>Available Scholarships</a>
 
       <div className={styles.scholarships}>
         <div className={styles.schcardContainer}>
