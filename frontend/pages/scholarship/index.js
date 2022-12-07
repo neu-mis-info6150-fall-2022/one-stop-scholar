@@ -1,7 +1,6 @@
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import Router from 'next/router'
 
 function scholarshipList({ scholarships }) {
 
@@ -21,15 +20,11 @@ function scholarshipList({ scholarships }) {
         </div>
       </nav>
 
-     {/* <div className={styles.banner}>
-        <h3 className={styles.quote}>Originality is the essence of true scholarship. <br />Creativity is the soul of the true scholar</h3>
-  </div> */}
-
       <div className={styles.banner}>
-        <Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={300} height={100} />
+        <h3 className={styles.quote}>Originality is the essence of true scholarship. <br />Creativity is the soul of the true scholar</h3>
       </div>
 
-      <a className={styles.popScholarships}>Available Scholarships</a>
+      <h2 className={styles.popScholarships}>Input something</h2>
 
       <div className={styles.scholarships}>
         <div className={styles.schcardContainer}>
@@ -40,15 +35,15 @@ function scholarshipList({ scholarships }) {
               return (
                 <div key={idx}>
                   <div className={styles.schcard}>
-                    <Link href={`scholarships/${scholarship.id}`} legacyBehavior>
-                      <a className={styles.schName}>{scholarship.scholarshipName}</a>
+                    <Link href={`/scholarship/${scholarship._id}`} legacyBehavior>  
+                      <a>{scholarship.scholarshipName}</a>
                     </Link>
-                    <p className={styles.schAmt}>{scholarship.scholarshipAmt}</p>
-                    <p className={styles.details}>Desc: {scholarship.scholarshipDescription}</p>
-                    <p className={styles.details}>Sponser: {scholarship.scholarshipSponsor}</p>
-                    <p className={styles.details}>Date Posted: {date}</p>
-                    <p className={styles.details}>Criteria: {scholarship.scholarshipCriteria}</p>
-                    <p className={styles.details}>Number of Applicants: {scholarship.scholarshipApplicants}</p>
+                    <p className={styles.details}>{scholarship.scholarshipDescription}</p>
+                    <p className={styles.details}>{scholarship.scholarshipSponsor}</p>
+                    <p className={styles.details}>{scholarship.scholarshipAmt}</p>
+                    <p className={styles.details}>{date}</p>
+                    <p className={styles.details}>{scholarship.scholarshipCriteria}</p>
+                    <p className={styles.details}>{scholarship.scholarshipApplicants}</p>
                   </div>
                 </div>
               )
@@ -73,4 +68,3 @@ export async function getStaticProps() {
     }
   }
 }
-
