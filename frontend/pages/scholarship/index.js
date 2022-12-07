@@ -36,7 +36,9 @@ function scholarshipList({ scholarships }) {
               return (
                 <div key={idx}>
                   <div className={styles.schcard}>
-                    <Link href={`scholarships/${scholarship.id}`} legacyBehavior>
+                    <Link href={`scholarships/${scholarship._id}`} legacyBehavior>  
+                    {/* "http://localhost:3000/scholarship/scholarshipDetails/" */}
+                    {/* {`scholarships/${scholarship.id}`} */}
                       <a>{scholarship.scholarshipName}</a>
                     </Link>
                     <p className={styles.details}>{scholarship.scholarshipDescription}</p>
@@ -69,4 +71,3 @@ export async function getStaticProps() {
     }
   }
 }
-

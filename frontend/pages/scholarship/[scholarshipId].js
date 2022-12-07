@@ -3,13 +3,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Router from 'next/router'
 
-export default function ScholarshipDetails() {
+function ScholarshipDetails() {
 
-    const handleApply = () => {
-        console.log("apply function");
-        // signIn('',{callbackUrl: 'http://localhost:3000/student'});
-        Router.push('/scholarships')
-    }
+    // const handleApply = () => {
+    //     console.log("apply function");
+    //     // signIn('',{callbackUrl: 'http://localhost:3000/student'});
+    //     Router.push('/scholarships')
+    // }
 
     return (
         <div>
@@ -32,4 +32,38 @@ export default function ScholarshipDetails() {
             <button onClick={handleApply} className={styles.applyButton}>Apply</button>
         </div>
     )
+}
+export default ScholarshipDetails;
+
+
+export async function getStaticPaths() {
+  const response = await fetch('http://localhost:8080/scholarships/')
+  const data = await response.json();
+  console.log("data-getStaticPaths",data);
+  const paths = data.map(scholarship => {
+      return{
+          params : {
+              scholarshipId: `${scholarship.id}`
+          }
+      }
+  })
+
+  return {
+      paths:[],
+      fallback: 'blocking'
+  }
+}
+
+export async function getStaticProps(context) {
+  const {params} = context;
+  console.log("params-prop",params);
+  const response = await fetch(`http://localhost:8080/scholarships/${params.scholarshipId}`);
+  console.log("response-prop",response);
+  const data = await response.json();
+  console.log("data-prop",data);
+  return {
+      props: {
+        scholarship: data[0]
+      }
+  }
 }
