@@ -3,14 +3,26 @@ import styles from '../../styles/Home.module.css'
 import Scholarship from "../../components/Scholarship";
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react';
+import Router from 'next/router';
 
-function getScholarshipDetails({scholarship, user}) {
+function getScholarshipDetails({scholarship, user, profileData}) {
 
-    const handleSubmit = async () => {
+    const[showSpan, setShowSpan] = useState(false);
 
-        console.log("button pressed");
-        //check user data is filled or no
-        //submit application
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        if(typeof profileData.firstName !== 'undefined') {
+            console.log(scholarship._id);
+            console.log(scholarship.sponsorEmail);
+            console.log(profileData._id);
+            setShowSpan(true);
+            setTimeout(() => {
+                setShowSpan(false);
+                Router.push('/student');
+            }, 10000);
+        }
+        
     }
 
     const handleSignOut = () => {
@@ -36,7 +48,14 @@ function getScholarshipDetails({scholarship, user}) {
             </nav>
 
             <Scholarship id={scholarship._id} name={scholarship.scholarshipName} sponsor={scholarship.scholarshipSponsor} description={scholarship.scholarshipDescription} deadline={date} amount={scholarship.scholarshipAmt} criteria={scholarship.scholarshipCriteria} applicants={scholarship.scholarshipApplicants}></Scholarship>
-            <button onClick={handleSubmit}>Apply</button>
+            <div className={styles.scholarshipApplyButton}>
+                <button onClick={handleSubmit}>Apply</button>
+                {
+                showSpan ? <div className={styles.successMessage}>Successfully Applied!</div> : null
+                }
+            </div>
+            
+            
         </div>
     ) 
 }
@@ -69,6 +88,10 @@ export async function getServerSideProps(context) {
 
         }
 
+        const profileDataURL = `http://localhost:8080/studentDb/profile/${email}`;
+        const profileResponse = await fetch(profileDataURL);
+        const profileData = await profileResponse.json();
+
         const { params } = context;
         const scholarshipResponse = await fetch(`http://localhost:8080/scholarships/${params.scholarshipId}`);
         const data = await scholarshipResponse.json();
@@ -77,7 +100,8 @@ export async function getServerSideProps(context) {
             props: {
                 session,
                 user: session.user,
-                scholarship: data
+                scholarship: data,
+                profileData
             }
         }
 

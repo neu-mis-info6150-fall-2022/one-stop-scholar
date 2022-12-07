@@ -4,13 +4,13 @@ function Scholarship(props) {
     
     return (        
         <ul className={styles.schApp} id={props.id}>
-            <li><span>Name: </span>{props.name}</li>
-            <li><span>Scholarship Sponsor: </span>{props.sponsor}</li>
-            <li><span>Description: </span>{props.description}</li>
-            <li><span>Application Deadline: </span>{props.deadline}</li>
-            <li><span>Amount: </span>{props.amount}</li>
-            <li><span>Criteria: </span>{props.criteria}</li>
-            <li><span>Applicants: </span>{props.applicants}</li>
+            <li><span>Name: </span><p>{props.name}</p></li>
+            <li><span>Scholarship Sponsor: </span><p>{props.sponsor}</p></li>
+            <li><span>Description: </span><p>{props.description}</p></li>
+            <li><span>Application Deadline: </span><p>{props.deadline}</p></li>
+            <li><span>Amount: </span><p>{props.amount}</p></li>
+            <li><span>Criteria: </span><p>{props.criteria}</p></li>
+            <li><span>Applicants: </span><p>{props.applicants}</p></li>
         </ul>
 
     )
