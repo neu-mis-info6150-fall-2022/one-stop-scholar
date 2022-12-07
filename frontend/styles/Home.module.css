@@ -463,6 +463,11 @@
   color: orangered;
 }
 
+.selectedBold {
+  color: black !important;
+  font-weight: bold;
+}
+
 .countries {
   margin-top: 10vh;
 }
