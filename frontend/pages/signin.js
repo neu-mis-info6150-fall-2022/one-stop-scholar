@@ -23,7 +23,7 @@ export default function SignIn() {
             <nav className={styles.navbar}>
                 <Image href="/" src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image>
                 <div className={styles.centerNav}>
-                <Link href='/scholarshio' legacyBehavior><a>Scholarships</a></Link>
+                <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
                 <Link href='/countries' legacyBehavior><a>Destinations</a></Link>
                 <Link href='/degree' legacyBehavior><a>Degrees</a></Link>
                 <Link href='/contactus' legacyBehavior><a>Contact Us</a></Link>
