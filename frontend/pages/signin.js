@@ -30,6 +30,7 @@ export default function SignIn() {
                 </div>
                 <div className='login-container'>
                 <Link href='/signin' legacyBehavior><a className={styles.selectedBold}>Sign In</a></Link>
+
                 </div>
             </nav>
             
