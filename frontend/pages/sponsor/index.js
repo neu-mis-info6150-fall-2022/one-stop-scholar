@@ -2,11 +2,31 @@ import { getSession, signOut } from 'next-auth/react';
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useEffect, useState } from 'react';
+import ScholarshipForm from '../../components/ScholarshipForm.js';
 
-export default function({user}) {
+export default function({user, scholarships}) {
+    const [formButtonText, setFormButtonText] = useState("Add Scholarship");
+    const [showForm, setShowForm] = useState(false);
+    const [successMessage, setsuccessMessage] = useState(false);
 
     const handleSignOut = () => {
         signOut({callbackUrl: 'http://localhost:3000'});
+    }
+
+    const handleFormButton = (formSubmit) => {
+        setShowForm(!showForm);
+        if(formButtonText === "Add Scholarship") {
+            setFormButtonText("Close")
+        } else setFormButtonText("Add Scholarship");
+
+        if(formSubmit) {
+            setsuccessMessage(true);
+            setTimeout(() => {
+                setsuccessMessage(false);
+                window.location.reload();
+            }, 1000);
+        }
     }
 
 
@@ -25,9 +45,21 @@ export default function({user}) {
             </nav>
 
             <div className={styles.dashboardContainer}>
+                {
+                    scholarships.length === 0 ? <p>No Scholarships Posted Yet</p> :
+                    (scholarships.map((scholarship,index) => {
+                        return <div key={index}>{scholarship.scholarshipName}</div>
+                    })
+                    )
+                }
                 
-
-                
+                {showForm && <ScholarshipForm handleFormButton={handleFormButton} email={user.email}></ScholarshipForm>}
+                <div className={styles.showScholarshipFormButtonContainer}>
+                    <button onClick={() => handleFormButton(false)}>{formButtonText}</button>
+                    {
+                        successMessage ? <div className={styles.submitSuccessMessage}>Data saved successfully!</div> : null
+                    }
+                </div>
             </div>
         </div>
     )
@@ -74,10 +106,14 @@ export async function getServerSideProps(context) {
             await fetch(profileTableURL,profileRequestOptions);
         }
 
+        const fetchScholarship = await fetch(`http://localhost:8080/scholarships/v1/search?${session.user.email}`);
+        const scholarships = await fetchScholarship.json();
+
         return{
             props: {
                 session,
-                user: session.user
+                user: session.user,
+                scholarships
             }
         }
     }
