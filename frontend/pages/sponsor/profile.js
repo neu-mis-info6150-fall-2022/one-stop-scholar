@@ -47,8 +47,68 @@ export default function SponsorProfile({session, profileData}) {
             </nav>
             
             <form className={styles.studentProfileForm} onSubmit={handleSubmit}>
-                
-                
+            <h2 className={styles.header}>Sponsor Profile Section</h2>
+                <h3 className={styles.formSectionHeader}>Personal Information</h3>
+                <div className={styles.inputElements}>
+                    <label>First Name:</label>
+                    <input 
+                        type="text" 
+                        name="firstName" 
+                        defaultValue={profileData.firstName}
+                        onChange={handleChange} 
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Last Name:</label>
+                    <input 
+                        type="text" 
+                        name="lastName" 
+                        defaultValue ={profileData.lastName} 
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Email:</label>
+                    <input 
+                        type="text" 
+                        name="email" 
+                        defaultValue={profileData.email}
+                        onChange={handleChange} 
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Address</label>
+                    <input
+                        type="text"
+                        name="address"
+                        defaultValue={profileData.address}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>Contact:</label>
+                    <input 
+                        type="text" 
+                        name="contact" 
+                        defaultValue ={profileData.contact} 
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div className={styles.inputElements}>
+                    <label>SSN:</label>
+                    <input 
+                        type="text" 
+                        name="SSN" 
+                        defaultValue ={profileData.SSN} 
+                        onChange={handleChange} 
+                        required
+                    />
+                </div>
                 <div className={styles.saveButton}>
                     <input type="submit" value="Save" />
                 </div>
