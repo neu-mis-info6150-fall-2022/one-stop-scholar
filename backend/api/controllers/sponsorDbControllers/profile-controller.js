@@ -28,7 +28,6 @@ export const search = async (req, res) => {
 export const post = async (req, res) => {
     
     try {
-        console.log("controller" + req.body);
         const profile = req.body;
         const savedProfile = await profileServices.save(profile);
         setResponse(savedProfile, res);

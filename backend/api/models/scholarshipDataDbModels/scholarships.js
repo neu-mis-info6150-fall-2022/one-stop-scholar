@@ -1,10 +1,7 @@
 import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
-    scholarshipType: {
-        type: String,
-        required: 'type is required'
-    },
+
     scholarshipName: {
         type: String,
         required: 'name is required'
@@ -26,10 +23,13 @@ const schema = new mongoose.Schema({
     },
     scholarshipApplicants: {
         type: String,
+    },
+    sponsorEmail: {
+        type: String,
     }
-}, {versionKey: false});
+}, { versionKey: false });
 
 const nextAuthDb = mongoose.createConnection('mongodb+srv://onestopscholar:OneStopScholarINFO6150@onestopscholar.cpgxpwf.mongodb.net/scholarshipDb?retryWrites=true&w=majority');
-const scholarshipModel = nextAuthDb.model('scholarships',schema);
+const scholarshipModel = nextAuthDb.model('scholarships', schema);
 
 export default scholarshipModel;
