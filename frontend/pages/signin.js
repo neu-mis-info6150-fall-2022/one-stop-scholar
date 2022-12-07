@@ -21,7 +21,7 @@ export default function SignIn() {
         <div className={styles.container}>
 
             <nav className={styles.navbar}>
-                <Image href="/" src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image>
+            <a href='http://localhost:3000'><Image href="" src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
                 <div className={styles.centerNav}>
                 <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
                 <Link href='/countries' legacyBehavior><a>Destinations</a></Link>
@@ -32,10 +32,16 @@ export default function SignIn() {
                 <Link href='/signin' legacyBehavior><a>Sign In</a></Link>
                 </div>
             </nav>
-
+            
+            <div>
+             <Image src="/bgPic.jpg" alt="BgPic" className={styles.bgPic} width={1270} height={750} />
+             </div>
+             <h1 className={styles.debt}>Fighting Student Debt</h1>
+             <p className={styles.debtText}>Create or apply to exclusive scholarships,<br /> fellowships, and grants, in minutes.</p>
+            
             <div className={styles.signInContainer}>
-                <button onClick={handleStudentClick} className={styles.signInButton}>I am Student</button>
-                <button onClick={handleSponsorClick} className={styles.signInButton}>I am Sponsor</button>
+                <button onClick={handleStudentClick} className={styles.signInButton}><Image src="/applicant.png" alt="applicant" className={styles.doner} width={1270} height={750} /></button>
+                <button onClick={handleSponsorClick} className={styles.signInButton}><Image src="/doner.png" alt="doner" className={styles.doner} width={1270} height={750} /></button>
             </div>
         </div>
     )
