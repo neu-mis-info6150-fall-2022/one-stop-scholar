@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export default function ScholarshipForm(props) {
 
-    const [inputs, setInputs] = useState({email: props.email});
+    const [inputs, setInputs] = useState({sponsorEmail: props.email});
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -29,16 +29,6 @@ export default function ScholarshipForm(props) {
         <div className={styles.formContainer}>
             <form className={styles.scholarshipForm} onSubmit={handleSubmit}>
                 <h3 className={styles.header}>Scholarship Form</h3>
-                <div className={styles.inputElements}>
-                    <label>Scholarship Type:</label>
-                    <input 
-                        type="text" 
-                        name="scholarshipType"
-                        value={inputs.scholarshipType || ""}
-                        onChange={handleChange} 
-                        required
-                    />
-                </div>
                 <div className={styles.inputElements}>
                     <label>Scholarship Name:</label>
                     <input 

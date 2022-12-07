@@ -1,10 +1,7 @@
 import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
-    scholarshipType: {
-        type: String,
-        required: 'type is required'
-    },
+    
     scholarshipName: {
         type: String,
         required: 'name is required'
@@ -27,7 +24,7 @@ const schema = new mongoose.Schema({
     scholarshipApplicants: {
         type: String,
     },
-    email: {
+    sponsorEmail: {
         type: String,
     }
 }, {versionKey: false});
