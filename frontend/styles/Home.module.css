@@ -8,66 +8,60 @@
   font-weight: bold;
 }
 
-.signInContainer {
+.bgPic {
+  position: fixed;
+  width: 100%;
+  height: 80%;
+  left: 0;
+  padding: 5em;
+  margin-left: 0;
+  z-index: -2;
+  background-image: url("../public/bgPic.jpg");
+}
+
+.signInDivContainer {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  border: 1px solid black;
+  padding: 3em;
+  color: white;
+  text-align: center;
+}
+.signInDivContainer .debt {
+  font-size: 50px;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 10px rgb(11, 11, 11);
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.signInDivContainer .debtText {
+  font-size: 25px;
+}
+.signInDivContainer .signInContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 17vh auto;
-  width: 60%;
-  position: relative;
-  bottom: 717px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 }
-.signInContainer .signInButton {
-  cursor: pointer;
-  width: 53vh;
-  height: 41vh;
-  font-size: x-large;
-  background-color: white;
+.signInDivContainer .signInContainer .signInButton {
   border: none;
-  color: rgb(50, 50, 50);
-  font-weight: 600;
-  transition: all 150ms linear;
-  border-radius: 10px;
+  width: 45%;
+  height: 50vh;
+  cursor: pointer;
 }
-.signInContainer .signInButton:hover {
+.signInDivContainer .signInContainer .signInButton .doner {
+  width: 100%;
+  height: 100%;
+}
+.signInDivContainer .signInContainer .signInButton:hover {
   transform: scale(1.03);
   transition: 0.5s;
   transition: all 250ms linear;
   box-shadow: 1px 1px 2px rgba(25, 25, 25, 0.2);
-}
-
-.bgPic {
-  position: relative;
-  top: -9px;
-  opacity: 75%;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.doner {
-  width: 298px;
-  height: 209px;
-}
-
-.debt {
-  position: relative;
-  left: 398px;
-  color: white;
-  bottom: 639px;
-  font-weight: bolder !important;
-  font-size: xxx-large !important;
-  text-shadow: 1px 2px 2px black;
-}
-
-.debtText {
-  position: relative;
-  left: 8px;
-  color: white;
-  bottom: 657px;
-  font-weight: bolder !important;
-  font-size: x-large !important;
-  text-shadow: 1px 2px 2px black;
-  text-align: center;
 }
 
 .selectedBold {
@@ -205,7 +199,7 @@
 }
 
 .scholarships {
-  margin-top: 10vh;
+  margin-top: 20vh;
 }
 .scholarships .schcardContainer {
   text-align: center;
@@ -215,11 +209,26 @@
 .scholarships .schcardContainer .schcard {
   width: 100%;
   height: 50%;
+  padding: 2em;
   box-sizing: border-box;
-  background-color: #b1b1b1;
+  background-color: #e1f9fd;
   border-radius: 5px;
-  margin: 23px;
+  margin: 3em auto;
   box-shadow: 5px 5px 5px rgb(95, 94, 94);
+}
+.scholarships .schcardContainer .schcard a {
+  color: black;
+  font-weight: 700;
+  font-size: larger;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px grey;
+}
+.scholarships .schcardContainer .schcard a:hover {
+  color: blue;
+  text-decoration: underline;
+  transition: 200ms linear;
 }
 .scholarships .schcardContainer .schcard .cardImage {
   height: 100%;
@@ -239,12 +248,10 @@
   font-size: 25px;
 }
 .scholarships .schcardContainer .schcard .details {
-  position: relative;
-  top: -8px;
-  right: -8px;
   color: black;
   text-align: left;
-  margin: 4px;
+  width: 80%;
+  margin: 8px auto;
 }
 .scholarships .schcardContainer .schcard .button {
   position: relative;
@@ -324,7 +331,8 @@
   filter: blur(5px);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
+  -webkit-animation: glowing 20s linear infinite;
+          animation: glowing 20s linear infinite;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
@@ -348,6 +356,18 @@
   left: 0;
   top: 0;
   border-radius: 10px;
+}
+
+@-webkit-keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 @keyframes glowing {
@@ -440,6 +460,36 @@
 .dashboardContainer {
   margin-top: 17vh;
 }
+.dashboardContainer .submitSuccessMessage {
+  text-align: center;
+  color: rgb(35, 183, 44);
+  margin-top: 3vh;
+  font-weight: 600;
+}
+.dashboardContainer .showScholarshipFormButtonContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  margin-bottom: 5vh;
+}
+.dashboardContainer .showScholarshipFormButtonContainer button {
+  background-color: #f95c39;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 2px;
+  height: 6vh;
+}
+.dashboardContainer .showScholarshipFormButtonContainer button:hover {
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 2px 2px 5px grey;
+}
+.dashboardContainer .showScholarshipFormButtonContainer button:active {
+  background-color: #e25536;
+}
 
 .contactContainer {
   text-align: center;
@@ -451,7 +501,7 @@
 .contactCard {
   width: 40%;
   height: 50%;
-  padding: 3px;
+  padding: 10px;
   box-sizing: border-box;
   background-color: white;
   border-radius: 5px;
@@ -461,6 +511,15 @@
 
 .contactCardHeader {
   color: orangered;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 40% 52%;
+}
+
+.contactPic {
+  border-radius: 50px;
 }
 
 .selectedBold {
@@ -481,8 +540,8 @@
 }
 .countries .cardContainer .card {
   width: 30%;
-  height: 60vh;
-  padding: 8px;
+  height: 62vh;
+  padding: 10px;
   box-sizing: border-box;
   background-color: white;
   border-radius: 5px;
@@ -500,7 +559,7 @@
   margin-top: 5px;
 }
 .countries .cardContainer .card:hover {
-  transform: scale(1.03);
+  transform: scale(1.07);
   transition: 0.5s;
   box-shadow: 5px 7px 7px rgb(79, 78, 78);
   background-color: #ffffff;
@@ -637,8 +696,26 @@
 .imageBannerContainer .form input:hover {
   border: 2px solid grey;
 }
+.imageBannerContainer .form input:hover::-moz-placeholder {
+  font-weight: 700;
+}
+.imageBannerContainer .form input:hover:-ms-input-placeholder {
+  font-weight: 700;
+}
 .imageBannerContainer .form input:hover::placeholder {
   font-weight: 700;
+}
+.imageBannerContainer .form input::-moz-placeholder {
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.imageBannerContainer .form input:-ms-input-placeholder {
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  letter-spacing: 2px;
 }
 .imageBannerContainer .form input::placeholder {
   font-weight: 500;
