@@ -6,8 +6,8 @@ export const save = async (data) => {
 }
 
 export const search = async (query) => {
-    const params = {...query};
-    const profile = await Profile.findOne(params).exec();
+    // const params = {...query};
+    const profile = await Profile.find(query).exec();
     return profile;
 }
 

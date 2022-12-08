@@ -56,4 +56,13 @@ export const remove = async (req, res) => {
     }
 }
 
+export const getByQuery = async (req, res) => {
+    try {
+        const query = req.query;
+        const searchByQuery = await profileServices.search(query);
+        setResponse(searchByQuery, res);
+    } catch (error) {
+        setError(error, res);
+    }
+}
 

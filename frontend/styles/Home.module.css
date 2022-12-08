@@ -399,7 +399,8 @@
   filter: blur(5px);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
+  -webkit-animation: glowing 20s linear infinite;
+          animation: glowing 20s linear infinite;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
@@ -423,6 +424,18 @@
   left: 0;
   top: 0;
   border-radius: 10px;
+}
+
+@-webkit-keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 @keyframes glowing {
@@ -732,6 +745,12 @@
   font-weight: bold;
 }
 
+.nav-logo {
+  position: relative;
+  top: 9px;
+  left: -38px;
+}
+
 .appliedScholarshipContainer {
   list-style: none;
 }
@@ -746,6 +765,91 @@
 }
 .appliedScholarshipContainer li p {
   width: 80%;
+}
+
+.sprApplications {
+  margin-top: 20vh;
+}
+.sprApplications .sprContainer {
+  text-align: center;
+  margin: 50px auto 100px auto;
+  width: 90%;
+}
+.sprApplications .sprContainer .schcard {
+  width: 100%;
+  height: 50%;
+  padding: 2em;
+  box-sizing: border-box;
+  background-color: #e1f9fd;
+  border-radius: 5px;
+  margin: 3em auto;
+  box-shadow: 5px 5px 5px rgb(95, 94, 94);
+}
+.sprApplications .sprContainer .schcard a {
+  color: black;
+  font-weight: 700;
+  font-size: larger;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px grey;
+}
+.sprApplications .sprContainer .schcard a:hover {
+  color: blue;
+  text-decoration: underline;
+  transition: 200ms linear;
+}
+.sprApplications .sprContainer .schcard .cardImage {
+  height: 100%;
+  width: 50%;
+  opacity: 20%;
+}
+.sprApplications .sprContainer .schcard p {
+  color: grey;
+  margin-bottom: 0;
+}
+.sprApplications .sprContainer .schcard .countries {
+  position: relative;
+  top: 1px;
+  right: 313px;
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+}
+.sprApplications .sprContainer .schcard .details {
+  color: black;
+  text-align: left;
+  width: 80%;
+  margin: 8px auto;
+}
+.sprApplications .sprContainer .schcard .button {
+  position: relative;
+  top: -48px;
+  left: 438px;
+  background-color: rgba(244, 132, 132, 0.6588235294);
+  border-radius: 7px;
+  border: 0px;
+  font-size: 15px;
+  padding: 6px;
+}
+.sprApplications .sprContainer .schcard .button:hover {
+  background-color: rgba(237, 75, 75, 0.8235294118);
+  cursor: pointer;
+}
+.sprApplications .sprContainer .applyButton {
+  background-color: blue;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgb(43, 43, 43);
+}
+.sprApplications .sprContainer .applyButton:hover {
+  opacity: 0.5;
+}
+.sprApplications .schcard:hover {
+  transform: scale(1.03);
+  transition: 0.5s;
+  box-shadow: 5px 7px 7px rgb(79, 78, 78);
+  background-color: #ffffff;
 }
 
 .header {
@@ -818,8 +922,26 @@
 .imageBannerContainer .form input:hover {
   border: 2px solid grey;
 }
+.imageBannerContainer .form input:hover::-moz-placeholder {
+  font-weight: 700;
+}
+.imageBannerContainer .form input:hover:-ms-input-placeholder {
+  font-weight: 700;
+}
 .imageBannerContainer .form input:hover::placeholder {
   font-weight: 700;
+}
+.imageBannerContainer .form input::-moz-placeholder {
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.imageBannerContainer .form input:-ms-input-placeholder {
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  letter-spacing: 2px;
 }
 .imageBannerContainer .form input::placeholder {
   font-weight: 500;
