@@ -10,7 +10,7 @@ export default function Degree() {
         <a href='http://localhost:3000'><Image src="/Scholar.gif" alt="OneStopScholar" className="nav-logo" width={120} height={120}></Image></a>
         <div className={styles.centerNav}>
           <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
-          <Link href='/countries' legacyBehavior><a>Destinations</a></Link>
+          <Link href='/countries' legacyBehavior><a>Countries</a></Link>
           <Link href='/degree' legacyBehavior><a className={styles.selectedBold}>Degrees</a></Link>
           <Link href='/contactus' legacyBehavior><a>Contact Us</a></Link>
         </div>
