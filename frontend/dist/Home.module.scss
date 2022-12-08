@@ -48,10 +48,10 @@
 
 .imageBannerContainer {
     @include flexCenter;
-    background: radial-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url(../public/banner-image.jpg);
+    background: url(../public/hellostu.png); //radial-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url(../public/hellostu.png);
     width: 100%;
-    border-radius: 20px;
-    height: 70vh;
+   // border-radius: 20px;
+    height: 60vh;
     background-size: cover;
     flex-direction: column;
     
@@ -124,7 +124,7 @@
 
         .card {
             width: 23%;
-            height: 42vh;
+            height: 55vh;
             padding: 8px;
             box-sizing: border-box;
             background-color: white;

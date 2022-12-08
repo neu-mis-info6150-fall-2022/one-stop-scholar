@@ -29,7 +29,7 @@ export default function Home() {
     <div className={styles.container}>
 
       <nav className={styles.navbar}>
-        <a href='http://localhost:3000'><Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
+        <a href='http://localhost:3000'><Image src="/Scholar.gif" alt="OneStopScholar" className="nav-logo" width={120} height={120}></Image></a>
         <div className={styles.centerNav}>
           <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
           <Link href='/countries' legacyBehavior><a>Destinations</a></Link>
@@ -42,12 +42,12 @@ export default function Home() {
         </div>
       </nav>
 
-      <div className={styles.banner}>
+      {/*<div className={styles.banner}>
         <Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={300} height={100} />
-      </div>
+  </div>*/}
 
       <div className={styles.imageBannerContainer}>
-        <h2>Find your scholarship to finance your study</h2>
+        {/*<h2>Find your scholarship to finance your study</h2>*/}
         <br/>
         <div className={styles.form}>
           <input type='email' placeholder='Enter Your Email' ref={emailRef} />
