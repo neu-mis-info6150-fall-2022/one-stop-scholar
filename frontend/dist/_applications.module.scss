@@ -1,0 +1,21 @@
+@import 'tokens';
+
+.appliedScholarshipContainer {
+    list-style: none;
+
+    li {
+        width: 90%;
+        display: flex;
+        align-items: center;
+
+        span {
+            width: 20%;
+            text-align: left;
+        }
+
+        p {
+            width: 80%;
+        }
+        
+    }
+}
