@@ -6,28 +6,38 @@ import Router from 'next/router';
 
 export default function StudentApplications({ session, applications, scholarshipData, studentData }) {
 
-    console.log("applications",applications);
+    
 
-    const handleAcceptSubmit = async () => {
+    const handleAcceptSubmit = async (id) => {
+        console.log("id",id);
         const url = `http://localhost:8080/applications/${id}`;
         console.log("url",url);
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ status: "accepted", studentId: applications.studentId, scholarshipId: applications.scholarshipId, sponsorId: applications.sponsorId})
+            body: JSON.stringify({ status: "Accepted"})
         };
         const res = await fetch(url, requestOptions);
         if(res.ok) {
-            setShowSpan(true);
             setTimeout(() => {
-            setShowSpan(false);
-            Router.push('/student');
+            window.location.reload();
         }, 1000);
         }
     }
 
-    const handleRejectSubmit = async () => {
-        Router.push('/sponsor/applications');
+    const handleRejectSubmit = async (id) => {
+        const url = `http://localhost:8080/applications/${id}`;
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: "Rejected"})
+        };
+        const res = await fetch(url, requestOptions);
+        if(res.ok) {
+            setTimeout(() => {
+            window.location.reload();
+        }, 1000);
+        }
     }
     
     const handleSignOut = () => {
@@ -67,8 +77,8 @@ export default function StudentApplications({ session, applications, scholarship
                                         <li><span>Grade:</span><p className={styles.details}>{studentData[idx].grade}</p></li>
                                         <li><span>Highest Qualification:</span><p className={styles.details}>{studentData[idx].highestQualification}</p></li>
                                         <li><span>Status:</span><p className={styles.details}>{applications[idx].status}</p></li>
-                                        <button onClick={handleAcceptSubmit} className={styles.acceptButton}>Accept</button>
-                                        <button onClick={handleRejectSubmit} className={styles.rejectButton}>Reject</button>
+                                        <button onClick={() => handleAcceptSubmit(scholarship._id)} className={styles.acceptButton}>Accept</button>
+                                        <button onClick={() => handleRejectSubmit(scholarship._id)} className={styles.rejectButton}>Reject</button>
                                     </ul>
                                 </div>
                             )
