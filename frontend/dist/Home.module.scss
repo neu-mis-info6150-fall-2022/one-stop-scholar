@@ -8,6 +8,8 @@
 @import 'contactUs.module';
 @import 'countries.module';
 @import 'applications.module';
+@import'tnc.modules'
+
 
 .header {
     text-align: center;
@@ -239,6 +241,10 @@
     margin-top: 5vh;
     margin-bottom: 5vh;
     font-weight: fonts(medium-bold);
+}
+
+.footerPageHeaders {
+    font-size: x-large;
 }
 
 .form {
