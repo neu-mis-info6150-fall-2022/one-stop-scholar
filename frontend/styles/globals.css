@@ -1,6 +1,12 @@
 .selectedBold {
-  color: black !important;
+  color: #e56a54 !important;
   font-weight: bold;
+}
+
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
 }
 
 .nav-logo {
@@ -11,6 +17,6 @@
 
 body {
   font-family: "Nunito", sans-serif;
-  background-color: #e1e1e1;
+  background-color: #ffffff;
   overflow-x: hidden;
 }/*# sourceMappingURL=globals.css.map */

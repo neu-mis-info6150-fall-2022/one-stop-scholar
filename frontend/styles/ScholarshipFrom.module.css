@@ -1,6 +1,12 @@
 .selectedBold {
-  color: black !important;
+  color: #e56a54 !important;
   font-weight: bold;
+}
+
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
 }
 
 .nav-logo {

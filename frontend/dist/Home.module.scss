@@ -8,6 +8,8 @@
 @import 'contactUs.module';
 @import 'countries.module';
 @import 'applications.module';
+@import'tnc.modules';
+
 
 .header {
     text-align: center;
@@ -55,6 +57,8 @@
     height: 60vh;
     background-size: cover;
     flex-direction: column;
+    position: relative;
+    top: 13vh;
     
     h2 {
         color: white;
@@ -115,7 +119,7 @@
 }
 
 .destinations {
-    margin-top: 10vh;
+    margin-top: 18vh;
 
     .cardContainer {
         @include flexEqualDistribution;
@@ -149,15 +153,16 @@
         .card:hover{
              transform: scale(1.03);
             transition: 0.5s;}
+            //background-color: #e56a54;
     }
 }
 
 .seeMore1 {
-    position: absolute;
+    position: relative;
     z-index: 0;
-    top: 1550px;
-    left: 94%;
-    // visibility: hidden;
+    top: -52vh;
+    /* left: 94%; */
+    float: right;
 }
 
 .seeMore1:hover {
@@ -167,10 +172,11 @@
 }
 
 .seeMore2 {
-    position: absolute;
+    position: relative;
     z-index: 0;
-    top: 2250px;
-    left: 94%;
+    //left: 94%;
+    float: right;
+    top: -52vh;
     // visibility: hidden;
 }
 
@@ -188,7 +194,7 @@
 
         .reviews {
             width: 49%;
-            height: 20vh;
+            height: 52vh;
             padding: 10px;
             box-sizing: border-box;
             background-color: white;
@@ -235,4 +241,91 @@
     margin-top: 5vh;
     margin-bottom: 5vh;
     font-weight: fonts(medium-bold);
+}
+
+.footerPageHeaders {
+    font-size: x-large;
+}
+
+.form {
+   // @include flexCenter;
+   display: flex;
+   align-items: center;
+    //background-color: rgba(255,255,255, 0.9);
+    height: 16vh;
+    //width: 100vh;
+    border-radius: 5px;
+    background-color: #f3dd6d;
+    .formtext{
+        position: relative;
+        font-size: 2vh;
+        text-align: center;
+        top: -22px;
+        left: 288px;
+    }
+    input {
+        margin: 16px;
+        height: 30px;
+        border: none !important;
+        border-radius: 3px;
+        position: relative;
+        top: 23px;
+        right: 147px;
+
+
+        &:hover {
+            border: 2px solid grey;
+            
+            &::placeholder {
+                font-weight: fonts(bold);
+                
+            }
+        }
+        
+        &::placeholder {
+            font-weight: 500;
+            color: black;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+    }
+
+    button {
+        width: 10%;
+        margin: 5px;
+        height: 35px;
+        border: none;
+        background-color: #db6550;
+        color: white;
+        font-weight: 500;
+        letter-spacing: 2px;
+        border-radius: 4px;
+        position: relative;
+        top: 23px;
+        right: 147px;
+
+        &:hover {
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 2px 2px 5px grey;
+        }
+    }
+}
+
+.applynow{
+    position: relative;
+    top: 10vh;
+    right: 53vh;
+    height: 8vh;
+    width: 41vh;
+    background-color: #e56a54;
+    color: white;
+    font-size: larger;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.applynow:hover{
+    background-color: #ffc4b9;
+    color: black;
 }

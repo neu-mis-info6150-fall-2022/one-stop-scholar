@@ -2,7 +2,7 @@
 $primary-text-color: black;
 $secondary-text-color: #636874;
 $highlight-text-color: white;
-$primary-bg-color: #e1e1e1;
+$primary-bg-color: #ffffff;
 $accent-color1: rgb(239, 248, 254);
 $accent-color2: rgb(227,235,251);
 $font-family: 'Nunito', sans-serif;
@@ -24,8 +24,14 @@ $font-weights: (
     @return map-get($font-weights , $weight-name );
 }
 .selectedBold{
-    color: black !important;
+    color: #e56a54 !important;
     font-weight: bold;
+}
+.selectedBolder{
+    color: #e56a54 !important;
+    font-weight: bolder !important;
+    //font-style: italic;
+    text-decoration: underline;
 }
 .nav-logo{
     position: relative;
