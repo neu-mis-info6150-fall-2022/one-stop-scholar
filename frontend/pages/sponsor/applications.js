@@ -4,9 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Router from 'next/router';
 
-export default function StudentApplications({ session, applications, scholarshipData, studentData }) {
+export default function StudentApplications({ email, applications, scholarshipData, studentData }) {
 
-    
 
     const handleAcceptSubmit = async (id) => {
         console.log("id",id);
@@ -53,7 +52,7 @@ export default function StudentApplications({ session, applications, scholarship
                     <Link href='/sponsor/applications' legacyBehavior><a className={styles.selectedBold}>Applications</a></Link>
                 </div>
                 <div className='login-container'>
-                    {/* <Link href='/sponsor/profile' legacyBehavior><a>{user.email}</a></Link> */}
+                    <Link href='/sponsor/profile' legacyBehavior><a>{email}</a></Link>
                     <button onClick={handleSignOut} className={styles.signOutButton}>Sign Out</button>
                 </div>
             </nav>
@@ -62,12 +61,10 @@ export default function StudentApplications({ session, applications, scholarship
                 <div className={styles.sprContainer}>
                     {
                         scholarshipData.length === 0 ? <p>No Applications here</p> : (scholarshipData.map((scholarship, idx) => {
-
+                            
                             return (
                                 <div className={styles.schcard}>
-                                    <Link href={`/student/${scholarship._id}`} legacyBehavior>
-                                        <a className={styles.schName}>{scholarship.scholarshipName}</a>
-                                    </Link>
+                                    <h2 className={styles.schName}>{scholarship.scholarshipName}</h2>
                                     <ul className={styles.appliedScholarshipContainer}>
                                         <li><span>Student Name:</span><p className={styles.details}>{studentData[idx].firstName+" "+studentData[idx].lastName}</p></li>
                                         <li><span>Email Address:</span><p className={styles.details}>{studentData[idx].email}</p></li>
@@ -140,7 +137,8 @@ export async function getServerSideProps(context) {
                 session,
                 applications,
                 scholarshipData,
-                studentData
+                studentData, 
+                email
             }
         }
     }
