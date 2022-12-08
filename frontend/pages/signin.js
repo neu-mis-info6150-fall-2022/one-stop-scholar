@@ -8,13 +8,13 @@ export default function SignIn() {
 
     const handleStudentClick = () => {
         console.log("Student function");
-        signIn('github',{callbackUrl: 'http://localhost:3000/student'});
+        signIn('',{callbackUrl: 'http://localhost:3000/student'});
         
     }
 
     const handleSponsorClick = () => {
         console.log("Sponsor function");
-        signIn('github',{callbackUrl: 'http://localhost:3000/sponsor'});
+        signIn('',{callbackUrl: 'http://localhost:3000/sponsor'});
     }
 
     return(

@@ -3,6 +3,7 @@ import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
+// Here student can view all applications and status of it
 export default function StudentApplications({session, user, applications, data}) {
 
     const handleSignOut = () => {

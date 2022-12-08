@@ -3,7 +3,7 @@ import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
-
+// This is landing page for student after login
 export default function StudentDashboard({scholarships, user}) {
 
     const handleSignOut = () => {

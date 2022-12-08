@@ -6,17 +6,17 @@ import Router from 'next/router';
 
 export default function StudentApplications({ email, applications, scholarshipData, studentData }) {
 
-
-    const handleAcceptSubmit = async (id) => {
-        console.log("id",id);
-        const url = `http://localhost:8080/applications/${id}`;
-        console.log("url",url);
+    // Accept scholarship by sponsor
+    const handleAcceptSubmit = async (acceptApplicationId) => {
+        console.log("Accept id",acceptApplicationId);
+        const url = `http://localhost:8080/applications/${acceptApplicationId}`;
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ status: "Accepted"})
         };
         const res = await fetch(url, requestOptions);
+        console.log(res);
         if(res.ok) {
             setTimeout(() => {
             window.location.reload();
@@ -24,7 +24,9 @@ export default function StudentApplications({ email, applications, scholarshipDa
         }
     }
 
+    // Reject scholarship by sponsor
     const handleRejectSubmit = async (id) => {
+        console.log(id);
         const url = `http://localhost:8080/applications/${id}`;
         const requestOptions = {
             method: 'PUT',
@@ -39,6 +41,7 @@ export default function StudentApplications({ email, applications, scholarshipDa
         }
     }
     
+    // SignOut function call
     const handleSignOut = () => {
         signOut({ callbackUrl: 'http://localhost:3000' });
     }
@@ -57,6 +60,7 @@ export default function StudentApplications({ email, applications, scholarshipDa
                 </div>
             </nav>
 
+            {/* Sponsor can see what all applications are pending for approval */}
             <div className={styles.sprApplications}>
                 <div className={styles.sprContainer}>
                     {
@@ -73,9 +77,16 @@ export default function StudentApplications({ email, applications, scholarshipDa
                                         <li><span>Year Of Completion:</span><p className={styles.details}>{studentData[idx].yearOfCompletion}</p></li>
                                         <li><span>Grade:</span><p className={styles.details}>{studentData[idx].grade}</p></li>
                                         <li><span>Highest Qualification:</span><p className={styles.details}>{studentData[idx].highestQualification}</p></li>
-                                        <li><span>Status:</span><p className={styles.details}>{applications[idx].status}</p></li>
-                                        <button onClick={() => handleAcceptSubmit(scholarship._id)} className={styles.acceptButton}>Accept</button>
-                                        <button onClick={() => handleRejectSubmit(scholarship._id)} className={styles.rejectButton}>Reject</button>
+                                        
+                                        {
+                                            applications[idx].status === 'pending' ? 
+                                            <>
+                                                <button onClick={() => handleAcceptSubmit(applications[idx]._id)} className={styles.acceptButton}>Accept</button>
+                                                <button onClick={() => handleRejectSubmit(applications[idx]._id)} className={styles.rejectButton}>Reject</button>
+                                            </> :
+                                                <li><span>Status:</span><p className={styles.details}>{applications[idx].status}</p></li>
+                                        }
+                                        
                                     </ul>
                                 </div>
                             )
@@ -90,6 +101,7 @@ export default function StudentApplications({ email, applications, scholarshipDa
 
 
 export async function getServerSideProps(context) {
+    // server side session validation
     const session = await getSession(context);
 
     if (!session) {
