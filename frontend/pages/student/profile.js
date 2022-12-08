@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react';
 
+// This is profile page for student where student can update the data in below mentioned form
 export default function StudentProfile({session, profileData}) {
     console.log(profileData);
 

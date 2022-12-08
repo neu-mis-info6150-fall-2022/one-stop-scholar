@@ -4,6 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react';
 
+
+// This is profile page that has update profile details functionality
 export default function SponsorProfile({session, profileData}) {
 
     const handleSignOut = () => {

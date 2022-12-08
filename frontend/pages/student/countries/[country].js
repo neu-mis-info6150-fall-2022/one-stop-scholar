@@ -3,7 +3,7 @@ import styles from '../../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
-
+// Check for each country show scholarships
 export default function StudentDashboard({scholarships, user}) {
 
     const handleSignOut = () => {
@@ -25,6 +25,7 @@ export default function StudentDashboard({scholarships, user}) {
                 </div>
             </nav>
 
+            
             <div className={styles.scholarships}>
                 <div className={styles.schcardContainer}>
                 {

@@ -4,6 +4,7 @@ import scholarshipRouter from './scholarshipRouters/scholarships-router.js';
 import sponsorProfileRouter from './sponsorDbRouters/profile-router.js';
 import applicationRouter from './applicationRouters/application-router.js';
 
+// This will have all the routing base URIs
 export default (app) => {
     app.use('/nextAuthDb/users', userRouter);
     app.use('/studentDb/profile', studentProfileRouter);  

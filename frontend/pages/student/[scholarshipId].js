@@ -6,7 +6,9 @@ import Image from 'next/image'
 import { useState } from 'react';
 import Router from 'next/router';
 
-function getScholarshipDetails({scholarship, user, profileData, alreadyApplied}) {
+// For opened scholarship student can apply
+// While applying checks will be done if student has filled all the data or not
+function getScholarshipDetails({scholarship, user, profileData, alreadyApplied, application}) {
 
     const[showSpan, setShowSpan] = useState(false);
 
@@ -25,7 +27,7 @@ function getScholarshipDetails({scholarship, user, profileData, alreadyApplied})
                 setShowSpan(true);
                 setTimeout(() => {
                 setShowSpan(false);
-                Router.push('/student');
+                window.location.reload();
             }, 1000);
             }
             
@@ -77,6 +79,7 @@ export default getScholarshipDetails;
 
 
 export async function getServerSideProps(context) {
+    // server side session validation
     const session = await getSession(context);
 
     if(!session) {
@@ -110,12 +113,12 @@ export async function getServerSideProps(context) {
         const scholarshipResponse = await fetch(`http://localhost:8080/scholarships/${params.scholarshipId}`);
         const data = await scholarshipResponse.json();
 
-        const applicationURL = `http://localhost:8080/applications/v1/search?studentId=${profileData._id}&scholarshipId=${params.scholarshipId}`;
-        const res = await (await fetch(applicationURL)).json();
-        const application = res[0];
+        const applicationURL = `http://localhost:8080/applications/v1/search?studentId=${profileData[0]._id}&scholarshipId=${params.scholarshipId}`;
+        const applicationRes = await fetch(applicationURL);
+        const application = await applicationRes.json();
 
         var alreadyApplied = false;
-        if(typeof application !== 'undefined') {
+        if(application.length > 0) {
             alreadyApplied = true;
         } 
         
@@ -126,8 +129,9 @@ export async function getServerSideProps(context) {
                 session,
                 user: session.user,
                 scholarship: data,
-                profileData,
+                profileData: profileData[0],
                 alreadyApplied,
+                application
             }
         }
 

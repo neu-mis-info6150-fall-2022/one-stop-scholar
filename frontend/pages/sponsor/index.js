@@ -7,15 +7,18 @@ import ScholarshipForm from '../../components/ScholarshipForm.js';
 import Scholarship from '../../components/Scholarship';
 
 export default function({user, scholarships}) {
+
+    // States to manage add scholarship button text and status
     const [formButtonText, setFormButtonText] = useState("Add Scholarship");
     const [showForm, setShowForm] = useState(false);
     const [successMessage, setsuccessMessage] = useState(false);
-    // console.log(scholarships);
 
+    // SignOut call from nextauth
     const handleSignOut = () => {
         signOut({callbackUrl: 'http://localhost:3000'});
     }
 
+    // To manage button and form states
     const handleFormButton = (formSubmit) => {
         setShowForm(!showForm);
         if(formButtonText === "Add Scholarship") {
@@ -31,12 +34,13 @@ export default function({user, scholarships}) {
         }
     }
 
+    // delete scholarships posted by sponsor
     const handleDeleteButton = async (id) => {
         const scholarshipDeleteURL = `http://localhost:8080/scholarships/${id}`;
         const relatedApplicationDeleteURL = `http://localhost:8080/applications/v1/search?scholarshipId=${id}`;
         const deleteScholarship = await fetch(scholarshipDeleteURL, {method: 'DELETE'});
-        const deleteRelatedApplication = await fetch(relatedApplicationDeleteURL, {method: 'DELETE'});
-        if(deleteScholarship.ok && deleteRelatedApplication.ok) {
+        await fetch(relatedApplicationDeleteURL, {method: 'DELETE'});
+        if(deleteScholarship.ok) {
             setTimeout(() => {
                 window.location.reload();
             }, 1000);
@@ -46,6 +50,7 @@ export default function({user, scholarships}) {
 
     return(
         <div className={styles.container}>
+            {/* Sponsor Nav Bar */}
             <nav className={styles.navbar}>
                 <Image src="/Scholar.gif" alt="OneStopScholar" className="nav-logo" width={120} height={120}></Image>
                 <div className={styles.centerNav}>
@@ -59,7 +64,7 @@ export default function({user, scholarships}) {
             </nav>
 
             
-
+            {/* For each scholarship posted by sponsor display list */}
             <div className={styles.dashboardContainer}>
                 {
                     scholarships.length === 0 ? <p>No Scholarships Posted Yet</p> :
@@ -75,6 +80,7 @@ export default function({user, scholarships}) {
                 {showForm && <ScholarshipForm handleFormButton={handleFormButton} email={user.email}></ScholarshipForm>}
                 <div className={styles.showScholarshipFormButtonContainer}>
                     <button onClick={() => handleFormButton(false)}>{formButtonText}</button>
+                    {/* Once scholarship added success message is displayed */}
                     {
                         successMessage ? <div className={styles.submitSuccessMessage}>Data saved successfully!</div> : null
                     }
@@ -86,7 +92,7 @@ export default function({user, scholarships}) {
 
 export async function getServerSideProps(context) {
     const session = await getSession(context);
-
+    // Check for server side validation
     if(!session) {
         return {
             redirect: {
@@ -95,6 +101,7 @@ export async function getServerSideProps(context) {
             },
         }
     } else {
+        // If student tries to login then redirect to signin since this is sponsor login
         const email = session.user.email;
         const url = `http://localhost:8080/nextAuthDb/users/${email}`;
         const response = await fetch(url);
@@ -109,6 +116,7 @@ export async function getServerSideProps(context) {
             }
 
         } else if(typeof userData[0].userType === 'undefined') {
+            // if user sign up for first time then add userType field to users table
             const requestOptions = {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
@@ -125,7 +133,8 @@ export async function getServerSideProps(context) {
             await fetch(profileTableURL,profileRequestOptions);
         }
 
-        const fetchScholarship = await fetch(`http://localhost:8080/scholarships/v1/search?${session.user.email}`);
+
+        const fetchScholarship = await fetch(`http://localhost:8080/scholarships/v1/search?sponsorEmail=${session.user.email}`);
         const scholarships = await fetchScholarship.json();
 
         return{
