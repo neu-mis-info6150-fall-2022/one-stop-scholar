@@ -7,6 +7,6 @@ const Router = express.Router();
 // Post routing it will call functions in controller
 Router.route('/').get(ApplicationController.getAll);
 Router.route('/v1/search').get(ApplicationController.getByQuery);
-Router.route('/createNewApplication').post(ApplicationController.post);
+Router.route('/').post(ApplicationController.post);
 
 export default Router;
