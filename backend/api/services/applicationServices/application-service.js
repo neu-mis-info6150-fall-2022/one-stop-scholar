@@ -14,3 +14,8 @@ export const save = (data) => {
     const application = new Application(data);
     return application.save();
 }
+
+export const update = async (queryParam, updateParam) => {
+    const application = Application.updateOne(queryParam, updateParam).exec();
+    return application;
+}

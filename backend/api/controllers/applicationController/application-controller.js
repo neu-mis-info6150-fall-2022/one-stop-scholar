@@ -42,3 +42,14 @@ export const post = async (req, res) => {
         setError(error, res);
     }
 }
+
+export const put = async (req, res) => {
+    try {
+        const updateParam = req.body;
+        const queryParam = req.params;
+        const savedAplication = await applicationServices.update(queryParam, updateParam);
+        setResponse(savedAplication, res);
+    } catch (error) {
+        setError(error, res);
+    }
+}
