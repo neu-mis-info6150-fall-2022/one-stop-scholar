@@ -43,7 +43,8 @@ export default function Home() {
       </nav>
 
       <div className={styles.imageBannerContainer}>
-      <button className={styles.applynow} onClick={''}>Know More</button>
+      {/* <button className={styles.applynow}><Link href='/signin'>Know More</Link></button> */}
+      <Link href='/signin' className={styles.applynow}>Know More</Link>
       </div> 
 
       <div className={styles.destinations}>
