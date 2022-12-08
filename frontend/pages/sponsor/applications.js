@@ -8,7 +8,7 @@ export default function StudentApplications({ session, applications, scholarship
 
     console.log("applications",applications);
 
-    const handleSubmit = async () => {
+    const handleAcceptSubmit = async () => {
         const url = `http://localhost:8080/applications/${id}`;
         console.log("url",url);
         const requestOptions = {
@@ -17,6 +17,13 @@ export default function StudentApplications({ session, applications, scholarship
             body: JSON.stringify({ status: "accepted", studentId: applications.studentId, scholarshipId: applications.scholarshipId, sponsorId: applications.sponsorId})
         };
         const res = await fetch(url, requestOptions);
+        if(res.ok) {
+            setShowSpan(true);
+            setTimeout(() => {
+            setShowSpan(false);
+            Router.push('/student');
+        }, 1000);
+        }
     }
 
     const handleRejectSubmit = async () => {
@@ -30,7 +37,7 @@ export default function StudentApplications({ session, applications, scholarship
     return (
         <div className={styles.container}>
             <nav className={styles.navbar}>
-                <a href='http://localhost:3000/student'><Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
+                <a href='http://localhost:3000/student'><Image src="/Scholar.gif" alt="OneStopScholar" className="nav-logo" width={120} height={120}></Image></a>
                 <div className={styles.centerNav}>
                     <Link href='/sponsor' legacyBehavior><a>Dashboard</a></Link>
                     <Link href='/sponsor/applications' legacyBehavior><a className={styles.selectedBold}>Applications</a></Link>
@@ -49,7 +56,7 @@ export default function StudentApplications({ session, applications, scholarship
                             return (
                                 <div className={styles.schcard}>
                                     <Link href={`/student/${scholarship._id}`} legacyBehavior>
-                                        <a>{scholarship.scholarshipName}</a>
+                                        <a className={styles.schName}>{scholarship.scholarshipName}</a>
                                     </Link>
                                     <ul className={styles.appliedScholarshipContainer}>
                                         <li><span>Student Name:</span><p className={styles.details}>{studentData[idx].firstName+" "+studentData[idx].lastName}</p></li>
@@ -60,8 +67,8 @@ export default function StudentApplications({ session, applications, scholarship
                                         <li><span>Grade:</span><p className={styles.details}>{studentData[idx].grade}</p></li>
                                         <li><span>Highest Qualification:</span><p className={styles.details}>{studentData[idx].highestQualification}</p></li>
                                         <li><span>Status:</span><p className={styles.details}>{applications[idx].status}</p></li>
-                                        <button onClick={handleSubmit}>Accept</button>
-                                        <button onClick={handleRejectSubmit}>Reject</button>
+                                        <button onClick={handleAcceptSubmit} className={styles.acceptButton}>Accept</button>
+                                        <button onClick={handleRejectSubmit} className={styles.rejectButton}>Reject</button>
                                     </ul>
                                 </div>
                             )
