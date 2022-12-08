@@ -13,9 +13,9 @@ function Footer() {
                 <Link href='#' legacyBehavior><a>Disclaimer</a></Link>
             </div>
             <div className={styles.social}>
-            <Image src="/facebook.png" alt="" className={styles.socialIcons} width={50} height={50}/>
-            <Image src="/twitter.png" alt="" className={styles.socialIcons} width={50} height={50}/>
-            <Image src="/linkedin.png" alt="" className={styles.socialIcons} width={50} height={50}/>
+            <Link href='#' legacyBehavior><Image src="/facebook.png" alt="" className={styles.socialIcons} width={50} height={50}/></Link>
+            <Link href='#' legacyBehavior><Image src="/twitter.png" alt="" className={styles.socialIcons} width={50} height={50}/></Link>
+            <Link href='#' legacyBehavior><Image src="/linkedin.png" alt="" className={styles.socialIcons} width={50} height={50}/></Link>
             </div>
         </div>
     )
