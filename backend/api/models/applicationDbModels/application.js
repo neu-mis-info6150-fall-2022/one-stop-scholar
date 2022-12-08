@@ -1,4 +1,4 @@
-//Creating a model schema for the to-do list database
+//Creating a model schema for the application database
 //Import mongoose for database
 import mongoose from "mongoose";
 

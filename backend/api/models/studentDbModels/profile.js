@@ -1,5 +1,8 @@
+//Creating a model schema for the users database
+//Import mongoose for database
 import mongoose, { Schema } from "mongoose";
 
+//Define the structure and parameters of the schema
 const schema = new mongoose.Schema({
     firstName: {
         type: String
@@ -50,9 +53,13 @@ const schema = new mongoose.Schema({
     duration: {
         type: Number
     }
-}, {versionKey: false});
+}, { versionKey: false });
 
+//Establish database connection using the Url
 const nextAuthDb = mongoose.createConnection('mongodb+srv://onestopscholar:OneStopScholarINFO6150@onestopscholar.cpgxpwf.mongodb.net/studentDb?retryWrites=true&w=majority');
-const studentProfileModel = nextAuthDb.model('profile',schema);
 
+//Giving name to the database
+const studentProfileModel = nextAuthDb.model('profile', schema);
+
+//Exporting the database model to use it in other files
 export default studentProfileModel;
