@@ -53,7 +53,7 @@ export default function SponsorProfile({session, profileData}) {
                     <Link href='/sponsor/applications' legacyBehavior><a>Applications</a></Link>
                 </div>
                 <div className='login-container'>
-                    <Link href='/sponsor/profile' legacyBehavior><a>{profileData.email}</a></Link>
+                    <Link href='/sponsor/profile' legacyBehavior><a className={styles.selectedBold}>{profileData.email}</a></Link>
                     <button onClick={handleSignOut} className={styles.signOutButton}>Sign Out</button>
                 </div>
             </nav>
