@@ -3,6 +3,12 @@
   font-weight: bold;
 }
 
+.nav-logo {
+  position: relative;
+  top: 9px;
+  left: -38px;
+}
+
 .footer {
   left: 0;
   position: absolute;
@@ -30,4 +36,10 @@
 }
 .footer .links a:hover {
   font-weight: 700;
+}
+.footer .socialIcons {
+  padding: 10px;
+}
+.footer .socialIcons:hover {
+  transform: translateY(-4px);
 }/*# sourceMappingURL=Footer.module.css.map */

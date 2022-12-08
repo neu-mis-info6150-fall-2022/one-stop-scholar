@@ -27,6 +27,11 @@ $font-weights: (
     color: black !important;
     font-weight: bold;
 }
+.nav-logo{
+    position: relative;
+    top: 9px;
+    left: -38px;
+}
 
 //Below map has been created to be used in destinations cards
 $destination-images-paths: (

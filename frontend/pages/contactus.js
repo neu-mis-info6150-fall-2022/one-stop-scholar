@@ -8,7 +8,7 @@ export default function ContactUs() {
     return (
         <div className={styles.container}>
             <nav className={styles.navbar}>
-                <a href='http://localhost:3000'><Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
+                <a href='http://localhost:3000'><Image src="/Scholar.gif" alt="OneStopScholar" className="nav-logo" width={120} height={120}></Image></a>
                 <div className={styles.centerNav}>
                     <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
                     <Link href='/countries' legacyBehavior><a>Destinations</a></Link>
@@ -35,8 +35,8 @@ export default function ContactUs() {
                         <Image src="/riya.jpeg" alt="" className={styles.contactPic} width={100} height={100} />
                         </div>
                         <div>
-                            <p>Contact: Riya Rajesh Patil</p>
-                            <p>Email ID: riya.patil@northeastern.edu</p>
+                            <p><b>Contact:</b> Riya Rajesh Patil</p>
+                            <p><b>Email ID:</b> riya.patil@northeastern.edu</p>
                         </div>
                     </div>
                     
@@ -50,8 +50,8 @@ export default function ContactUs() {
                         <Image src="/ritvik.jpeg" alt="" className={styles.contactPic} width={100} height={100} />
                         </div>
                         <div>
-                            <p>Contact: Ritvik Saxena</p>
-                            <p>Email ID: ritvik.saxena@northeastern.edu</p>
+                            <p><b>Contact:</b> Ritvik Saxena</p>
+                            <p><b>Email ID:</b> ritvik.saxena@northeastern.edu</p>
                         </div>
                     </div>
                 </div>
@@ -64,8 +64,8 @@ export default function ContactUs() {
                         <Image src="/souvik.jpeg" alt="" className={styles.contactPic} width={100} height={100} />
                         </div>
                         <div>
-                            <p>Contact: Souvik Dinda</p>
-                            <p>Email ID: souvik.dinda@northeastern.edu</p>
+                            <p><b>Contact:</b> Souvik Dinda</p>
+                            <p><b>Email ID:</b> souvik.dinda@northeastern.edu</p>
                         </div>
                     </div>
                 </div>
@@ -78,8 +78,8 @@ export default function ContactUs() {
                         <Image src="/vinay.jpeg" alt="" className={styles.contactPic} width={100} height={100} />
                         </div>
                         <div>
-                            <p>Contact: Vinay Kumar Gudooru</p>
-                            <p>Email ID: vinay.gudooru@northeastern.edu</p>
+                            <p><b>Contact:</b> Vinay Kumar Gudooru</p>
+                            <p><b>Email ID:</b> vinay.gudooru@northeastern.edu</p>
                         </div>
                     </div>
                 </div>

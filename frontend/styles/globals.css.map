@@ -1,1 +1,1 @@
-{"version":3,"sources":["../dist/_tokens.scss","globals.css","../dist/globals.scss"],"names":[],"mappings":"AAyBA;EACI,uBAAA;EACA,iBAAA;ACxBJ;;ACDA;EACI,iCFIU;EEHV,yBAAA;EACA,kBAAA;ADIJ","file":"globals.css"}
+{"version":3,"sourceRoot":"","sources":["../dist/_tokens.scss","../dist/globals.scss"],"names":[],"mappings":"AAyBA;EACI;EACA;;;AAEJ;EACI;EACA;EACA;;;AC9BJ;EACI,aDIU;ECHV;EACA","file":"globals.css"}

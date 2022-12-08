@@ -25,6 +25,9 @@ const schema = new mongoose.Schema({
     },
     sponsorEmail: {
         type: String,
+    },
+    country: {
+        type: String,
     }
 }, { versionKey: false });
 
