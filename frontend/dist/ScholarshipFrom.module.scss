@@ -1,24 +1,19 @@
 @import 'tokens';
 
-.studentProfileForm {
+.formContainer {
     @include autoMarginHorizontal;
-    margin-top: 17vh;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
     padding: 3em;
     width: 75%;
     box-sizing: border-box;
     box-shadow: 5px 5px 10px $secondary-text-color;
     background-color: rgb(230, 249, 254);
 
-    .header {
+    .header{
         text-transform: uppercase;
         letter-spacing: 3px;
         text-shadow: 1px 2px 5px grey;
-    }
-
-    .formSectionHeader {
         text-align: center;
-        margin-top: 5vh;
     }
 
     .inputElements {
@@ -26,8 +21,8 @@
         width: 80%;
         // border: 1px solid black;
         @include flexEqualDistribution;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
 
         label {
             width: 30%;
@@ -62,5 +57,4 @@
             }
         }
     }
-
 }

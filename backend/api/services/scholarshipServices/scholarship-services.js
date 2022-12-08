@@ -5,9 +5,8 @@ export const getAll = async () => {
     return scholarships;
 }
 
-export const getByEmail = async (query) => {
-    const params = {...query};
-    const scholarship = await Scholarship.findOne(params).exec();
+export const search = async (query) => {
+    const scholarship = Scholarship.find(query).exec();
     return scholarship;
 }
 

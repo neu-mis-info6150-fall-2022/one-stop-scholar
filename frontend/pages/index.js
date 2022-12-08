@@ -61,31 +61,105 @@ export default function Home() {
           <div className={styles.card}>
             <div className={[styles.image1, styles.cardImage].join(" ")}></div>
             <p>Scholarships in</p>
-            <h4>United States</h4>
+            <h3>United States</h3>
           </div>
 
           <div className={styles.card}>
             <div className={[styles.image2, styles.cardImage].join(" ")}></div>
             <p>Scholarships in</p>
-            <h4>United Kingdom</h4>
+            <h3>United Kingdom</h3>
           </div>
 
           <div className={styles.card}>
             <div className={[styles.image3, styles.cardImage].join(" ")}></div>
             <p>Scholarships in</p>
-            <h4>Australia</h4>
+            <h3>Australia</h3>
           </div>
 
           <div className={styles.card}>
             <div className={[styles.image4, styles.cardImage].join(" ")}></div>
             <p>Scholarships in</p>
-            <h4>Germany</h4>
+            <h3>Germany</h3> 
           </div>
-
+        </div >
+        <div>
+          <Link href='/countries' legacyBehavior><Image src="/see-more.png" class={styles.seeMore1}  alt=""   width={100} height={100} /></Link>
         </div>
       </div>
-    
 
+      <div className={styles.destinations}>
+        <h2 className={styles.header}>Most Popular Degrees</h2>
+        <div className={styles.cardContainer}>
+          <div className={styles.card}>
+            <div className={[styles.image5, styles.cardImage].join(" ")}></div>
+            <p>Scholarships for</p>
+            <h3>Professional Certificate</h3>
+          </div>
+
+          <div className={styles.card}>
+            <div className={[styles.image6, styles.cardImage].join(" ")}></div>
+            <p>Scholarships for</p>
+            <h3>Bachelor Degree</h3>
+          </div>
+
+          <div className={styles.card}>
+            <div className={[styles.image7, styles.cardImage].join(" ")}></div>
+            <p>Scholarships for</p>
+            <h3>Master Degree</h3>
+          </div>
+
+          <div className={styles.card}>
+            <div className={[styles.image8, styles.cardImage].join(" ")}></div>
+            <p>Scholarships for</p>
+            <h3>Doctoral Degree</h3> 
+          </div>
+        </div >
+        <div>
+          <Link href='/degree' legacyBehavior><Image src="/see-more.png" class={styles.seeMore2}  alt=""   width={100} height={100} /></Link>
+        </div>
+      </div>
+
+      <div className={styles.reviewsSection}>
+        <h2 className={styles.header}>Student Reviews</h2>
+        <div className={styles.reviewsContainer}>
+          <div className={styles.reviews}>
+            <div className={styles.reviewGrid}>
+            <Image src="/inverted-comma1.jpeg" alt=""   width={100} height={200} />
+            <div>
+              <div className={styles.reviewsHeader}>
+                <div className={styles.reviewHeader1}>
+                  <Image src="/virat.jpeg" alt="" className={styles.reviewPhoto}  width={70} height={70} />
+                  <h3>Virat Kohli</h3>
+                </div>
+                <h4>Massachusetts Institute of Technology</h4>
+              </div>
+              <div>  
+                <p>I was able to win the Sage Marketing Scholarship for $10,000 because the access that the Onestop Scholar provides. There's so many different types of scholarships, all for different kind of people. It is giving the user pure opportunity. All you need is effort.</p>
+              </div>
+              </div>
+              <Image src="/inverted-comma2.jpeg" alt="" width={100} height={200} />
+            </div>
+          </div>
+          <div className={styles.reviews}>
+            <div className={styles.reviewGrid}>
+            <Image src="/inverted-comma1.jpeg" alt=""   width={100} height={200} />
+            <div>
+              <div className={styles.reviewsHeader}>
+              <div className={styles.reviewHeader1}>
+                  <Image src="/anushka.jpeg" alt="" className={styles.reviewPhoto}  width={70} height={70} />
+                  <h3>Anushka Sharma</h3>
+                </div>
+                <h4>University of Cambridge</h4>
+              </div>
+              <div>  
+                <p>I simply accepted that I only had the tuition and scholarship opportunities that were explicitly presented to me until I discovered Onestop Scholar. Now the tough task of affording my full-time MBA is far more manageable.</p>
+              </div>
+              </div>
+              <Image src="/inverted-comma2.jpeg" alt="" width={100} height={200} />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
