@@ -63,3 +63,34 @@
         background-repeat: no-repeat;
     }
 }
+
+.countryContainer {
+    @include autoMarginHorizontal;
+    margin-top: 17vh;
+    margin-bottom: 80vh;
+    width: 80vw;
+
+    h2 {
+        text-decoration: underline;
+    }
+
+    .country {
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+
+        a {
+            text-decoration: none;
+            color: black;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: large;
+
+            &:hover {
+                color: $button-color;
+                font-weight: fonts(medium-bold);
+                text-decoration: underline;
+            }
+        }
+    }
+    
+}
