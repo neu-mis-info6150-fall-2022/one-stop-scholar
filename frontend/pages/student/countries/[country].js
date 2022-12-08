@@ -1,5 +1,5 @@
 import { getSession, signOut } from 'next-auth/react';
-import styles from '../../styles/Home.module.css'
+import styles from '../../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -13,9 +13,9 @@ export default function StudentDashboard({scholarships, user}) {
     return(
         <div className={styles.container}>
             <nav className={styles.navbar}>
-            <a href='http://localhost:3000/student'><Image src="/Scholar.gif" alt="OneStopScholar" className="nav-logo" width={120} height={120}></Image></a>
+            <a href='http://localhost:3000/student'><Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
                 <div className={styles.centerNav}>
-                    <Link href='/student' legacyBehavior><a className={styles.selectedBold}>Dashboard</a></Link>
+                    <Link href='/student' legacyBehavior><a>Dashboard</a></Link>
                     <Link href='/student/applications' legacyBehavior><a>Applications</a></Link>
                     <Link href='/student/countries' legacyBehavior><a>Countries</a></Link>
                 </div>
@@ -57,6 +57,7 @@ export default function StudentDashboard({scholarships, user}) {
 
 export async function getServerSideProps(context) {
     const session = await getSession(context);
+    const {params} = context;
 
     if(!session) {
         return {
@@ -79,31 +80,16 @@ export async function getServerSideProps(context) {
                 },
             }
 
-        } else if(typeof userData[0].userType === 'undefined') {
-            const requestOptions = {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ userType: "student"})
-            };
-            await fetch(url, requestOptions);
-
-            const profileTableURL = `http://localhost:8080/studentDb/profile/`;
-            const profileRequestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: email})
-            };
-            await fetch(profileTableURL,profileRequestOptions);
-        }
-
-        const scholarshipResponse = await fetch('http://localhost:8080/scholarships/')
-        const data = await scholarshipResponse.json();
+        } 
+        
+        const scholarshipResponse = await fetch(`http://localhost:8080/scholarships/v1/search?country=${params.country}`)
+        const scholarships = await scholarshipResponse.json();
 
         return{
             props: {
                 session,
                 user: session.user,
-                scholarships:data
+                scholarships
             }
         }
     }
