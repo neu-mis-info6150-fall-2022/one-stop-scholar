@@ -8,7 +8,7 @@
 @import 'contactUs.module';
 @import 'countries.module';
 @import 'applications.module';
-@import'tnc.modules';
+@import'tnc.module';
 
 
 .header {
@@ -227,6 +227,17 @@
     }
 }
 
+.featuresLogo {
+    @include flexEqualDistribution;
+    display: flex;
+    margin: 50px auto 100px auto;
+    width: 40%;;
+}
+.featuresLogo1 {
+    margin: 10px;
+}
+
+
 @each $name, $path in $destination-images-paths {
     .#{$name} {
         background: url($path);
@@ -313,6 +324,8 @@
 }
 
 .applynow{
+    text-align: center;
+    
     position: relative;
     top: 10vh;
     right: 53vh;
@@ -324,6 +337,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
 }
 .applynow:hover{
     background-color: #ffc4b9;

@@ -43,7 +43,8 @@ export default function Home() {
       </nav>
 
       <div className={styles.imageBannerContainer}>
-      <button className={styles.applynow} onClick={handleSubmit}>Know More</button>
+      {/* <button className={styles.applynow}><Link href='/signin'>Know More</Link></button> */}
+      <Link href='/signin' className={styles.applynow}>Know More</Link>
       </div> 
 
       <div className={styles.destinations}>
@@ -162,6 +163,15 @@ export default function Home() {
               <Image src="/inverted-comma2.jpeg" alt="" width={80} height={170} />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className={styles.featuredIn}>
+        <h2 className={styles.header}><b>Onestop Scholar</b> has been featured in</h2>
+        <div className={styles.featuresLogo}>
+            <Image src="/forbeslogo.png" alt="" className={styles.featuresLogo1} width={200} height={100} />
+            <Image src="/cnnlogo.png" alt=""  className={styles.featuresLogo1} width={200} height={100} />
+            <Image src="/cbslogo.png" alt=""  className={styles.featuresLogo1} width={200} height={100} />
         </div>
       </div>
     </div>
