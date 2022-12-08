@@ -3,6 +3,12 @@
   font-weight: bold;
 }
 
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
+}
+
 .nav-logo {
   position: relative;
   top: 9px;
@@ -12,6 +18,12 @@
 .selectedBold {
   color: black !important;
   font-weight: bold;
+}
+
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
 }
 
 .nav-logo {
@@ -81,6 +93,12 @@
   font-weight: bold;
 }
 
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
+}
+
 .nav-logo {
   position: relative;
   top: 9px;
@@ -103,6 +121,12 @@
 .selectedBold {
   color: black !important;
   font-weight: bold;
+}
+
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
 }
 
 .nav-logo {
@@ -176,6 +200,12 @@
 .selectedBold {
   color: black !important;
   font-weight: bold;
+}
+
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
 }
 
 .nav-logo {
@@ -441,6 +471,12 @@
   font-weight: bold;
 }
 
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
+}
+
 .nav-logo {
   position: relative;
   top: 9px;
@@ -510,6 +546,12 @@
 .selectedBold {
   color: black !important;
   font-weight: bold;
+}
+
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
 }
 
 .nav-logo {
@@ -586,6 +628,12 @@
 .selectedBold {
   color: black !important;
   font-weight: bold;
+}
+
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
 }
 
 .nav-logo {
@@ -745,6 +793,8 @@
   height: 60vh;
   background-size: cover;
   flex-direction: column;
+  position: relative;
+  top: 13vh;
 }
 .imageBannerContainer h2 {
   color: white;
@@ -797,7 +847,7 @@
 }
 
 .destinations {
-  margin-top: 10vh;
+  margin-top: 18vh;
 }
 .destinations .cardContainer {
   display: flex;
@@ -833,10 +883,11 @@
 }
 
 .seeMore1 {
-  position: absolute;
+  position: relative;
   z-index: 0;
-  top: 1550px;
-  left: 94%;
+  top: -52vh;
+  /* left: 94%; */
+  float: right;
 }
 
 .seeMore1:hover {
@@ -846,10 +897,10 @@
 }
 
 .seeMore2 {
-  position: absolute;
+  position: relative;
   z-index: 0;
-  top: 2250px;
-  left: 94%;
+  float: right;
+  top: -52vh;
 }
 
 .seeMore2:hover {

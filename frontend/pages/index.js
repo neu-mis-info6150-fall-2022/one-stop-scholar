@@ -42,10 +42,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/*<div className={styles.banner}>
-        <Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={300} height={100} />
-  </div>*/}
-
       <div className={styles.imageBannerContainer}>
         {/*<h2>Find your scholarship to finance your study</h2>*/}
         <br/>
@@ -53,10 +49,10 @@ export default function Home() {
           <input type='email' placeholder='Enter Your Email' ref={emailRef} />
           <button onClick={handleSubmit}>Know More</button>
         </div>
-      </div>
+      </div> 
 
       <div className={styles.destinations}>
-        <h2 className={styles.header}>Most Popular Countries</h2>
+        <h2 className={styles.header}>Most Popular Countries to <b className={styles.selectedBolder}>Build</b> you career</h2>
         <div className={styles.cardContainer}>
           <div className={styles.card}>
             <div className={[styles.image1, styles.cardImage].join(" ")}></div>
@@ -83,12 +79,16 @@ export default function Home() {
           </div>
         </div >
         <div>
-          <Link href='/countries' legacyBehavior><Image src="/see-more.png" class={styles.seeMore1}  alt=""   width={100} height={100} /></Link>
+          <Link href='/countries' legacyBehavior><Image src="/see-more.png" class={styles.seeMore1}  alt=""   width={50} height={50} /></Link>
         </div>
       </div>
 
+      <div className={styles.banner}>
+        <Image src="/blog.png" alt="blog" className="" width={1260} height={650} />
+      </div> 
+
       <div className={styles.destinations}>
-        <h2 className={styles.header}>Most Popular Degrees</h2>
+        <h2 className={styles.header}>Most Popular <b className={styles.selectedBolder}>Degrees</b> to pursue</h2>
         <div className={styles.cardContainer}>
           <div className={styles.card}>
             <div className={[styles.image5, styles.cardImage].join(" ")}></div>
@@ -115,7 +115,7 @@ export default function Home() {
           </div>
         </div >
         <div>
-          <Link href='/degree' legacyBehavior><Image src="/see-more.png" class={styles.seeMore2}  alt=""   width={100} height={100} /></Link>
+          <Link href='/degree' legacyBehavior><Image src="/see-more.png" class={styles.seeMore2}  alt=""   width={50} height={50} /></Link>
         </div>
       </div>
 
