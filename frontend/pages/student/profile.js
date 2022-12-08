@@ -38,7 +38,7 @@ export default function StudentProfile({session, profileData}) {
     return(
         <div className={styles.container}>
             <nav className={styles.navbar}>
-            <a href='http://localhost:3000/student'><Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
+            <a href='http://localhost:3000/student'><Image src="/Scholar.gif" alt="OneStopScholar" className="nav-logo" width={120} height={120}></Image></a>
                 <div className={styles.centerNav}>
                     <Link href='/student' legacyBehavior><a>Dashboard</a></Link>
                     <Link href='/student/applications' legacyBehavior><a>Applications</a></Link>
