@@ -3,7 +3,7 @@ import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default function StudentApplications({session, user}) {
+export default function StudentApplications({session, user, applications, data}) {
 
     const handleSignOut = () => {
         signOut({callbackUrl: 'http://localhost:3000'});
@@ -23,6 +23,29 @@ export default function StudentApplications({session, user}) {
                     <button onClick={handleSignOut} className={styles.signOutButton}>Sign Out</button>
                 </div>
             </nav>
+
+            <div className={styles.scholarships}>
+                <div className={styles.schcardContainer}>
+                {
+                    data.length === 0 ? <p>Scholarships Not Applied Yet...</p> : (data.map((scholarship, idx) => {
+
+                        return (
+                            <div className={styles.schcard}>
+                                <Link href={`/student/${scholarship._id}`} legacyBehavior>  
+                                <a>{scholarship.scholarshipName}</a>
+                                </Link>
+                                <ul className={styles.appliedScholarshipContainer}>
+                                    <li><span>Description:</span><p className={styles.details}>{scholarship.scholarshipDescription}</p></li>
+                                    <li><span>Amount:</span><p className={styles.details}>{scholarship.scholarshipAmt}</p></li>
+                                    <li><span>Status:</span><p className={styles.details}>{applications[idx].status}</p></li>
+                                </ul>
+                            </div>
+                        )
+                    }))
+                }
+                </div>
+            </div>
+            
         </div>
     )
 }
@@ -53,10 +76,27 @@ export async function getServerSideProps(context) {
 
         }
 
+        const profileDataURL = `http://localhost:8080/studentDb/profile/${email}`;
+        const profileResponse = await fetch(profileDataURL);
+        const profileData = await profileResponse.json();
+
+        const applicationURL = `http://localhost:8080/applications/v1/search?studentId=${profileData._id}`;
+        const applicationsResponse = await fetch(applicationURL);
+        const applications = await applicationsResponse.json();
+
+        const data = await Promise.all(applications.map(async (application) => {
+            const id = application.scholarshipId;
+            const res =  await fetch(`http://localhost:8080/scholarships/${id}`);
+            const scholarshipData = await res.json();
+            return scholarshipData;
+        }))
+
         return{
             props: {
                 session,
-                user: session.user
+                user: profileData,
+                applications,
+                data
             }
         }
     } 
