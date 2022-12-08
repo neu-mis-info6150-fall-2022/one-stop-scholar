@@ -29,7 +29,7 @@ export default function Home() {
     <div className={styles.container}>
 
       <nav className={styles.navbar}>
-        <a href='http://localhost:3000'><Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
+        <a href='http://localhost:3000'><Image src="/Scholar.gif" alt="OneStopScholar" className="nav-logo" width={120} height={120}></Image></a>
         <div className={styles.centerNav}>
           <Link href='/scholarship' legacyBehavior><a>Scholarships</a></Link>
           <Link href='/countries' legacyBehavior><a>Destinations</a></Link>
@@ -42,12 +42,12 @@ export default function Home() {
         </div>
       </nav>
 
-      <div className={styles.banner}>
+      {/*<div className={styles.banner}>
         <Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={300} height={100} />
-      </div>
+  </div>*/}
 
       <div className={styles.imageBannerContainer}>
-        <h2>Find your scholarship to finance your study</h2>
+        {/*<h2>Find your scholarship to finance your study</h2>*/}
         <br/>
         <div className={styles.form}>
           <input type='email' placeholder='Enter Your Email' ref={emailRef} />
@@ -79,11 +79,46 @@ export default function Home() {
           <div className={styles.card}>
             <div className={[styles.image4, styles.cardImage].join(" ")}></div>
             <p>Scholarships in</p>
-            <h3>Germany</h3>
+            <h3>Germany</h3> 
           </div>
-
+        </div >
+        <div>
+          <Link href='/countries' legacyBehavior><Image src="/see-more.png" class={styles.seeMore1}  alt=""   width={100} height={100} /></Link>
         </div>
       </div>
+
+      <div className={styles.destinations}>
+        <h2 className={styles.header}>Most Popular Degrees</h2>
+        <div className={styles.cardContainer}>
+          <div className={styles.card}>
+            <div className={[styles.image5, styles.cardImage].join(" ")}></div>
+            <p>Scholarships for</p>
+            <h3>Professional Certificate</h3>
+          </div>
+
+          <div className={styles.card}>
+            <div className={[styles.image6, styles.cardImage].join(" ")}></div>
+            <p>Scholarships for</p>
+            <h3>Bachelor Degree</h3>
+          </div>
+
+          <div className={styles.card}>
+            <div className={[styles.image7, styles.cardImage].join(" ")}></div>
+            <p>Scholarships for</p>
+            <h3>Master Degree</h3>
+          </div>
+
+          <div className={styles.card}>
+            <div className={[styles.image8, styles.cardImage].join(" ")}></div>
+            <p>Scholarships for</p>
+            <h3>Doctoral Degree</h3> 
+          </div>
+        </div >
+        <div>
+          <Link href='/degree' legacyBehavior><Image src="/see-more.png" class={styles.seeMore2}  alt=""   width={100} height={100} /></Link>
+        </div>
+      </div>
+
       <div className={styles.reviewsSection}>
         <h2 className={styles.header}>Student Reviews</h2>
         <div className={styles.reviewsContainer}>

@@ -49,10 +49,10 @@
 
 .imageBannerContainer {
     @include flexCenter;
-    background: radial-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url(../public/banner-image.jpg);
+    background: url(../public/hellostu.png); //radial-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url(../public/hellostu.png);
     width: 100%;
-    border-radius: 20px;
-    height: 70vh;
+   // border-radius: 20px;
+    height: 60vh;
     background-size: cover;
     flex-direction: column;
     
@@ -125,7 +125,7 @@
 
         .card {
             width: 23%;
-            height: 42vh;
+            height: 55vh;
             padding: 8px;
             box-sizing: border-box;
             background-color: white;
@@ -150,6 +150,34 @@
              transform: scale(1.03);
             transition: 0.5s;}
     }
+}
+
+.seeMore1 {
+    position: absolute;
+    z-index: 0;
+    top: 1550px;
+    left: 94%;
+    // visibility: hidden;
+}
+
+.seeMore1:hover {
+    visibility: visible;
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+.seeMore2 {
+    position: absolute;
+    z-index: 0;
+    top: 2250px;
+    left: 94%;
+    // visibility: hidden;
+}
+
+.seeMore2:hover {
+    visibility: visible;
+    transform: scale(1.2);
+    transition: 0.5s;
 }
 
 .reviewsContainer {

@@ -3,6 +3,12 @@
   font-weight: bold;
 }
 
+.nav-logo {
+  position: relative;
+  top: 9px;
+  left: -38px;
+}
+
 .formContainer {
   margin-left: auto;
   margin-right: auto;

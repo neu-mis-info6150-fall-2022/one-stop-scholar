@@ -33,9 +33,9 @@ export default function({user, scholarships}) {
     return(
         <div className={styles.container}>
             <nav className={styles.navbar}>
-                <Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image>
+                <Image src="/Scholar.gif" alt="OneStopScholar" className="nav-logo" width={120} height={120}></Image>
                 <div className={styles.centerNav}>
-                    <Link href='#' legacyBehavior><a>Dashboard</a></Link>
+                    <Link href='#' legacyBehavior><a className={styles.selectedBold}>Dashboard</a></Link>
                     <Link href='/sponsor/applications' legacyBehavior><a>Applications</a></Link>
                 </div>
                 <div className='login-container'>
