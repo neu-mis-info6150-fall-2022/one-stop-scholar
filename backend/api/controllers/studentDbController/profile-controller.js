@@ -1,19 +1,20 @@
+//Import the service file to perform operations
 import * as profileServices from '../../services/studentDbServices/profile-service.js';
 
-// Default response in case of success and failure
+//Default function to send response
 const setResponse = (obj, response) => {
     response.status(200);
     response.json(obj);
 }
 
+//Function to send error response if any
 const setError = (err, response) => {
     response.status(500);
     response.json(err);
 }
 
-// Below are functions for each type of requests i.e. GET, POST, PUT, DELETE
 // Controller resolves the requests and consumes functions defined in services
-
+//search function :- to search all the students data
 export const search = async (req, res) => {
     try {
         const params = req.params;
@@ -24,7 +25,7 @@ export const search = async (req, res) => {
     }
 }
 
-
+//post function :- to add a new student data
 export const post = async (req, res) => {
     try {
         const profile = req.body;
@@ -35,6 +36,7 @@ export const post = async (req, res) => {
     }
 }
 
+//put function :- to updtae a student's data
 export const put = async (req, res) => {
     try {
         const updateParam = req.body;
@@ -46,6 +48,7 @@ export const put = async (req, res) => {
     }
 }
 
+//remove function :- to delete the student's data
 export const remove = async (req, res) => {
     try {
         const query = req.params;
@@ -56,6 +59,7 @@ export const remove = async (req, res) => {
     }
 }
 
+//getByQuery function :- to search the student data by passing a query parameter
 export const getByQuery = async (req, res) => {
     try {
         const query = req.query;
