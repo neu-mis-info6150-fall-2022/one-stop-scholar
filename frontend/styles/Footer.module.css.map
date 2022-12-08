@@ -1,1 +1,3 @@
-{"version":3,"sourceRoot":"","sources":["../dist/_tokens.scss","../dist/Footer.module.scss"],"names":[],"mappings":"AAyBA;EACI;EACA;;;AAEJ;EACI;EACA;EAEA;;;AAEJ;EACI;EACA;EACA;;;ACpCJ;EACI;EACA;EACA;EACA;EACA,kBDEW;ECDX;EDoEA;EACA;EACA;ECpEA;;AAEA;EACI;EACA;;AAGJ;EACI;EACA;;AAIA;EACI;EACA;EACA;;AAEA;EACI;;AAKZ;EACI;;AAGJ;EACI","file":"Footer.module.css"}
+
+{"version":3,"sources":["../dist/_tokens.scss","Footer.module.css","../dist/Footer.module.scss"],"names":[],"mappings":"AAyBA;EACI,uBAAA;EACA,iBAAA;ACxBJ;;AD0BA;EACI,kBAAA;EACA,QAAA;EACA,WAAA;ACvBJ;;ACPA;EACI,OAAA;EACA,kBAAA;EACA,WAAA;EACA,aAAA;EACA,yBFEW;EEDX,YAAA;EF8DA,aAAA;EACA,uBAAA;EACA,mBAAA;EE9DA,sBAAA;ADYJ;ACVI;EACI,gBAAA;EACA,mBAAA;ADYR;ACTI;EACI,YAAA;EACA,WAAA;ADWR;ACPQ;EACI,yBAAA;EACA,qBAAA;EACA,iBAAA;ADSZ;ACPY;EACI,gBAAA;ADShB;ACJI;EACI,aAAA;ADMR;ACHI;EACI,2BAAA;ADKR","file":"Footer.module.css"}
+
