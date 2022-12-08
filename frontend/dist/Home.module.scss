@@ -250,6 +250,17 @@
     }
 }
 
+.featuresLogo {
+        display: flex;
+        flex-direction: column;
+        margin: 50px auto 100px auto;
+        width: 30%;
+}
+.featuresLogo1 {
+    margin: 10px;
+}
+
+
 @each $name, $path in $destination-images-paths {
     .#{$name} {
         background: url($path);
