@@ -4,11 +4,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import ScholarshipForm from '../../components/ScholarshipForm.js';
+import Scholarship from '../../components/Scholarship';
 
 export default function({user, scholarships}) {
     const [formButtonText, setFormButtonText] = useState("Add Scholarship");
     const [showForm, setShowForm] = useState(false);
     const [successMessage, setsuccessMessage] = useState(false);
+    // console.log(scholarships);
 
     const handleSignOut = () => {
         signOut({callbackUrl: 'http://localhost:3000'});
@@ -50,7 +52,8 @@ export default function({user, scholarships}) {
                 {
                     scholarships.length === 0 ? <p>No Scholarships Posted Yet</p> :
                     (scholarships.map((scholarship,index) => {
-                        return <div key={index}>{scholarship.scholarshipName}</div>
+                        return <div className={styles.scholarshipCardSponsorAccount}>
+                        <Scholarship id={scholarship._id} name={scholarship.scholarshipName} sponsor={scholarship.scholarshipSponsor} description={scholarship.scholarshipDescription} deadline={scholarship.scholarshipDeadline} amount={scholarship.scholarshipAmt} criteria={scholarship.scholarshipCriteria} applicants={scholarship.scholarshipApplicants}></Scholarship></div>
                     })
                     )
                 }
