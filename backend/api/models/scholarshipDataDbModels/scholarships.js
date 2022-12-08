@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
-
     scholarshipName: {
         type: String,
         required: 'name is required'

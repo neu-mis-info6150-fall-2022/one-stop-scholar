@@ -2,4 +2,39 @@
 
 .dashboardContainer {
     margin-top: 17vh;
+
+
+    .submitSuccessMessage {
+        text-align: center;
+        color: rgb(35, 183, 44);
+        margin-top: 3vh;
+        font-weight: fonts(medium-bold);
+    }
+
+    .showScholarshipFormButtonContainer {
+        @include autoMarginHorizontal;
+        width: 30%;
+        margin-bottom: 5vh;
+
+        button {
+            background-color: $button-color;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-weight: fonts(medium);
+            letter-spacing: 2px;
+            height: 6vh;
+
+            &:hover {
+                cursor: pointer;
+                font-weight: fonts(bold);
+                box-shadow: 2px 2px 5px grey;
+            }
+
+            &:active {
+                background-color: #e25536;
+            }
+        }
+    }
 }
