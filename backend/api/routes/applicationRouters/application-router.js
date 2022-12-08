@@ -8,5 +8,6 @@ const Router = express.Router();
 Router.route('/').get(ApplicationController.getAll);
 Router.route('/v1/search').get(ApplicationController.getByQuery);
 Router.route('/').post(ApplicationController.post);
+Router.route('/:id').put(ApplicationController.put);
 
 export default Router;
