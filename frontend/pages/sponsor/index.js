@@ -31,6 +31,18 @@ export default function({user, scholarships}) {
         }
     }
 
+    const handleDeleteButton = async (id) => {
+        const scholarshipDeleteURL = `http://localhost:8080/scholarships/${id}`;
+        const relatedApplicationDeleteURL = `http://localhost:8080/applications/v1/search?scholarshipId=${id}`;
+        const deleteScholarship = await fetch(scholarshipDeleteURL, {method: 'DELETE'});
+        const deleteRelatedApplication = await fetch(relatedApplicationDeleteURL, {method: 'DELETE'});
+        if(deleteScholarship.ok && deleteRelatedApplication.ok) {
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        }
+    } 
+
 
     return(
         <div className={styles.container}>
@@ -53,7 +65,9 @@ export default function({user, scholarships}) {
                     scholarships.length === 0 ? <p>No Scholarships Posted Yet</p> :
                     (scholarships.map((scholarship,index) => {
                         return <div className={styles.scholarshipCardSponsorAccount}>
-                        <Scholarship id={scholarship._id} name={scholarship.scholarshipName} sponsor={scholarship.scholarshipSponsor} description={scholarship.scholarshipDescription} deadline={scholarship.scholarshipDeadline} amount={scholarship.scholarshipAmt} criteria={scholarship.scholarshipCriteria} applicants={scholarship.scholarshipApplicants}></Scholarship></div>
+                        <Scholarship id={scholarship._id} name={scholarship.scholarshipName} sponsor={scholarship.scholarshipSponsor} description={scholarship.scholarshipDescription} deadline={scholarship.scholarshipDeadline} amount={scholarship.scholarshipAmt} criteria={scholarship.scholarshipCriteria} applicants={scholarship.scholarshipApplicants}></Scholarship>
+                        <button onClick={()=> handleDeleteButton(scholarship._id)} className={styles.scholarshipDelete}>Delete</button>
+                        </div>
                     })
                     )
                 }

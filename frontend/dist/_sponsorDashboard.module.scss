@@ -42,5 +42,15 @@
 .scholarshipCardSponsorAccount {
     background-color: aliceblue;
     margin: 10%;
+    padding: 1.5em;
     box-shadow: 2px 2px 10px grey;
+    display: flex;
+    flex-direction: column;
+}
+
+.scholarshipDelete {
+    width: 25vw;
+    background-color: $button-color;
+    height: 5vh;
+    @include autoMarginHorizontal;
 }

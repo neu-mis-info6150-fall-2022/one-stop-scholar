@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useState } from 'react';
 
 export default function StudentProfile({session, profileData}) {
+    console.log(profileData);
 
     const handleSignOut = () => {
         signOut({callbackUrl: 'http://localhost:3000'});
@@ -267,7 +268,7 @@ export async function getServerSideProps(context) {
         return{
             props: {
                 session,
-                profileData
+                profileData: profileData[0],
             }
         }
     } 
