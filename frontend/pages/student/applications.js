@@ -16,6 +16,7 @@ export default function StudentApplications({session, user}) {
                 <div className={styles.centerNav}>
                     <Link href='/student' legacyBehavior><a>Dashboard</a></Link>
                     <Link href='/student/applications' legacyBehavior><a>Applications</a></Link>
+                    <Link href='/student/countries' legacyBehavior><a>Countries</a></Link>
                 </div>
                 <div className='login-container'>
                     <Link href='/student/profile' legacyBehavior><a>{user.email}</a></Link>

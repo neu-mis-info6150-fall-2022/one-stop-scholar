@@ -1,5 +1,5 @@
 import { getSession, signOut } from 'next-auth/react';
-import styles from '../../styles/Home.module.css'
+import styles from '../../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -9,6 +9,10 @@ export default function StudentDashboard({scholarships, user}) {
     const handleSignOut = () => {
         signOut({callbackUrl: 'http://localhost:3000'});
     }
+
+    const countries = scholarships.map(scholarship => {
+        return scholarship.country;
+    })
 
     return(
         <div className={styles.container}>
@@ -25,31 +29,17 @@ export default function StudentDashboard({scholarships, user}) {
                 </div>
             </nav>
 
-            <div className={styles.scholarships}>
-                <div className={styles.schcardContainer}>
+            <div className={styles.countryContainer}>
+                <h2>Countries</h2>
                 {
-                    scholarships.length === 0 ? <p>No scholarships Yet...</p> : (scholarships.map((scholarship, idx) => {
-                        var date = scholarship.scholarshipDeadline;
-                        date = date.split('T')[0];
-                        
-                        return (
-                            <div key={idx}>
-                            <div className={styles.schcard}>
-                                <Link href={`/student/${scholarship._id}`} legacyBehavior>  
-                                <a>{scholarship.scholarshipName}</a>
-                                </Link>
-                                <p className={styles.details}>{scholarship.scholarshipDescription}</p>
-                                <p className={styles.details}>{scholarship.scholarshipSponsor}</p>
-                                <p className={styles.details}>{scholarship.scholarshipAmt}</p>
-                                <p className={styles.details}>{date}</p>
-                                <p className={styles.details}>{scholarship.scholarshipCriteria}</p>
-                                <p className={styles.details}>{scholarship.scholarshipApplicants}</p>
-                            </div>
-                            </div>
-                        )
-                    }))
+                    countries.length === 0 ? <p>No scholarship posted yet</p> :
+                    countries.map(country => {
+                        console.log(country);
+                        return <div className={styles.country}>
+                            <Link href={`/student/countries/${country}`} legacyBehavior><a>{country}</a></Link>
+                        </div>
+                    })
                 }
-                </div>
             </div>
         </div>
     )
@@ -79,23 +69,8 @@ export async function getServerSideProps(context) {
                 },
             }
 
-        } else if(typeof userData[0].userType === 'undefined') {
-            const requestOptions = {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ userType: "student"})
-            };
-            await fetch(url, requestOptions);
-
-            const profileTableURL = `http://localhost:8080/studentDb/profile/`;
-            const profileRequestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: email})
-            };
-            await fetch(profileTableURL,profileRequestOptions);
-        }
-
+        } 
+        
         const scholarshipResponse = await fetch('http://localhost:8080/scholarships/')
         const data = await scholarshipResponse.json();
 
