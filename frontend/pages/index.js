@@ -43,7 +43,7 @@ export default function Home() {
       </nav>
 
       <div className={styles.imageBannerContainer}>
-      <button className={styles.applynow} onClick={handleSubmit}>Know More</button>
+      <button className={styles.applynow} onClick={''}>Know More</button>
       </div> 
 
       <div className={styles.destinations}>
@@ -128,11 +128,11 @@ export default function Home() {
         <div className={styles.reviewsContainer}>
           <div className={styles.reviews}>
             <div className={styles.reviewGrid}>
-            <Image src="/inverted-comma1.jpeg" alt=""   width={80} height={170} />
+            <Image src="/inverted-comma1.jpeg" alt=""   width={40} height={60} />
             <div>
               <div className={styles.reviewsHeader}>
                 <div className={styles.reviewHeader1}>
-                  <Image src="/virat.jpeg" alt="" className={styles.reviewPhoto}  width={70} height={70} />
+                  <Image src="/virat.jpeg" alt="" className={styles.reviewPhoto}  width={55} height={55} />
                   <h3>Virat Kohli</h3>
                 </div>
                 <h4>Massachusetts Institute of Technology</h4>
@@ -141,16 +141,16 @@ export default function Home() {
                 <p>I was able to win the Sage Marketing Scholarship for $10,000 because the access that the Onestop Scholar provides. There's so many different types of scholarships, all for different kind of people. It is giving the user pure opportunity. All you need is effort.</p>
               </div>
               </div>
-              <Image src="/inverted-comma2.jpeg" alt="" width={80} height={170} />
+              <Image src="/inverted-comma2.jpeg" alt="" width={55} height={303} />
             </div>
           </div>
           <div className={styles.reviews}>
             <div className={styles.reviewGrid}>
-            <Image src="/inverted-comma1.jpeg" alt=""   width={80} height={170} />
+            <Image src="/inverted-comma1.jpeg" alt=""   width={40} height={60} />
             <div>
               <div className={styles.reviewsHeader}>
               <div className={styles.reviewHeader1}>
-                  <Image src="/anushka.jpeg" alt="" className={styles.reviewPhoto}  width={70} height={70} />
+                  <Image src="/anushka.jpeg" alt="" className={styles.reviewPhoto}  width={55} height={55} />
                   <h3>Anushka Sharma</h3>
                 </div>
                 <h4>University of Cambridge</h4>
@@ -159,7 +159,7 @@ export default function Home() {
                 <p>I simply accepted that I only had the tuition and scholarship opportunities that were explicitly presented to me until I discovered Onestop Scholar. Now the tough task of affording my full-time MBA is far more manageable.</p>
               </div>
               </div>
-              <Image src="/inverted-comma2.jpeg" alt="" width={80} height={170} />
+              <Image src="/inverted-comma2.jpeg" alt="" width={55} height={303} />
             </div>
           </div>
         </div>
