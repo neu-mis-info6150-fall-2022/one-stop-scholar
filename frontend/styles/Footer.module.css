@@ -31,6 +31,9 @@
 .footer .links a:hover {
   font-weight: 700;
 }
-.footer .social .socialIcons {
+.footer .socialIcons {
   padding: 10px;
+}
+.footer .socialIcons:hover {
+  transform: translateY(-4px);
 }/*# sourceMappingURL=Footer.module.css.map */

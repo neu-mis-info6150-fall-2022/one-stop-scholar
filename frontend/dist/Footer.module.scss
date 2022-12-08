@@ -31,12 +31,13 @@
             }
         }
     }
-    .social{
-        
-        
-
-        .socialIcons{
-            padding:10px;  
-        }
+    
+    .socialIcons{
+        padding:10px;  
     }
+
+    .socialIcons:hover {
+        transform: translateY(-4px);
+    }
+
 }
