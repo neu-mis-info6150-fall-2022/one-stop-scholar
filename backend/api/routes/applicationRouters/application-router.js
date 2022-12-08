@@ -3,8 +3,8 @@ import * as ApplicationController from '../../controllers/applicationController/
 
 const Router = express.Router();
 
-//Defining methods for each service to be implemented
-// Post routing it will call functions in controller
+// Defining URL patterns for each type of request, GET, POST, PUT, DELETE
+// Routing it will call functions in controller
 Router.route('/').get(ApplicationController.getAll);
 Router.route('/v1/search').get(ApplicationController.getByQuery);
 Router.route('/').post(ApplicationController.post);
