@@ -1,28 +1,31 @@
-import { response } from 'express';
+//Import the service file to perform operations
 import * as applicationServices from '../../services/applicationServices/application-service.js';
 
-// Default response in case of success and failure
+//Default function to send response
 const setResponse = (obj, response) => {
     response.status(200);
     response.json(obj);
 }
 
+//Function to send error response if any
 const setError = (err, response) => {
     response.status(500);
     response.json(err);
 }
 
-// Below are functions for each type of requests i.e. GET, POST
+
 // Controller resolves the requests and consumes functions defined in services
+//getAll function :- to fetch all the applications
 export const getAll = async (req, res) => {
     try {
         const allApplications = await applicationServices.getAll();
         setResponse(allApplications, res);
-    } catch(error) {
+    } catch (error) {
         setError(error, res);
     }
 }
 
+//getByQuery function :- to fetch an application by query parameter
 export const getByQuery = async (req, res) => {
     try {
         const query = req.query;
@@ -33,6 +36,7 @@ export const getByQuery = async (req, res) => {
     }
 }
 
+//post function :- to add a new application in database
 export const post = async (req, res) => {
     try {
         const application = req.body;
@@ -43,6 +47,7 @@ export const post = async (req, res) => {
     }
 }
 
+//put function :- to update the status of an application
 export const put = async (req, res) => {
     try {
         const updateParam = req.body;
