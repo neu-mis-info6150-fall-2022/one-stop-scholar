@@ -9,10 +9,14 @@ const schema = new mongoose.Schema({
         type: String,
         required: 'scholarship id is required'
     },
-    sponsorId: {
+    sponsorEmail: {
         type: String,
         required: 'sponsor id is required'
     },
+    status: {
+        type: String,
+        required: 'Status is required',
+    }
     
 }, { versionKey: false });
 
