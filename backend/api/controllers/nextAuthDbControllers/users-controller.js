@@ -1,27 +1,31 @@
+//Import the service file to perform operations
 import * as userServices from '../../services/nextAuthDbServices/users-services.js';
 
-// Default response in case of success and failure
+//Default function to send response
 const setResponse = (obj, response) => {
     response.status(200);
     response.json(obj);
 }
 
+//Function to send error response if any
 const setError = (err, response) => {
     response.status(500);
     response.json(err);
 }
 
-// Below are functions for each type of requests i.e. GET, POST, PUT, DELETE
+
 // Controller resolves the requests and consumes functions defined in services
+//getAll function :- to fetch all the users
 export const getAll = async (req, res) => {
     try {
         const allUsers = await userServices.getAll();
         setResponse(allUsers, res);
-    } catch(error) {
+    } catch (error) {
         setError(error, res);
     }
 }
 
+//search function :- to fetch an application by query parameter
 export const search = async (req, res) => {
     try {
         const params = req.params;
@@ -32,6 +36,7 @@ export const search = async (req, res) => {
     }
 }
 
+//getByQuery function :- to fetch an application by query parameter
 export const getByQuery = async (req, res) => {
     try {
         const query = req.query;
@@ -42,6 +47,7 @@ export const getByQuery = async (req, res) => {
     }
 }
 
+//post function :- to add a new application in database
 export const post = async (req, res) => {
     try {
         const user = req.body;
@@ -52,6 +58,7 @@ export const post = async (req, res) => {
     }
 }
 
+//put function :- to update a user in database
 export const put = async (req, res) => {
     try {
         const updateParam = req.body;
@@ -63,6 +70,7 @@ export const put = async (req, res) => {
     }
 }
 
+//remove function :- to delete a user in database
 export const remove = async (req, res) => {
     try {
         const query = req.params;
@@ -72,5 +80,3 @@ export const remove = async (req, res) => {
         setError(error, res)
     }
 }
-
-
