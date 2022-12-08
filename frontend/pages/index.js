@@ -43,12 +43,7 @@ export default function Home() {
       </nav>
 
       <div className={styles.imageBannerContainer}>
-        {/*<h2>Find your scholarship to finance your study</h2>*/}
-        <br/>
-        <div className={styles.form}>
-          <input type='email' placeholder='Enter Your Email' ref={emailRef} />
-          <button onClick={handleSubmit}>Know More</button>
-        </div>
+      <button className={styles.applynow} onClick={handleSubmit}>Know More</button>
       </div> 
 
       <div className={styles.destinations}>
@@ -86,6 +81,15 @@ export default function Home() {
       <div className={styles.banner}>
         <Image src="/blog.png" alt="blog" className="" width={1260} height={650} />
       </div> 
+
+      <div className={styles.orangebox}>
+      <div className={styles.form}>
+        <a className={styles.formtext}>Subscribe to Our Newsletter<br />
+Keep up to date with scholarship news, student success stories, and how to advocate for students!</a>
+          <input type='email' placeholder='Enter Your Email' ref={emailRef} />
+          <button onClick={handleSubmit}>Know More</button>
+        </div>
+        </div>
 
       <div className={styles.destinations}>
         <h2 className={styles.header}>Most Popular <b className={styles.selectedBolder}>Degrees</b> to pursue</h2>

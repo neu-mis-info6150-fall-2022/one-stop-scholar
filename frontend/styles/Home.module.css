@@ -1036,4 +1036,78 @@
   margin-top: 5vh;
   margin-bottom: 5vh;
   font-weight: 600;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  height: 16vh;
+  border-radius: 5px;
+  background-color: #f3dd6d;
+}
+.form .formtext {
+  position: relative;
+  font-size: 2vh;
+  text-align: center;
+  top: -22px;
+  left: 288px;
+}
+.form input {
+  margin: 16px;
+  height: 30px;
+  border: none !important;
+  border-radius: 3px;
+  position: relative;
+  top: 23px;
+  right: 147px;
+}
+.form input:hover {
+  border: 2px solid grey;
+}
+.form input:hover::placeholder {
+  font-weight: 700;
+}
+.form input::placeholder {
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.form button {
+  width: 10%;
+  margin: 5px;
+  height: 35px;
+  border: none;
+  background-color: #db6550;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  position: relative;
+  top: 23px;
+  right: 147px;
+}
+.form button:hover {
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px grey;
+}
+
+.applynow {
+  position: relative;
+  top: 10vh;
+  right: 53vh;
+  height: 8vh;
+  width: 41vh;
+  background-color: #e56a54;
+  color: white;
+  font-size: larger;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.applynow:hover {
+  background-color: #ffc4b9;
+  color: black;
 }/*# sourceMappingURL=Home.module.css.map */
