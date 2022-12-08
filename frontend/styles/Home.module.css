@@ -3,6 +3,12 @@
   font-weight: bold;
 }
 
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
+}
+
 .nav-logo {
   position: relative;
   top: 9px;
@@ -12,6 +18,12 @@
 .selectedBold {
   color: black !important;
   font-weight: bold;
+}
+
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
 }
 
 .nav-logo {
@@ -81,6 +93,12 @@
   font-weight: bold;
 }
 
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
+}
+
 .nav-logo {
   position: relative;
   top: 9px;
@@ -103,6 +121,12 @@
 .selectedBold {
   color: black !important;
   font-weight: bold;
+}
+
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
 }
 
 .nav-logo {
@@ -176,6 +200,12 @@
 .selectedBold {
   color: black !important;
   font-weight: bold;
+}
+
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
 }
 
 .nav-logo {
@@ -441,6 +471,12 @@
   font-weight: bold;
 }
 
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
+}
+
 .nav-logo {
   position: relative;
   top: 9px;
@@ -510,6 +546,12 @@
 .selectedBold {
   color: black !important;
   font-weight: bold;
+}
+
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
 }
 
 .nav-logo {
@@ -586,6 +628,12 @@
 .selectedBold {
   color: black !important;
   font-weight: bold;
+}
+
+.selectedBolder {
+  color: #e56a54 !important;
+  font-weight: bolder !important;
+  text-decoration: underline;
 }
 
 .nav-logo {
@@ -793,6 +841,8 @@
   height: 60vh;
   background-size: cover;
   flex-direction: column;
+  position: relative;
+  top: 13vh;
 }
 .imageBannerContainer h2 {
   color: white;
@@ -845,7 +895,7 @@
 }
 
 .destinations {
-  margin-top: 10vh;
+  margin-top: 18vh;
 }
 .destinations .cardContainer {
   display: flex;
@@ -881,10 +931,11 @@
 }
 
 .seeMore1 {
-  position: absolute;
+  position: relative;
   z-index: 0;
-  top: 1550px;
-  left: 94%;
+  top: -52vh;
+  /* left: 94%; */
+  float: right;
 }
 
 .seeMore1:hover {
@@ -894,10 +945,10 @@
 }
 
 .seeMore2 {
-  position: absolute;
+  position: relative;
   z-index: 0;
-  top: 2250px;
-  left: 94%;
+  float: right;
+  top: -52vh;
 }
 
 .seeMore2:hover {
@@ -1006,4 +1057,78 @@
   margin-top: 5vh;
   margin-bottom: 5vh;
   font-weight: 600;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  height: 16vh;
+  border-radius: 5px;
+  background-color: #f3dd6d;
+}
+.form .formtext {
+  position: relative;
+  font-size: 2vh;
+  text-align: center;
+  top: -22px;
+  left: 288px;
+}
+.form input {
+  margin: 16px;
+  height: 30px;
+  border: none !important;
+  border-radius: 3px;
+  position: relative;
+  top: 23px;
+  right: 147px;
+}
+.form input:hover {
+  border: 2px solid grey;
+}
+.form input:hover::placeholder {
+  font-weight: 700;
+}
+.form input::placeholder {
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.form button {
+  width: 10%;
+  margin: 5px;
+  height: 35px;
+  border: none;
+  background-color: #db6550;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  position: relative;
+  top: 23px;
+  right: 147px;
+}
+.form button:hover {
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px grey;
+}
+
+.applynow {
+  position: relative;
+  top: 10vh;
+  right: 53vh;
+  height: 8vh;
+  width: 41vh;
+  background-color: #e56a54;
+  color: white;
+  font-size: larger;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.applynow:hover {
+  background-color: #ffc4b9;
+  color: black;
 }/*# sourceMappingURL=Home.module.css.map */
