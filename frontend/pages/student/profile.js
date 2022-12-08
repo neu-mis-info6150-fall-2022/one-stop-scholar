@@ -44,7 +44,7 @@ export default function StudentProfile({session, profileData}) {
                     <Link href='/student/applications' legacyBehavior><a>Applications</a></Link>
                 </div>
                 <div className='login-container'>
-                    <Link href='/student/profile' legacyBehavior><a>{profileData.email}</a></Link>
+                    <Link href='/student/profile' legacyBehavior><a className={styles.selectedBold}>{profileData.email}</a></Link>
                     <button onClick={handleSignOut} className={styles.signOutButton}>Sign Out</button>
                 </div>
             </nav>
