@@ -40,8 +40,8 @@ export default function SignIn() {
                 <p className={styles.debtText}>Create or apply to exclusive scholarships,<br /> fellowships, and grants, in minutes.</p>
 
                 <div className={styles.signInContainer}>
-                    <button onClick={handleStudentClick} className={styles.signInButton}><Image src="/signin-student.png" alt="applicant" className={styles.doner} width={150} height={100} /></button>
-                    <button onClick={handleSponsorClick} className={styles.signInButton}><Image src="/signin-sponsor.png" alt="doner" className={styles.doner} width={150} height={100} /></button>
+                    <button onClick={handleStudentClick} className={styles.signInButton}><img src="/signin-student.png" alt="applicant" className={styles.doner} /></button>
+                    <button onClick={handleSponsorClick} className={styles.signInButton}><img src="/signin-sponsor.png" alt="doner" className={styles.doner} /></button>
                 </div>
             </div>
              
