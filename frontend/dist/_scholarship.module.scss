@@ -45,7 +45,49 @@
 
 .schApp{
     margin-top: 10%;
-    font-weight: fonts(bold);
+    list-style: none;
+    
+
+    li {
+        @include autoMarginHorizontal;
+        display: flex;
+        width: 80%;
+
+        span {
+            font-weight: fonts(bold);
+            width: 20%;
+            @include flexEqualDistribution;
+        }
+
+        p {
+            width: 80%;
+        }
+
+    }
+}
+
+.scholarshipApplyButton {
+    // @include flexCenter;
+    @include autoMarginHorizontal;
+    margin-bottom: 10vh;
+    width: 30%;
+
+    button {
+        width: 100%;
+        height: 7vh;
+        border: none;
+        color: white;
+        background-color: $button-color;
+        border-radius: 5px;
+        font-size: medium;
+        letter-spacing: 2px;
+
+        &:hover {
+            box-shadow: 2px 2px 5px grey;
+            font-weight: fonts(medium-bold);
+            cursor: pointer;
+        }
+    }
 }
 
 .scholarships {
