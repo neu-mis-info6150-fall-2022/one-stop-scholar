@@ -2,11 +2,27 @@ import { getSession, signOut } from 'next-auth/react';
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import Router from 'next/router';
 
 export default function StudentApplications({ session, applications, scholarshipData, studentData }) {
 
-    console.log("studentData",studentData);
+    console.log("applications",applications);
 
+    const handleSubmit = async () => {
+        const url = `http://localhost:8080/applications/${id}`;
+        console.log("url",url);
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: "accepted", studentId: applications.studentId, scholarshipId: applications.scholarshipId, sponsorId: applications.sponsorId})
+        };
+        const res = await fetch(url, requestOptions);
+    }
+
+    const handleRejectSubmit = async () => {
+        Router.push('/sponsor/applications');
+    }
+    
     const handleSignOut = () => {
         signOut({ callbackUrl: 'http://localhost:3000' });
     }
@@ -37,8 +53,15 @@ export default function StudentApplications({ session, applications, scholarship
                                     </Link>
                                     <ul className={styles.appliedScholarshipContainer}>
                                         <li><span>Student Name:</span><p className={styles.details}>{studentData[idx].firstName+" "+studentData[idx].lastName}</p></li>
-                                        <li><span>Amount:</span><p className={styles.details}>{scholarship.scholarshipAmt}</p></li>
+                                        <li><span>Email Address:</span><p className={styles.details}>{studentData[idx].email}</p></li>
+                                        <li><span>Gender:</span><p className={styles.details}>{studentData[idx].gender}</p></li>
+                                        <li><span>University:</span><p className={styles.details}>{studentData[idx].university}</p></li>
+                                        <li><span>Year Of Completion:</span><p className={styles.details}>{studentData[idx].yearOfCompletion}</p></li>
+                                        <li><span>Grade:</span><p className={styles.details}>{studentData[idx].grade}</p></li>
+                                        <li><span>Highest Qualification:</span><p className={styles.details}>{studentData[idx].highestQualification}</p></li>
                                         <li><span>Status:</span><p className={styles.details}>{applications[idx].status}</p></li>
+                                        <button onClick={handleSubmit}>Accept</button>
+                                        <button onClick={handleRejectSubmit}>Reject</button>
                                     </ul>
                                 </div>
                             )
@@ -76,10 +99,6 @@ export async function getServerSideProps(context) {
                 },
             }
         }
-
-        // const profileDataURL = `http://localhost:8080/sponsorDb/profile/${email}`;
-        // const profileResponse = await fetch(profileDataURL);
-        // const profileData = await profileResponse.json();
 
         const applicationURL = `http://localhost:8080/applications/v1/search?email=${email}`;
         const applicationsResponse = await fetch(applicationURL);
