@@ -8,7 +8,7 @@ function scholarshipList({ scholarships }) {
     
     <div className={styles.container}>
       <nav className={styles.navbar}>
-        <a href="http://localhost:3000" ><Image src="/site-logo.png" alt="OneStopScholar" className="nav-logo" width={150} height={50}></Image></a>
+        <a href="http://localhost:3000" ><Image src="/Scholar.gif" alt="OneStopScholar" className="nav-logo" width={120} height={120}></Image></a>
         <div className={styles.centerNav}>
           <Link href='/scholarship' legacyBehavior><a className={styles.selectedBold}>Scholarships</a></Link>
           <Link href='/countries' legacyBehavior><a>Destinations</a></Link>

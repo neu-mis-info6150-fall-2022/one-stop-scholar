@@ -3,6 +3,12 @@
   font-weight: bold;
 }
 
+.nav-logo {
+  position: relative;
+  top: 9px;
+  left: -38px;
+}
+
 .footer {
   left: 0;
   position: absolute;
