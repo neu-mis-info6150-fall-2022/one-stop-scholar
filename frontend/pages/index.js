@@ -79,11 +79,46 @@ export default function Home() {
           <div className={styles.card}>
             <div className={[styles.image4, styles.cardImage].join(" ")}></div>
             <p>Scholarships in</p>
-            <h3>Germany</h3>
+            <h3>Germany</h3> 
           </div>
-
+        </div >
+        <div>
+          <Link href='/countries' legacyBehavior><Image src="/see-more.png" class={styles.seeMore1}  alt=""   width={100} height={100} /></Link>
         </div>
       </div>
+
+      <div className={styles.destinations}>
+        <h2 className={styles.header}>Most Popular Degrees</h2>
+        <div className={styles.cardContainer}>
+          <div className={styles.card}>
+            <div className={[styles.image5, styles.cardImage].join(" ")}></div>
+            <p>Scholarships for</p>
+            <h3>Professional Certificate</h3>
+          </div>
+
+          <div className={styles.card}>
+            <div className={[styles.image6, styles.cardImage].join(" ")}></div>
+            <p>Scholarships for</p>
+            <h3>Bachelor Degree</h3>
+          </div>
+
+          <div className={styles.card}>
+            <div className={[styles.image7, styles.cardImage].join(" ")}></div>
+            <p>Scholarships for</p>
+            <h3>Master Degree</h3>
+          </div>
+
+          <div className={styles.card}>
+            <div className={[styles.image8, styles.cardImage].join(" ")}></div>
+            <p>Scholarships for</p>
+            <h3>Doctoral Degree</h3> 
+          </div>
+        </div >
+        <div>
+          <Link href='/degree' legacyBehavior><Image src="/see-more.png" class={styles.seeMore2}  alt=""   width={100} height={100} /></Link>
+        </div>
+      </div>
+
       <div className={styles.reviewsSection}>
         <h2 className={styles.header}>Student Reviews</h2>
         <div className={styles.reviewsContainer}>
