@@ -35,8 +35,8 @@ export default function ContactUs() {
                         <Image src="/riya.jpeg" alt="" className={styles.contactPic} width={100} height={100} />
                         </div>
                         <div>
-                            <p>Contact: Riya Rajesh Patil</p>
-                            <p>Email ID: riya.patil@northeastern.edu</p>
+                            <p><b>Contact:</b> Riya Rajesh Patil</p>
+                            <p><b>Email ID:</b> riya.patil@northeastern.edu</p>
                         </div>
                     </div>
                     
@@ -50,8 +50,8 @@ export default function ContactUs() {
                         <Image src="/ritvik.jpeg" alt="" className={styles.contactPic} width={100} height={100} />
                         </div>
                         <div>
-                            <p>Contact: Ritvik Saxena</p>
-                            <p>Email ID: ritvik.saxena@northeastern.edu</p>
+                            <p><b>Contact:</b> Ritvik Saxena</p>
+                            <p><b>Email ID:</b> ritvik.saxena@northeastern.edu</p>
                         </div>
                     </div>
                 </div>
@@ -64,8 +64,8 @@ export default function ContactUs() {
                         <Image src="/souvik.jpeg" alt="" className={styles.contactPic} width={100} height={100} />
                         </div>
                         <div>
-                            <p>Contact: Souvik Dinda</p>
-                            <p>Email ID: souvik.dinda@northeastern.edu</p>
+                            <p><b>Contact:</b> Souvik Dinda</p>
+                            <p><b>Email ID:</b> souvik.dinda@northeastern.edu</p>
                         </div>
                     </div>
                 </div>
@@ -78,8 +78,8 @@ export default function ContactUs() {
                         <Image src="/vinay.jpeg" alt="" className={styles.contactPic} width={100} height={100} />
                         </div>
                         <div>
-                            <p>Contact: Vinay Kumar Gudooru</p>
-                            <p>Email ID: vinay.gudooru@northeastern.edu</p>
+                            <p><b>Contact:</b> Vinay Kumar Gudooru</p>
+                            <p><b>Email ID:</b> vinay.gudooru@northeastern.edu</p>
                         </div>
                     </div>
                 </div>
