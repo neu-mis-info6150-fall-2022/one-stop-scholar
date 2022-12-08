@@ -85,7 +85,7 @@ export default function Home() {
       <div className={styles.orangebox}>
       <div className={styles.form}>
         <a className={styles.formtext}>Subscribe to Our Newsletter<br />
-Keep up to date with scholarship news, student success stories, and how to advocate for students!</a>
+        Keep up to date with scholarship news, student success stories, and how to advocate for students!</a>
           <input type='email' placeholder='Enter Your Email' ref={emailRef} />
           <button onClick={handleSubmit}>Know More</button>
         </div>
@@ -128,7 +128,7 @@ Keep up to date with scholarship news, student success stories, and how to advoc
         <div className={styles.reviewsContainer}>
           <div className={styles.reviews}>
             <div className={styles.reviewGrid}>
-            <Image src="/inverted-comma1.jpeg" alt=""   width={100} height={200} />
+            <Image src="/inverted-comma1.jpeg" alt=""   width={80} height={170} />
             <div>
               <div className={styles.reviewsHeader}>
                 <div className={styles.reviewHeader1}>
@@ -141,12 +141,12 @@ Keep up to date with scholarship news, student success stories, and how to advoc
                 <p>I was able to win the Sage Marketing Scholarship for $10,000 because the access that the Onestop Scholar provides. There's so many different types of scholarships, all for different kind of people. It is giving the user pure opportunity. All you need is effort.</p>
               </div>
               </div>
-              <Image src="/inverted-comma2.jpeg" alt="" width={100} height={200} />
+              <Image src="/inverted-comma2.jpeg" alt="" width={80} height={170} />
             </div>
           </div>
           <div className={styles.reviews}>
             <div className={styles.reviewGrid}>
-            <Image src="/inverted-comma1.jpeg" alt=""   width={100} height={200} />
+            <Image src="/inverted-comma1.jpeg" alt=""   width={80} height={170} />
             <div>
               <div className={styles.reviewsHeader}>
               <div className={styles.reviewHeader1}>
@@ -159,7 +159,7 @@ Keep up to date with scholarship news, student success stories, and how to advoc
                 <p>I simply accepted that I only had the tuition and scholarship opportunities that were explicitly presented to me until I discovered Onestop Scholar. Now the tough task of affording my full-time MBA is far more manageable.</p>
               </div>
               </div>
-              <Image src="/inverted-comma2.jpeg" alt="" width={100} height={200} />
+              <Image src="/inverted-comma2.jpeg" alt="" width={80} height={170} />
             </div>
           </div>
         </div>

@@ -99,6 +99,16 @@ export default function ScholarshipForm(props) {
                         required
                     />
                 </div>
+                <div className={styles.inputElements}>
+                    <label>Country:</label>
+                    <input 
+                        type="text" 
+                        name="country"
+                        value={inputs.country || ""}
+                        onChange={handleChange} 
+                        required
+                    />
+                </div>
                 <div className={styles.saveButton}>
                     <input type="submit" value="Save" />
                 </div>
