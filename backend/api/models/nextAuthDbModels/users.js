@@ -1,6 +1,8 @@
+//Creating a model schema for the users database
+//Import mongoose for database
 import mongoose from "mongoose";
-// import {nextAuthDb} from '../../app.js'
 
+//Define the structure and parameters of the schema
 const schema = new mongoose.Schema({
     email: {
         type: String,
@@ -20,9 +22,13 @@ const schema = new mongoose.Schema({
         type: String,
         required: 'userType is required'
     }
-}, {versionKey: false});
+}, { versionKey: false });
 
+//Establish database connection using the Url 
 const nextAuthDb = mongoose.createConnection('mongodb+srv://onestopscholar:OneStopScholarINFO6150@onestopscholar.cpgxpwf.mongodb.net/nextauthDb?retryWrites=true&w=majority');
-const userModel = nextAuthDb.model('users',schema);
 
+//Giving name to the database
+const userModel = nextAuthDb.model('users', schema);
+
+//Exporting the database model to use it in other files
 export default userModel;
