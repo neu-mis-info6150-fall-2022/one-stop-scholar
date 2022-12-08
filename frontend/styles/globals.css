@@ -3,6 +3,12 @@
   font-weight: bold;
 }
 
+.nav-logo {
+  position: relative;
+  top: 9px;
+  left: -38px;
+}
+
 body {
   font-family: "Nunito", sans-serif;
   background-color: #e1e1e1;
