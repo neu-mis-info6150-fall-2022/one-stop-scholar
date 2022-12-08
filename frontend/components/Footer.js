@@ -9,8 +9,8 @@ function Footer() {
         
             <div className={styles.links}>
                 <Link href='/tnc' legacyBehavior><a>Terms & Conditions</a></Link>
-                <Link href='#' legacyBehavior><a>Privacy Statement</a></Link>
-                <Link href='#' legacyBehavior><a>Disclaimer</a></Link>
+                <Link href='/privacy' legacyBehavior><a>Privacy Statement</a></Link>
+                <Link href='/disclaimer' legacyBehavior><a>Disclaimer</a></Link>
             </div>
             <div className={styles.social}>
             <Link href='https://www.facebook.com/' legacyBehavior><Image src="/facebook-white.png" alt="" className={styles.socialIcons} width={50} height={50}/></Link>
