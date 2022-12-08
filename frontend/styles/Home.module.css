@@ -775,6 +775,27 @@
   text-decoration: underline;
 }
 
+.selectedBold {
+  color: black !important;
+  font-weight: bold;
+}
+
+.appliedScholarshipContainer {
+  list-style: none;
+}
+.appliedScholarshipContainer li {
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+.appliedScholarshipContainer li span {
+  width: 20%;
+  text-align: left;
+}
+.appliedScholarshipContainer li p {
+  width: 80%;
+}
+
 .header {
   text-align: center;
 }
